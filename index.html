@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Energieberatung München – Nicolas Stephan</title>
-<meta name="description" content="Unabhängige Energieberatung in München: Sanierungsfahrplan (iSFP), Energieausweis, Baubegleitung, Wärmepumpe, Energieaudit und Fördermittel. Mit kostenlosem Energie-Check.">
+<title>Energiekosten senken – Energie- und Fördermittelberatung München | Nicolas Stephan</title>
+<meta name="description" content="Energiekosten dauerhaft senken, Betrieb und Gebäude zukunftssicher machen und Förderung mitnehmen, solange sie noch läuft: unabhängige Energie- und Fördermittelberatung in München für Unternehmen und Eigentümer – mit Rechenbeispielen für Maschinentausch und Nachrüstung.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6b4f'/%3E%3Cpath d='M9 17l7-9 7 9h-4v7h-6v-7z' fill='white'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Energieberatung München – Nicolas Stephan">
-<meta property="og:description" content="Sanierungsfahrplan, Energieausweis, Wärmepumpe und Fördermittel – mit kostenlosem Energie-Check.">
+<meta property="og:title" content="Energiekosten senken. Zukunft sichern. – Energieberatung München">
+<meta property="og:description" content="Wie viel können Ihr Betrieb und Ihr Gebäude sparen? Maschinentausch, Nachrüstung, Sanierung und Fördermittel – bevor Zuschüsse auslaufen.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Nicolas Stephan – Ingenieur- und Energieberatung",
-  "description": "Unabhängige Energieberatung für Wohn- und Nichtwohngebäude: individueller Sanierungsfahrplan (iSFP), Energieausweise, Baubegleitung, Wärmepumpen-Check, Energieaudits und Fördermittel.",
+  "description": "Unabhängige Energie- und Fördermittelberatung für Unternehmen und Eigentümer: Energieaudits, Einsparkonzepte für Maschinen und Anlagen, Fördermittelprüfung, individueller Sanierungsfahrplan (iSFP), Energieausweise und Baubegleitung.",
   "founder": { "@type": "Person", "name": "Nicolas Stephan", "jobTitle": "Energieberater, Ingenieur (M.Sc.)" },
   "address": { "@type": "PostalAddress", "streetAddress": "Schellingstraße 76", "postalCode": "80799", "addressLocality": "München", "addressCountry": "DE" },
   "telephone": "+4915209964648",
   "email": "nicolasstephan@gmx.de",
   "areaServed": { "@type": "City", "name": "München" },
   "priceRange": "€€",
-  "knowsAbout": ["Energieberatung", "Sanierungsfahrplan", "Energieausweis", "Wärmepumpe", "BEG-Förderung", "Energieaudit DIN EN 16247"]
+  "knowsAbout": ["Energieberatung", "Fördermittelberatung", "Bundesförderung Energie- und Ressourceneffizienz in der Wirtschaft", "Forschungszulage", "Energieaudit DIN EN 16247", "Sanierungsfahrplan", "Energieausweis", "Wärmepumpe", "BEG-Förderung"]
 }
 </script>
 <style>
@@ -61,7 +61,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; scroll-padding-top: 136px; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 var(--font-body); -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
@@ -95,7 +95,7 @@ details.mobile-nav .panel { position: absolute; right: 0; top: calc(100% + 14px)
   padding: 10px 6px; min-width: 240px; display: grid; box-shadow: 0 16px 40px rgba(0,0,0,.14); }
 details.mobile-nav .panel a { padding: 10px 16px; color: var(--text); text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; text-transform: uppercase; }
 details.mobile-nav .panel a:hover { color: var(--accent); }
-@media (max-width: 900px) { nav.main { display: none; } details.mobile-nav { display: block; } }
+@media (max-width: 1060px) { nav.main { display: none; } details.mobile-nav { display: block; } }
 
 /* Bausteine */
 section { padding: 96px 0; }
@@ -134,7 +134,9 @@ ul.check li::after { content: ""; position: absolute; left: 7px; top: calc(.1em 
 .hero { padding: 72px 0 88px; overflow: hidden; position: relative; }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; position: relative; }
 @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 420px; margin: 0 auto -20px; } }
-.hero h1 { margin-bottom: .35em; }
+.hero h1 { margin-bottom: .35em; font-size: clamp(2.1rem, 4.6vw, 3.5rem); }
+.deadline { margin: 26px 0 0; padding: 12px 16px; background: var(--band); border-left: 4px solid var(--yellow); font-size: .95rem; max-width: 40em; }
+.deadline a { font-weight: 600; white-space: nowrap; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .question { font-family: var(--font-head); font-weight: 700; font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.25; margin-bottom: .7em; }
 .hero-art svg { width: 100%; height: auto; display: block; }
@@ -266,63 +268,70 @@ footer.site nav a:first-child { margin-left: 0; }
   .check-tool { grid-template-columns: 1fr; }
   body { background: #fff; color: #000; }
 }
+
+/* Unternehmen: Rechenbeispiele, Rechner, Kompetenz */
+.case { display: flex; flex-direction: column; }
+.case .tag { font: 700 .76rem var(--font-head); text-transform: uppercase; letter-spacing: .07em; color: var(--blue); margin-bottom: .5em; }
+.case h3 { font-size: 1.3rem; margin-bottom: .35em; }
+table.calc { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 6px 0 16px; }
+table.calc td { padding: 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.calc td:last-child { text-align: right; font-weight: 600; white-space: nowrap; padding-left: 14px; }
+table.calc tr.sum td { font: 700 1.08rem var(--font-head); border-top: 2px solid var(--text); border-bottom: 0; padding-top: 10px; }
+.case .takeaway { margin-top: auto; background: var(--band); border-left: 4px solid var(--yellow); padding: 10px 14px; font-size: .93rem; }
+.band .case .takeaway { background: var(--bg); }
+.h-sub { font-size: clamp(1.4rem, 2.6vw, 1.8rem); }
+.lbl { font-weight: 600; font-size: .92rem; font-family: var(--font-head); margin: 0 0 6px; }
+.seg.seg-3 { grid-template-columns: repeat(3, 1fr); margin-bottom: 14px; }
+#mr-out h3 { font-size: 1.6rem; margin-bottom: .4em; }
+@media (max-width: 520px) { #mr-out .kpi b { font-size: 1.25rem; } }
+.mr-prog { font: 700 .76rem var(--font-head); text-transform: uppercase; letter-spacing: .07em; color: var(--blue); margin: 0 0 .3em; }
+.mr-warn { background: #fff4d6; color: #5a4300; border-left: 3px solid var(--yellow); padding: 10px 14px; font-size: .9rem; margin: 0 0 12px; }
+ul.mr-notes { padding-left: 18px; margin: 8px 0 16px; font-size: .9rem; color: var(--muted); }
+ul.mr-notes li { margin-bottom: 4px; }
+.skills { display: grid; gap: 32px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .skills { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .skills { grid-template-columns: 1fr; } }
+.skills > div { border-top: 3px solid var(--text); padding-top: 16px; }
+.skills h3 { font-size: 1.22rem; }
+.skills p { margin: 0; color: var(--muted); }
+.kompetenz-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; margin-top: 48px; padding: 26px 28px; background: var(--bg); border-left: 4px solid var(--yellow); }
+.kompetenz-box > div { flex: 1 1 420px; min-width: 0; }
+.kompetenz-box h3 { font-size: 1.3rem; }
+.kompetenz-box p { margin: 0; color: var(--muted); }
+
+/* Zwei Bereiche mit Reitern */
+.view { display: none; }
+body:not([data-view]) .view, body[data-view="wohngebaeude"] #wohngebaeude, body[data-view="unternehmen"] #unternehmen { display: block; }
+body[data-view="wohngebaeude"] [data-for="unternehmen"], body[data-view="unternehmen"] [data-for="wohngebaeude"] { display: none !important; }
+.tabbar { background: var(--band); border-top: 1px solid var(--line); }
+header.site .tabbar .wrap { display: block; min-height: 0; }
+.tabs { display: flex; gap: 6px; margin-bottom: -1px; padding-top: 8px; }
+.tabs a { display: flex; align-items: center; gap: 9px; padding: 10px 20px 11px; color: var(--muted); text-decoration: none; font: 700 .86rem var(--font-head); text-transform: uppercase; letter-spacing: .06em; border: 1px solid transparent; border-bottom: 0; border-top: 3px solid transparent; }
+.tabs a svg { width: 20px; height: 20px; flex: none; }
+.tabs a:hover { color: var(--text); }
+.tabs a[aria-selected="true"] { background: var(--bg); color: var(--text); border-color: var(--line); border-top-color: var(--accent); }
+.tabs a[aria-selected="true"] svg { color: var(--accent); }
+.tabs .kurz { display: none; }
+@media (max-width: 620px) {
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .tabs a { justify-content: center; padding: 9px 8px 10px; font-size: .8rem; }
+  .tabs .lang { display: none; } .tabs .kurz { display: inline; }
+}
+.switch-hint { margin: 18px 0 0; font-size: .95rem; color: var(--muted); }
+.switch-hint a { font-weight: 600; }
+.svc h3 { font-size: 1.22rem; }
+.svc { border-top: 3px solid var(--text); }
+.band .svc { border-top-color: var(--text); }
+.note-box { margin: 32px 0 0; padding: 16px 20px; border-left: 4px solid var(--yellow); background: var(--bg); max-width: 52em; }
+.band .note-box { background: var(--bg); }
+section:not(.band) .note-box { background: var(--band); }
+.card.cross { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.card.cross .btn { margin-top: auto; }
 </style>
 </head>
 <body>
-
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="#start">Nicolas Stephan<small>Energieberatung</small></a>
-    <nav class="main" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#energie-check">Energie-Check</a>
-      <a href="#preise">Preise</a>
-      <a href="#ueber-mich">Über mich</a>
-      <a href="#aktuelles">Aktuelles</a>
-      <a class="btn" href="#kontakt">Kontakt</a>
-    </nav>
-    <details class="mobile-nav">
-      <summary aria-label="Menü öffnen"><span></span></summary>
-      <div class="panel">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#energie-check">Energie-Check</a>
-        <a href="#beispiele">Beispiele</a>
-        <a href="#preise">Preise</a>
-        <a href="#ablauf">Ablauf</a>
-        <a href="#ueber-mich">Über mich</a>
-        <a href="#aktuelles">Aktuelles</a>
-        <a href="#faq">Fragen</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </details>
-  </div>
-</header>
-
-<main class="home" id="start">
-
-<!-- Start -->
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Energieberatung in München und Umgebung</p>
-      <h1>Sanieren<br>mit <em>Plan</em></h1>
-      <p class="question">Welche Maßnahme lohnt sich für Ihr Gebäude – und wie holen Sie die volle Förderung?</p>
-      <p class="lead">Unabhängige Beratung für Wohnhäuser und Nichtwohngebäude: vom Sanierungsfahrplan bis zur Wärmepumpe, mit allen Zuschüssen von BAFA und KfW.</p>
-      <div class="actions">
-        <a class="btn" href="#energie-check">Kostenlosen Energie-Check starten</a>
-        <a class="btn ghost" href="#kontakt">Erstgespräch</a>
-      </div>
-      <ul class="trust">
-        <li>Energieeffizienz-Experte (dena)</li>
-        <li>BAFA-gelistet</li>
-        <li>Energieauditor DIN EN 16247</li>
-        <li>M.Sc. TU München</li>
-        <li>Herstellerunabhängig</li>
-      </ul>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
-        <defs>
+<script>(function(){var h=location.hash.slice(1),f=["unternehmen","f-leistungen","rechenbeispiele","maschinen-rechner","kompetenz","f-foerderung","f-beispiele","f-preise","f-aktuelles","f-faq"],w=["wohngebaeude","w-leistungen","w-beispiele","w-foerderung","w-preise","w-aktuelles","w-faq"],v=null;if(f.indexOf(h)>=0)v="unternehmen";else if(w.indexOf(h)>=0)v="wohngebaeude";else{try{v=localStorage.getItem("bereich")}catch(e){}}document.body.setAttribute("data-view",v==="unternehmen"?"unternehmen":"wohngebaeude");})();</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
           <filter id="aquarell" x="-20%" y="-20%" width="140%" height="140%">
             <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="11" result="n"/>
             <feDisplacementMap in="SourceGraphic" in2="n" scale="34"/>
@@ -335,7 +344,87 @@ footer.site nav a:first-child { margin-left: 0; }
             <feComposite in2="SourceGraphic" operator="in"/>
           </filter>
           <filter id="strich"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="2.6"/></filter>
-        </defs>
+        </defs></svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#start">Nicolas Stephan<small>Energieberatung</small></a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a data-for="wohngebaeude" href="#w-leistungen">Leistungen</a>
+      <a data-for="wohngebaeude" href="#energie-check">Energie-Check</a>
+      <a data-for="wohngebaeude" href="#w-foerderung">Förderung</a>
+      <a data-for="wohngebaeude" href="#w-preise">Preise</a>
+      <a data-for="wohngebaeude" href="#ueber-mich">Über mich</a>
+      <a data-for="unternehmen" href="#f-leistungen">Leistungen</a>
+      <a data-for="unternehmen" href="#rechenbeispiele">Rechenbeispiele</a>
+      <a data-for="unternehmen" href="#maschinen-rechner">Förderrechner</a>
+      <a data-for="unternehmen" href="#kompetenz">Fördermittel</a>
+      <a data-for="unternehmen" href="#f-preise">Preise</a>
+      <a class="btn" href="#kontakt">Kontakt</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Menü öffnen"><span></span></summary>
+      <div class="panel">
+        <a data-for="wohngebaeude" href="#w-leistungen">Leistungen</a>
+        <a data-for="wohngebaeude" href="#energie-check">Energie-Check</a>
+        <a data-for="wohngebaeude" href="#w-beispiele">Beispiele</a>
+        <a data-for="wohngebaeude" href="#ablauf">Ablauf</a>
+        <a data-for="wohngebaeude" href="#w-foerderung">Förderung</a>
+        <a data-for="wohngebaeude" href="#w-preise">Preise</a>
+        <a data-for="wohngebaeude" href="#ueber-mich">Über mich</a>
+        <a data-for="wohngebaeude" href="#w-aktuelles">Fristen</a>
+        <a data-for="wohngebaeude" href="#w-faq">Fragen</a>
+        <a data-for="unternehmen" href="#f-leistungen">Leistungen</a>
+        <a data-for="unternehmen" href="#rechenbeispiele">Rechenbeispiele</a>
+        <a data-for="unternehmen" href="#maschinen-rechner">Förderrechner</a>
+        <a data-for="unternehmen" href="#kompetenz">Fördermittel</a>
+        <a data-for="unternehmen" href="#f-preise">Preise</a>
+        <a data-for="unternehmen" href="#f-foerderung">Programme</a>
+        <a data-for="unternehmen" href="#energie-check">Gebäude-Check</a>
+        <a data-for="unternehmen" href="#ablauf">Ablauf</a>
+        <a data-for="unternehmen" href="#ueber-mich">Über mich</a>
+        <a data-for="unternehmen" href="#f-aktuelles">Fristen</a>
+        <a data-for="unternehmen" href="#f-faq">Fragen</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </details>
+  </div>
+  <div class="tabbar">
+    <div class="wrap">
+      <nav class="tabs" role="tablist" aria-label="Bereich wählen">
+        <a role="tab" id="tab-w" href="#wohngebaeude" data-tab="wohngebaeude" aria-controls="wohngebaeude"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Wohngebäude</span></a>
+        <a role="tab" id="tab-u" href="#unternehmen" data-tab="unternehmen" aria-controls="unternehmen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M3 21V10l5 -3v3l5 -3v3l5 -3v14"/><path d="M18 21V4h3v17"/><path d="M7 15h2M12 15h2"/></svg><span class="lang">Unternehmen &amp; Nichtwohngebäude</span><span class="kurz">Unternehmen</span></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="home" id="start">
+
+<div class="view" id="wohngebaeude" data-view="wohngebaeude" role="tabpanel" aria-labelledby="tab-w">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Energieberatung für Wohngebäude in München</p>
+      <h1>Heizkosten senken.<br><em>Zukunft sichern.</em></h1>
+      <p class="question">Wie wird Ihr Haus günstiger im Unterhalt – und wie holen Sie sich die Förderung, bevor sie ausläuft?</p>
+      <p class="lead">Unabhängige Energieberatung für Eigentümer von Ein- und Mehrfamilienhäusern und für Eigentümergemeinschaften: vom Sanierungsfahrplan über die Wärmepumpe bis zur Baubegleitung – mit allen Zuschüssen von BAFA und KfW.</p>
+      <div class="actions">
+        <a class="btn" href="#energie-check">Einsparpotenzial berechnen</a>
+        <a class="btn ghost" href="#kontakt">Erstgespräch</a>
+      </div>
+      <p class="deadline"><b>Fristen im Blick:</b> Der Zuschuss zum Sanierungsfahrplan läuft nach heutigem Stand am 31.12.2026 aus. Ab Februar 2027 sinkt die Förderung für den Heizungstausch schrittweise. <a href="#w-aktuelles">Alle Fristen</a></p>
+      <ul class="trust">
+        <li>Energieeffizienz-Experte (dena)</li>
+        <li>BAFA-gelistet</li>
+        <li>M.Sc. TU München</li>
+        <li>Herstellerunabhängig</li>
+      </ul>
+      <p class="switch-hint">Sie planen für einen Betrieb oder ein Nichtwohngebäude? <a href="#unternehmen">Zum Bereich Unternehmen</a></p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        
         <!-- Aquarell -->
         <g filter="url(#aquarell)">
           <circle cx="255" cy="212" r="186" fill="#2f7fae" opacity=".20"/>
@@ -375,59 +464,40 @@ footer.site nav a:first-child { margin-left: 0; }
       </svg>
     </div>
   </div>
-  <div class="wrap"><a class="more" href="#leistungen">Mehr<svg viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M2 2 L17 16 L32 2"/></svg></a></div>
+  <div class="wrap"><a class="more" href="#w-leistungen">Mehr<svg viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M2 2 L17 16 L32 2"/></svg></a></div>
 </section>
 
-<!-- Leistungen -->
-<section id="leistungen" class="band">
+<section id="w-leistungen">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Leistungen</p>
-      <h2>Für Eigentümer und für Unternehmen</h2>
-      <p class="lead">Von der ersten Einschätzung bis zur abgeschlossenen Sanierung – alles aus einer Hand.</p>
+      <h2>Was ich für Ihr Haus tue</h2>
+      <p class="lead">Von der ersten Einschätzung bis zur ausgezahlten Förderung – unabhängig, mit festen Preisen und mit Blick auf das, was sich auf der Baustelle wirklich umsetzen lässt.</p>
     </div>
-    <div class="grid-2">
-      <div class="card">
-        <div class="ill"><svg viewBox="0 0 84 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 66 L15 34 L44 12 L72 34 L71 66 Z"/><path d="M8 38 L44 8 L80 38"/><rect x="24" y="42" width="16" height="14"/><path d="M32 42 V56 M24 49 H40"/><path d="M52 66 V46 H64 V66"/><path class="blau" d="M60 14 c 3 -4, -1 -7, 2 -11 M66 16 c 3 -4, -1 -7, 2 -11" stroke="currentColor" style="color:var(--blue)"/></svg></div>
-        <h3>Wohngebäude</h3>
-        <p class="muted">Für Eigentümer von Ein- und Mehrfamilienhäusern sowie Eigentümergemeinschaften.</p>
-        <ul class="check">
-          <li><b>Individueller Sanierungsfahrplan (iSFP)</b> – mit BAFA-Zuschuss zur Beratung</li>
-          <li><b>Heizungstausch und Wärmepumpe</b> – Heizlast, Eignung, Förderung</li>
-          <li><b>Baubegleitung</b> – Bestätigungen und Nachweise für BAFA und KfW</li>
-          <li><b>Effizienzhaus-Sanierung</b> – Planung und KfW-Nachweise</li>
-          <li><b>Energieausweise</b> – Bedarfs- und Verbrauchsausweis nach GEG</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="ill"><svg viewBox="0 0 84 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 66 H80"/><path d="M12 66 V30 L26 20 V30 L40 20 V30 L54 20 V30 L68 20 V66"/><rect x="18" y="40" width="12" height="10"/><rect x="36" y="40" width="12" height="10"/><path d="M54 66 V44 H64 V66"/><rect x="70" y="50" width="10" height="16"/><path d="M73 50 V44 M77 50 V40" style="color:var(--blue)"/></svg></div>
-        <h3>Unternehmen und Nichtwohngebäude</h3>
-        <p class="muted">Für Betriebe, Gewerbeimmobilien, Vereine und Kommunen.</p>
-        <ul class="check">
-          <li><b>Energieaudit nach DIN EN 16247</b> – inkl. Pflichtaudit nach EDL-G</li>
-          <li><b>Energieberatung Nichtwohngebäude</b> – Sanierungsfahrplan mit Förderung</li>
-          <li><b>Prozess- und Anlageneffizienz</b> – Druckluft, Wärme, Beleuchtung</li>
-          <li><b>Fördermittel</b> – BEG, Bundesförderung Energie- und Ressourceneffizienz</li>
-          <li><b>Energieausweise</b> für Nichtwohngebäude</li>
-        </ul>
-      </div>
+    <div class="grid-3">
+      <div class="card svc"><h3>Sanierungsfahrplan (iSFP)</h3><p class="muted">Ihr Weg zu niedrigen Heizkosten: welche Maßnahme wann, was sie kostet und was sie spart. Das BAFA übernimmt 50 % des Honorars, und für Dämmung und Fenster verdoppelt sich die förderfähige Kostengrenze.</p></div>
+      <div class="card svc"><h3>Heizungstausch und Wärmepumpe</h3><p class="muted">Weg von Gas- und Ölpreisen: Heizlast, Eignung der Heizkörper und passende Anlagengröße – für Selbstnutzer mit bis zu 70 % Zuschuss.</p></div>
+      <div class="card svc"><h3>Dämmung und Fenster</h3><p class="muted">Planung und Bestätigung zum Förderantrag für BAFA-Einzelmaßnahmen, damit der Zuschuss sicher fließt.</p></div>
+      <div class="card svc"><h3>Effizienzhaus-Sanierung</h3><p class="muted">Planung und Nachweise für die Komplettsanierung mit KfW-Kredit und Tilgungszuschuss.</p></div>
+      <div class="card svc"><h3>Baubegleitung</h3><p class="muted">Kontrolle auf der Baustelle, Bestätigungen und Nachweise für BAFA und KfW – selbst zu großen Teilen förderfähig.</p></div>
+      <div class="card svc"><h3>Energieausweis</h3><p class="muted">Bedarfs- und Verbrauchsausweis nach Gebäudeenergiegesetz – für Verkauf, Vermietung und Aushang.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Energie-Check -->
+<div data-slot="energie-check">
 <section id="energie-check">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Kostenloser Energie-Check</p>
-      <h2>Wie effizient ist Ihr Gebäude?</h2>
-      <p class="lead">Für Wohnhäuser und Nichtwohngebäude wie Büros, Läden, Praxen oder Hallen. Sie sehen sofort Effizienz, Energiekosten und CO₂. Die Auswertung mit Maßnahmen, Kosten, Einsparung und Förderung erhalten Sie per E-Mail.</p>
+      <p class="eyebrow" data-t-unternehmen="Kostenloser Gebäude-Check">Kostenloser Energie-Check</p>
+      <h2 data-t-unternehmen="Was kostet Ihr Betriebsgebäude – und was ließe sich sparen?">Wie viel kann Ihr Haus sparen?</h2>
+      <p class="lead" data-t-unternehmen="Für Büros, Läden, Praxen, Hotels und beheizte Hallen: Wärmebedarf, Energiekosten, CO₂ und Einsparpotenzial auf einen Blick. Den Sparplan mit Maßnahmen, Förderung und Fristen erhalten Sie per E-Mail.">Ein paar Angaben zu Ihrem Haus genügen: Sie sehen sofort Effizienzklasse, Energiekosten, CO₂ und Einsparpotenzial. Den Sparplan mit Maßnahmen, Kosten, Förderung und Fristen erhalten Sie per E-Mail.</p>
     </div>
 
     <div class="check-tool">
       <div class="card" id="check-form-card">
         <form id="check-form" novalidate>
-          <div class="seg" role="radiogroup" aria-label="Gebäudeart">
+          <div class="seg" role="radiogroup" aria-label="Gebäudeart" hidden>
             <label><input type="radio" name="art" value="wg" checked><span>Wohngebäude</span></label>
             <label><input type="radio" name="art" value="nwg"><span>Nichtwohngebäude</span></label>
           </div>
@@ -549,8 +619,8 @@ footer.site nav a:first-child { margin-left: 0; }
           </div>
 
           <div class="gate" id="gate">
-            <h3>Ausführliche Auswertung per E-Mail</h3>
-            <p class="muted small">Maßnahmen nach Wirtschaftlichkeit, Investitionskosten, Einsparung, Förderung und Ihre nächsten Schritte.</p>
+            <h3>Ihr Sparplan per E-Mail</h3>
+            <p class="muted small">Maßnahmen nach Wirtschaftlichkeit, Investition, jährliche Ersparnis, Förderung – und welche Fristen für Sie gelten.</p>
             <form id="gate-form" novalidate>
               <label>Ihr Name <span class="hint">(optional)</span>
                 <input id="g-name" type="text" autocomplete="name">
@@ -585,58 +655,59 @@ footer.site nav a:first-child { margin-left: 0; }
     </div>
   </div>
 </section>
+</div>
 
-<!-- Beispiele -->
-<section id="beispiele" class="band">
+<section id="w-beispiele">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Rechenbeispiele</p>
-      <h2>Was bei typischen Gebäuden drin ist</h2>
-      <p class="lead">Vier typische Gebäude, gerechnet mit dem Energie-Check. Es handelt sich um Beispielrechnungen, nicht um Kundenprojekte.</p>
+      <h2>So viel sparen typische Häuser</h2>
+      <p class="lead">Drei typische Wohnhäuser, gerechnet mit dem Energie-Check: heutige Energiekosten, mögliche Einsparung und Förderung. Beispielrechnungen, keine Kundenprojekte.</p>
     </div>
-    <div class="grid-2" id="examples"></div>
+    <div class="grid-3" id="examples-wg"></div>
   </div>
 </section>
 
-<!-- Ablauf -->
+<div data-slot="ablauf">
 <section id="ablauf">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Ablauf</p>
-      <h2>In vier Schritten zum Ergebnis</h2>
+      <h2>In vier Schritten zu niedrigeren Energiekosten</h2>
     </div>
     <ol class="steps">
-      <li><h3>Erstgespräch</h3><p>Kostenloses Telefonat: Was haben Sie vor, was ist sinnvoll, welche Förderung passt?</p></li>
-      <li><h3>Vor-Ort-Termin</h3><p>Begehung, Aufnahme von Bauteilen und Heizung, Sichtung Ihrer Pläne und Rechnungen.</p></li>
-      <li><h3>Berechnung und Bericht</h3><p>Energiebilanz, Varianten, Kosten und Einsparung – verständlich aufbereitet.</p></li>
-      <li><h3>Umsetzung</h3><p>Förderanträge, Ausschreibungshilfe und auf Wunsch Begleitung bis zur Abnahme.</p></li>
+      <li><h3>Erstgespräch</h3><p>Kostenloses Telefonat: Was haben Sie vor, wo liegt das größte Sparpotenzial, welche Förderung und Fristen gelten?</p></li>
+      <li><h3>Vor-Ort-Termin</h3><p data-t-unternehmen="Begehung von Betrieb und Gebäude: Anlagen, Maschinen und Heizung, dazu Ihre Pläne, Rechnungen und Lastgänge.">Begehung Ihres Hauses: Bauteile und Heizung, dazu Ihre Pläne und Rechnungen.</p></li>
+      <li><h3>Berechnung und Bericht</h3><p>Energiebilanz und Varianten: was jede Maßnahme kostet, was sie jährlich spart und wann sie sich rechnet.</p></li>
+      <li><h3>Förderung und Umsetzung</h3><p>Förderanträge vor der Bestellung und vor Fristende, Nachweise für BAFA und KfW, Begleitung bis zur Auszahlung.</p></li>
     </ol>
   </div>
 </section>
+</div>
 
-<!-- Förderung -->
-<section id="foerderung" class="band">
+<section id="w-foerderung">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Förderung</p>
-      <h2>Beratung, die sich selbst mitfinanziert</h2>
-      <p class="lead">Viele Zuschüsse gibt es nur mit Energieeffizienz-Experten – und nur, wenn der Antrag <b>vor</b> der Beauftragung gestellt wird.</p>
+      <h2>Förderung jetzt mitnehmen – bevor sie weniger wird</h2>
+      <p class="lead">Mehrere Zuschüsse laufen Ende 2026 aus oder werden ab 2027 schrittweise gekürzt. Gefördert wird zudem nur, wer den Antrag <b>vor</b> der Beauftragung stellt – rechtzeitig planen lohnt sich doppelt.</p>
     </div>
-    <div class="grid-3">
-      <div class="card"><h3>Energieberatung</h3><p class="muted">Der Bund bezuschusst den Sanierungsfahrplan für Wohngebäude und die Energieberatung für Nichtwohngebäude.</p></div>
-      <div class="card"><h3>Einzelmaßnahmen</h3><p class="muted">Zuschüsse für Dämmung, Fenster und Anlagentechnik (BAFA) und für den Heizungstausch (KfW) – mit Sanierungsfahrplan teils mehr.</p></div>
-      <div class="card"><h3>Komplettsanierung</h3><p class="muted">KfW-Kredite mit Tilgungszuschuss für die Sanierung zum Effizienzhaus, dazu Landes- und kommunale Programme.</p></div>
+    <div class="grid-2">
+      <div class="card"><h3>Sanierungsfahrplan</h3><p class="muted">50 % Zuschuss zum Beraterhonorar – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten. Nach heutigem Stand nur noch bis 31.12.2026.</p></div>
+      <div class="card"><h3>Heizungstausch</h3><p class="muted">KfW-Zuschuss für Wärmepumpe und andere erneuerbare Heizungen: 30 % Grundförderung, für Selbstnutzer mit Boni bis zu 70 %. Ab Februar 2027 sinken förderfähige Kosten und Klimageschwindigkeitsbonus schrittweise.</p></div>
+      <div class="card"><h3>Dämmung, Fenster, Anlagentechnik</h3><p class="muted">BAFA-Zuschuss von 15 % für Einzelmaßnahmen. Mit Sanierungsfahrplan verdoppelt sich die förderfähige Kostengrenze.</p></div>
+      <div class="card"><h3>Komplettsanierung</h3><p class="muted">KfW-Kredite mit Tilgungszuschuss für die Sanierung zum Effizienzhaus, dazu Landesprogramme – in München zusätzlich das städtische Förderprogramm.</p></div>
     </div>
+    <p class="note-box">Fördermittel sind mein Hauptberuf: Ich prüfe alle Programme für Ihr Vorhaben, kombiniere sie richtig und stelle die Anträge rechtzeitig – damit Ihnen kein Zuschuss entgeht.</p>
   </div>
 </section>
 
-<!-- Preise -->
-<section id="preise">
+<section id="w-preise">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Preise</p>
-      <h2>Transparent und mit Förderung gerechnet</h2>
-      <p class="lead">Festpreis nach dem Erstgespräch – ohne versteckte Kosten. Den BAFA-Zuschuss zur Energieberatung beantrage ich für Sie und verrechne ihn direkt mit meinem Honorar.</p>
+      <h2>Klare Preise – mit Förderung gerechnet</h2>
+      <p class="lead">Festpreis nach dem Erstgespräch – ohne versteckte Kosten. Den BAFA-Zuschuss zur Energieberatung beantrage ich für Sie und verrechne ihn direkt mit meinem Honorar – nach heutigem Stand bei Antrag bis 31.12.2026.</p>
     </div>
     <div class="grid-3">
       <div class="card">
@@ -664,34 +735,37 @@ footer.site nav a:first-child { margin-left: 0; }
         <p class="price">nach Aufwand</p>
         <p class="muted">Bestätigungen für BAFA und KfW, Planung und Begleitung bis zur Abnahme – selbst zu großen Teilen förderfähig.</p>
       </div>
-      <div class="card">
-        <h3>Unternehmen</h3>
-        <p class="price">auf Anfrage</p>
-        <p class="muted">Energieaudit DIN EN 16247 und Energieberatung für Nichtwohngebäude – mit 50 % BAFA-Zuschuss (je nach Fläche bis 4.000 €). Angebot nach Erstgespräch.</p>
+      <div class="card cross">
+        <h3>Für Betriebe und Nichtwohngebäude</h3>
+        <p class="muted">Energieaudit, Fördermittel-Check und Einsparkonzepte für Maschinen und Anlagen finden Sie im Bereich Unternehmen.</p>
+        <a class="btn ghost" href="#f-preise">Preise für Unternehmen</a>
       </div>
     </div>
     <p class="small muted" style="margin-top:16px">Alle Preise sind Endpreise. Fahrtkosten im Stadtgebiet München inklusive. Zuschüsse nach aktuellem Stand (November 2026), vorbehaltlich der Bewilligung durch das BAFA.</p>
   </div>
 </section>
 
-<!-- Über mich -->
-<section id="ueber-mich" class="band">
+<div data-slot="ueber-mich">
+<section id="ueber-mich">
   <div class="wrap about">
     <div class="portrait-wrap"><div class="portrait photo" role="img" aria-label="Foto von Nicolas Stephan"></div></div>
     <div>
       <p class="eyebrow">Über mich</p>
       <h2>Nicolas Stephan, M.Sc.</h2>
-      <p>Ich habe an der TU München Ressourceneffizientes und Nachhaltiges Bauen studiert und arbeite seit 2019 in Planung, Nachhaltigkeits- und Fördermittelberatung für Gebäude und Unternehmen.</p>
+      <p>Ich habe an der TU München Ressourceneffizientes und Nachhaltiges Bauen studiert und arbeite seit 2019 in Planung, Nachhaltigkeits- und Fördermittelberatung für Gebäude und Unternehmen. Hauptberuflich leite ich heute den Bereich Energie und Nachhaltigkeit in einer Fördermittelberatung – ich kenne die Programme also nicht nur vom Merkblatt, sondern aus vielen Anträgen, Rückfragen und Bescheiden.</p>
       <p>Vor dem Studium war ich als Maurer und Schreiner auf der Baustelle – ich weiß also, was sich in der Praxis umsetzen lässt und was nur auf dem Papier gut aussieht.</p>
+      <p data-t-unternehmen="Mein Ziel: dass die Energiekosten Ihres Betriebs dauerhaft sinken und Sie für steigende CO₂-Preise und neue Vorgaben gerüstet sind – ohne dass Ihnen Förderung entgeht.">Mein Ziel: dass Ihre Heizkosten dauerhaft sinken und Ihr Haus für steigende CO₂-Preise und neue Vorgaben gerüstet ist – ohne dass Ihnen Förderung entgeht.</p>
       <ul class="check">
         <li>Zertifizierter Energieberater für Wohn- und Nichtwohngebäude</li>
         <li>Eingetragen in der Energieeffizienz-Expertenliste des Bundes</li>
         <li>Energieauditor nach DIN EN 16247</li>
+        <li>Fördermittelberatung für Unternehmen: EU, Bund, Land und Kommune</li>
         <li>Herstellerunabhängig – keine Provisionen von Handwerk oder Industrie</li>
       </ul>
     </div>
   </div>
 </section>
+</div>
 
 <!-- Kundenstimmen: erst einfügen, wenn echte Stimmen mit schriftlicher Zustimmung vorliegen.
 <section id="stimmen">
@@ -704,48 +778,48 @@ footer.site nav a:first-child { margin-left: 0; }
 </section>
 -->
 
-<!-- Aktuelles -->
-<section id="aktuelles">
+<section id="w-aktuelles">
   <div class="wrap" style="max-width:900px">
     <div class="section-head">
-      <p class="eyebrow">Aktuelles zur Förderung</p>
-      <h2>Was sich gerade ändert</h2>
+      <p class="eyebrow">Fristen und Änderungen</p>
+      <h2>Was sich ändert – und bis wann Sie handeln sollten</h2>
     </div>
     <div class="news">
       <article>
-        <time datetime="2026-07-21">21.07.2026</time>
-        <div><h3>Neue Regeln für BEG-Einzelmaßnahmen</h3>
-        <p>Für Dämmung, Fenster und Anlagentechnik gelten neue Förderbedingungen. Der Bonus für Maßnahmen aus einem Sanierungsfahrplan gilt nur noch für Kosten oberhalb der normalen Höchstgrenze und erst ab 30.000 € Investition; die förderfähige Kostengrenze verdoppelt sich mit Sanierungsfahrplan aber weiterhin. Bei Nichtwohngebäuden wird Innenbeleuchtung nicht mehr als Einzelmaßnahme gefördert.</p></div>
+        <time datetime="2026-12-31">bis 31.12.2026</time>
+        <div><h3>Zuschuss zum Sanierungsfahrplan – nach heutigem Stand bis Ende 2026</h3>
+        <p>Das BAFA übernimmt 50 % der Kosten für einen Sanierungsfahrplan – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten. Die Richtlinie läuft nach heutigem Stand am 31.12.2026 aus, eine Nachfolgeregelung ist noch nicht bekannt. Wer den Zuschuss sicher nutzen will, sollte den Antrag noch 2026 stellen.</p></div>
       </article>
       <article>
         <time datetime="2027-01">ab 2027</time>
-        <div><h3>Neue Sätze für Wärmepumpen</h3>
+        <div><h3>Heizungstausch: Kürzungen ab 2027</h3>
         <p>Laut Förderrichtlinie sinkt die Grundförderung für Wärmepumpen ab dem ersten Quartal 2027 auf 15 %; dazu kommt ein Bonus von 15 Prozentpunkten für Geräte aus europäischer Herstellung. Ab 01.02.2027 sinken außerdem die förderfähigen Höchstkosten schrittweise, und der Klimageschwindigkeitsbonus für Selbstnutzer nimmt halbjährlich ab. Ein Antrag noch in diesem Jahr kann sich lohnen.</p></div>
       </article>
       <article>
-        <time datetime="2026-11">November 2026</time>
+        <time datetime="2027">2027 / 2028</time>
         <div><h3>CO₂-Preis 2027 und Emissionshandel ab 2028</h3>
         <p>Der CO₂-Preis auf Heizöl und Erdgas soll auch 2027 bei 55 bis 65 € je Tonne liegen. Ab 2028 wechselt die Bepreisung in den europäischen Emissionshandel; wie sich der Preis dann entwickelt, ist offen. Wer heute plant, sollte steigende Preise einkalkulieren.</p></div>
       </article>
       <article>
-        <time datetime="2026-11">November 2026</time>
-        <div><h3>Zuschuss zur Energieberatung – nach heutigem Stand bis Ende 2026</h3>
-        <p>Das BAFA übernimmt 50 % der Kosten für einen Sanierungsfahrplan – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten; bei Nichtwohngebäuden je nach Fläche bis 4.000 €. Beide Richtlinien laufen nach heutigem Stand am 31.12.2026 aus, eine Nachfolgeregelung ist noch nicht bekannt. Wer den Zuschuss sicher nutzen will, sollte den Antrag noch 2026 stellen.</p></div>
+        <time datetime="2026-07-21">seit 21.07.2026</time>
+        <div><h3>Neue Regeln für Dämmung, Fenster und Anlagentechnik</h3>
+        <p>Für Einzelmaßnahmen gelten neue Förderbedingungen. Der Bonus für Maßnahmen aus einem Sanierungsfahrplan gilt nur noch für Kosten oberhalb der normalen Höchstgrenze und erst ab 30.000 € Investition; die förderfähige Kostengrenze verdoppelt sich mit Sanierungsfahrplan aber weiterhin.</p></div>
       </article>
     </div>
     <p class="small muted" style="margin-top:14px">Stand: November 2026. Förderbedingungen ändern sich häufig – maßgeblich sind die jeweils gültigen Richtlinien.</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="band">
+<section id="w-faq">
   <div class="wrap" style="max-width:820px">
     <div class="section-head">
       <p class="eyebrow">Häufige Fragen</p>
       <h2>Gut zu wissen</h2>
     </div>
+    <details class="faq"><summary>Lohnt es sich, jetzt noch zu handeln?</summary>
+      <p>Wenn Sie ohnehin sanieren oder die Heizung tauschen wollen: ja. Der Zuschuss zum Sanierungsfahrplan läuft nach heutigem Stand am 31.12.2026 aus, und ab Februar 2027 sinken beim Heizungstausch die förderfähigen Kosten und Boni schrittweise. Wie sich der CO₂-Preis ab 2028 entwickelt, ist offen. Entscheidend ist, dass der Förderantrag vor der Beauftragung gestellt wird – dafür braucht es etwas Vorlauf.</p></details>
     <details class="faq"><summary>Was kostet eine Energieberatung?</summary>
-      <p>Das hängt von Gebäude und Umfang ab. Für den Sanierungsfahrplan übernimmt der Bund einen Teil des Honorars; den Antrag stelle ich für Sie. Im Erstgespräch erhalten Sie ein Festpreisangebot.</p></details>
+      <p>Das hängt von Gebäude und Umfang ab. Für den Sanierungsfahrplan übernimmt der Bund die Hälfte des Honorars; den Antrag stelle ich für Sie. Im Erstgespräch erhalten Sie ein Festpreisangebot.</p></details>
     <details class="faq"><summary>Muss ich vor der Sanierung einen Energieberater einschalten?</summary>
       <p>Für viele Förderungen ja: Die Bestätigung eines Energieeffizienz-Experten ist Voraussetzung, und der Antrag muss vor der Beauftragung der Handwerker gestellt werden. Wer zuerst unterschreibt, verliert oft den Zuschuss.</p></details>
     <details class="faq"><summary>Passt eine Wärmepumpe zu meinem Altbau?</summary>
@@ -753,17 +827,17 @@ footer.site nav a:first-child { margin-left: 0; }
     <details class="faq"><summary>Wie lange dauert ein Sanierungsfahrplan?</summary>
       <p>Vom Vor-Ort-Termin bis zur Besprechung meist drei bis sechs Wochen, abhängig von den vorhandenen Unterlagen.</p></details>
     <details class="faq"><summary>In welchem Gebiet sind Sie tätig?</summary>
-      <p>In München und im Umland. Energieaudits für Unternehmen auch bayernweit.</p></details>
+      <p>In München und im Umland.</p></details>
   </div>
 </section>
 
-<!-- Kontakt -->
+<div data-slot="kontakt">
 <section id="kontakt">
   <div class="wrap contact">
     <div>
       <p class="eyebrow">Kontakt</p>
-      <h2>Lassen Sie uns sprechen</h2>
-      <p class="lead">Schreiben Sie mir kurz, um welches Gebäude es geht und was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden an Werktagen.</p>
+      <h2>Lassen Sie uns über Ihre Einsparung sprechen</h2>
+      <p class="lead" data-t-unternehmen="Schreiben Sie mir kurz, worum es geht – Maschine, Anlage, Betriebsgebäude oder Entwicklungsprojekt. Ich melde mich innerhalb von 24 Stunden an Werktagen. Ein früher Termin lohnt sich: Gefördert wird fast nur, wer vor der Bestellung beantragt.">Schreiben Sie mir kurz, um welches Haus es geht und was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden an Werktagen. Ein früher Termin lohnt sich: So bleibt genug Zeit für die Förderanträge vor Fristende.</p>
     </div>
     <div class="card">
       <div class="person"><div class="avatar photo" role="img" aria-label="Foto von Nicolas Stephan"></div>
@@ -791,6 +865,351 @@ footer.site nav a:first-child { margin-left: 0; }
     </div>
   </div>
 </section>
+</div>
+</div>
+
+<div class="view" id="unternehmen" data-view="unternehmen" role="tabpanel" aria-labelledby="tab-u">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Energie- und Fördermittelberatung für Unternehmen</p>
+      <h1>Kosten senken.<br><em>Förderung sichern.</em></h1>
+      <p class="question">Wo verliert Ihr Betrieb Energie – und welche Förderung holen Sie sich, bevor sie ausläuft?</p>
+      <p class="lead">Für Produktion, Handwerk, Gewerbe und Nichtwohngebäude: Ich finde die Maßnahmen mit der schnellsten Amortisation – von Druckluft und Antrieben über Abwärme bis zur neuen Maschine – und sichere Ihnen die Förderung von EU, Bund und Land.</p>
+      <div class="actions">
+        <a class="btn" href="#maschinen-rechner">Förderung berechnen</a>
+        <a class="btn ghost" href="#rechenbeispiele">Rechenbeispiele</a>
+        <a class="btn ghost" href="#kontakt">Fördermittel-Check</a>
+      </div>
+      <p class="deadline"><b>Fristen im Blick:</b> Der Zuschuss zu Energieaudit und Energieberatung für Nichtwohngebäude läuft nach heutigem Stand am 31.12.2026 aus – ebenso die Frist für die Forschungszulage auf Aufwand aus 2022. <a href="#f-aktuelles">Alle Fristen</a></p>
+      <ul class="trust">
+        <li>Fördermittel-Experte für Unternehmen</li>
+        <li>Energieauditor DIN EN 16247</li>
+        <li>Energieeffizienz-Experte (dena)</li>
+        <li>M.Sc. TU München</li>
+        <li>Herstellerunabhängig</li>
+      </ul>
+      <p class="switch-hint">Sie planen für Ihr eigenes Haus? <a href="#wohngebaeude">Zum Bereich Wohngebäude</a></p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#aquarell)">
+          <circle cx="250" cy="214" r="186" fill="#35614a" opacity=".17"/>
+          <circle cx="236" cy="234" r="150" fill="#1d6b98" opacity=".18"/>
+          <ellipse cx="312" cy="160" rx="118" ry="82" fill="#6aaad0" opacity=".24"/>
+          <ellipse cx="166" cy="294" rx="126" ry="72" fill="#0b5a85" opacity=".14"/>
+          <ellipse cx="356" cy="302" rx="70" ry="54" fill="#35614a" opacity=".16"/>
+        </g>
+        <g filter="url(#korn)"><circle cx="250" cy="214" r="186" fill="#0b5a85"/></g>
+        <g filter="url(#aquarell)" fill="none" style="stroke:var(--bg)" stroke-linecap="round" opacity=".75">
+          <path d="M120 120 C 190 70, 300 62, 372 104" stroke-width="16"/>
+          <path d="M98 250 C 130 300, 190 330, 250 338" stroke-width="10"/>
+        </g>
+        <rect x="196" y="282" width="70" height="70" fill="#f2cf3e"/>
+        <g filter="url(#strich)" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text)">
+          <path d="M40 372 C 150 367, 330 375, 446 369"/>
+          <path d="M110 371 V236 L160 200 V236 L210 200 V236 L260 200 V236 L310 200 V371"/>
+          <path d="M122 226 L152 205 M172 226 L202 205 M222 226 L252 205" stroke-width="1.6"/>
+          <rect x="130" y="270" width="44" height="36"/>
+          <rect x="206" y="270" width="44" height="36"/>
+          <path d="M152 270 V306 M228 270 V306"/>
+          <path d="M262 371 V318 H298 V371 M262 336 H298 M262 353 H298"/>
+          <path d="M310 371 V286 H394 V371"/>
+          <circle cx="352" cy="327" r="18"/>
+          <path d="M352 309 V345 M334 327 H370 M339 314 L365 340 M365 314 L339 340" stroke-width="1.6"/>
+          <path d="M372 286 V250 H386 V286"/>
+          <circle cx="98" cy="96" r="24"/>
+          <path d="M98 58 V66 M98 126 V134 M60 96 H68 M128 96 H136 M71 69 l6 6 M119 117 l6 6 M125 69 l-6 6 M77 117 l-6 6"/>
+          <path d="M132 124 C 158 138, 170 156, 176 186"/>
+          <path d="M166 180 l10 7 l3 -12"/>
+        </g>
+        <g fill="none" stroke-width="2.2" stroke-linecap="round" style="stroke:var(--blue)" filter="url(#strich)">
+          <path d="M374 240 c 8 -10, 0 -18, 8 -28 M388 244 c 8 -10, 0 -18, 8 -28"/>
+          <path d="M394 330 C 432 326, 436 262, 404 252"/>
+          <path d="M400 262 l4 -11 l10 5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap"><a class="more" href="#f-leistungen">Mehr<svg viewBox="0 0 34 18" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M2 2 L17 16 L32 2"/></svg></a></div>
+</section>
+
+<section id="f-leistungen">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Leistungen</p>
+      <h2>Was ich für Ihren Betrieb tue</h2>
+      <p class="lead">Weniger Energiekosten, unabhängiger von Energiepreisen, keine verschenkte Förderung – von der ersten Einschätzung bis zur Auszahlung.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card svc"><h3>Maschinen und Anlagen</h3><p class="muted">Austausch und Nachrüstung von Druckluft, Antrieben, Pumpen, Lüftung und Maschinen, Abwärmenutzung und Prozesswärme – gefördert mit 10 bis 60 %.</p></div>
+      <div class="card svc"><h3>Fördermittel-Check</h3><p class="muted">Ihr Vorhaben gegen alle passenden Programme von EU, Bund und Land – mit Förderhöhe, Kombination, Reihenfolge und Fristen.</p></div>
+      <div class="card svc"><h3>Einsparnachweise und Einsparkonzepte</h3><p class="muted">Die Bestätigungen und Konzepte, die BAFA und KfW für den Antrag verlangen – aus einer Hand.</p></div>
+      <div class="card svc"><h3>Energieaudit DIN EN 16247</h3><p class="muted">Als Pflichtaudit nach Energiedienstleistungsgesetz oder freiwillig als Fahrplan – für kleine und mittlere Unternehmen mit 50 % BAFA-Zuschuss.</p></div>
+      <div class="card svc"><h3>Nichtwohngebäude</h3><p class="muted">Sanierungsfahrplan, Heizungstausch, Dämmung und Gebäudeautomation für Büro, Halle, Laden oder Praxis – mit BEG-Förderung.</p></div>
+      <div class="card svc"><h3>Forschungszulage</h3><p class="muted">Für eigene Entwicklungsprojekte: 25 %, für kleine und mittlere Unternehmen 35 % der förderfähigen Aufwendungen – auch rückwirkend.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechenbeispiele">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Rechenbeispiele</p>
+      <h2>Maschinen tauschen, Anlagen nachrüsten – so rechnet es sich</h2>
+      <p class="lead">In Betrieben stecken die größten Einsparungen meist nicht im Gebäude, sondern in Druckluft, Antrieben, Prozesswärme und alten Maschinen. Der Bund fördert Austausch und Nachrüstung mit 10 bis 60 % Zuschuss – wenn der Antrag vor der Bestellung gestellt wird.</p>
+    </div>
+    <div class="grid-2">
+      <article class="card case">
+        <span class="tag">Austausch · kleines Unternehmen</span>
+        <h3>Druckluft: neuer Kompressor, Abwärme genutzt</h3>
+        <p class="muted small">Metallbetrieb mit 55-kW-Kompressor ohne Drehzahlregelung (Baujahr 2006), rund 4.000 Betriebsstunden und 200.000 kWh Strom im Jahr. Neu: drehzahlgeregelter Kompressor mit Wärmerückgewinnung für Heizung und Warmwasser.</p>
+        <table class="calc">
+          <tr><td>Investition</td><td>52.000 €</td></tr>
+          <tr><td>Zuschuss EEW Modul 1 (25 %)</td><td>− 13.000 €</td></tr>
+          <tr><td>Eigenanteil</td><td>39.000 €</td></tr>
+          <tr><td>Strom gespart (−30 %, 60.000 kWh)</td><td>13.200 €/Jahr</td></tr>
+          <tr><td>Gas gespart durch Abwärme (80.000 kWh)</td><td>5.600 €/Jahr</td></tr>
+          <tr class="sum"><td>Amortisation</td><td>2,8 → 2,1 Jahre</td></tr>
+        </table>
+        <p class="takeaway">Nach gut zwei Jahren bezahlt – danach bleiben jedes Jahr rund 18.800 € im Betrieb.</p>
+      </article>
+      <article class="card case">
+        <span class="tag">Maschinentausch · mittleres Unternehmen</span>
+        <h3>Spritzgießmaschine: hydraulisch raus, elektrisch rein</h3>
+        <p class="muted small">Kunststoffverarbeiter mit hydraulischer 150-t-Maschine (Baujahr 2009), 5.500 Betriebsstunden und 165.000 kWh im Jahr. Sie muss ohnehin ersetzt werden – durch eine vollelektrische Maschine mit Servo-Hauptachsen.</p>
+        <table class="calc">
+          <tr><td>Investition vollelektrische Maschine</td><td>250.000 €</td></tr>
+          <tr><td>Zuschuss EEW Modul 4 Basis (10 %)</td><td>− 25.000 €</td></tr>
+          <tr><td>Mehrpreis gegenüber neuer Hydraulikmaschine nach Zuschuss</td><td>25.000 €</td></tr>
+          <tr><td>Strom gespart gegenüber Altmaschine (−45 %)</td><td>16.300 €/Jahr</td></tr>
+          <tr><td>Strom gespart gegenüber neuer Hydraulikmaschine</td><td>12.700 €/Jahr</td></tr>
+          <tr class="sum"><td>Mehrpreis zurück nach</td><td>ca. 2 Jahren</td></tr>
+        </table>
+        <p class="takeaway">Kleine Unternehmen erhalten 15 % (37.500 €). Voraussetzung: Die Altmaschine läuft seit mindestens fünf Jahren im Betrieb, und die Einsparung von mindestens 15 % bestätigt ein gelisteter Energieauditor.</p>
+      </article>
+      <article class="card case">
+        <span class="tag">Nachrüstung · mittleres Unternehmen</span>
+        <h3>Pumpen und Lüftung: geregelt statt Volllast</h3>
+        <p class="muted small">Produktionsbetrieb mit 14 ungeregelten Pumpen und Ventilatoren in Kühlwasser und Hallenlüftung, zusammen 280.000 kWh Strom im Jahr. Nachgerüstet werden Frequenzumrichter, IE4-Motoren und Hocheffizienzpumpen – ohne lange Produktionspause.</p>
+        <table class="calc">
+          <tr><td>Investition</td><td>68.000 €</td></tr>
+          <tr><td>Zuschuss EEW Modul 1 (20 %)</td><td>− 13.600 €</td></tr>
+          <tr><td>Eigenanteil</td><td>54.400 €</td></tr>
+          <tr><td>Strom gespart (−35 %, 98.000 kWh)</td><td>21.600 €/Jahr</td></tr>
+          <tr class="sum"><td>Amortisation</td><td>3,1 → 2,5 Jahre</td></tr>
+        </table>
+        <p class="takeaway">Keine neue Produktionslinie, kein Umbau der Halle – und trotzdem 98.000 kWh weniger Strom pro Jahr.</p>
+      </article>
+      <article class="card case">
+        <span class="tag">Abwärme · mittleres Unternehmen</span>
+        <h3>Abwärme aus dem Trockner statt Gas</h3>
+        <p class="muted small">Lackiererei: Die 160 °C heiße Abluft des Trocknungsofens geht ungenutzt über das Dach, parallel erhitzt ein Gaskessel 60 °C warmes Prozesswasser – 650.000 kWh Gas im Jahr. Neu: Wärmeübertrager in der Abluft und Pufferspeicher.</p>
+        <table class="calc">
+          <tr><td>Investition</td><td>190.000 €</td></tr>
+          <tr><td>Gas gespart, abzüglich Pumpenstrom</td><td>42.200 €/Jahr</td></tr>
+          <tr><td>CO₂ vermieden</td><td>ca. 125 t/Jahr</td></tr>
+          <tr><td>Zuschuss EEW Modul 4 Premium (20–45 %)</td><td>38.000 – 85.500 €</td></tr>
+          <tr class="sum"><td>Amortisation</td><td>4,5 → 2,5–3,6 Jahre</td></tr>
+        </table>
+        <p class="takeaway">38.000 € oder 85.500 € Zuschuss: Hier entscheidet der beihilferechtliche Berechnungsweg über 47.500 €. Genau das prüfe ich vor dem Antrag.</p>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:16px">Beispielrechnungen, keine Kundenprojekte. Annahmen: Strom 22 ct/kWh, Erdgas 7 ct/kWh (jeweils netto, Erdgas einschließlich CO₂-Preis); Einsparungen sind typische Werte und im Einzelfall zu prüfen. Förderquoten nach der Bundesförderung für Energie- und Ressourceneffizienz in der Wirtschaft (BAFA-Merkblatt, Fassung April 2026); alle Maßnahmen sind alternativ als KfW-Kredit 295 mit Tilgungszuschuss förderbar.</p>
+  </div>
+</section>
+
+<section id="maschinen-rechner">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Förderrechner</p>
+      <h2>Ihr Vorhaben in einer Minute durchgerechnet</h2>
+      <p class="lead">Investition, heutige Energiekosten der Anlage und erwartete Einsparung eingeben – der Rechner zeigt Zuschuss, Eigenanteil und Amortisation. Ohne Anmeldung, es werden keine Daten übertragen.</p>
+    </div>
+      <div class="check-tool">
+        <form id="mr-form" class="card" novalidate>
+          <label>Was haben Sie vor?
+            <select id="mr-art">
+              <option value="m1">Pumpen, Motoren, Druckluft oder Wärmerückgewinnung erneuern</option>
+              <option value="m4b">Maschine ersetzen, z. B. elektrische Spritzgieß-, CNC- oder Laserschneidmaschine, E-Stapler</option>
+              <option value="m6">Gas- oder Ölanlage durch eine elektrische ersetzen</option>
+              <option value="m4p">Prozess optimieren oder Abwärme nutzen</option>
+            </select></label>
+          <p class="lbl">Unternehmensgröße</p>
+          <div class="seg seg-3" role="radiogroup" aria-label="Unternehmensgröße">
+            <label><input type="radio" name="mr-gr" value="KU" checked><span>Klein</span></label>
+            <label><input type="radio" name="mr-gr" value="MU"><span>Mittel</span></label>
+            <label><input type="radio" name="mr-gr" value="GU"><span>Groß</span></label>
+          </div>
+          <p class="small muted" style="margin-top:-8px">Klein: unter 50 Beschäftigte und höchstens 10 Mio. € Umsatz oder Bilanzsumme. Mittel: unter 250 Beschäftigte und höchstens 50 Mio. € Umsatz oder 43 Mio. € Bilanzsumme.</p>
+          <label>Investition <span class="hint">(€ netto)</span><input id="mr-inv" type="number" min="1000" step="1000" value="60000" inputmode="numeric"></label>
+          <label>Energiekosten der Anlage heute <span class="hint">(€ pro Jahr)</span><input id="mr-kosten" type="number" min="100" step="500" value="40000" inputmode="numeric"></label>
+          <label>Erwartete Einsparung <span class="hint">(% der Energiekosten)</span><input id="mr-spar" type="number" min="1" max="90" step="1" value="30" inputmode="numeric"></label>
+          <p class="form-err" id="mr-err" hidden></p>
+          <button class="btn" type="submit">Förderung berechnen</button>
+        </form>
+        <div class="card" id="mr-out" aria-live="polite">
+          <div class="result-empty"><p>Ihre Werte eingeben und auf <b>Förderung berechnen</b> klicken.<br><span class="small">Unverbindliche Ersteinschätzung – die genaue Prüfung übernehme ich gern.</span></p></div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section id="kompetenz">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Fördermittel-Kompetenz</p>
+      <h2>Fördermittel sind mein Hauptberuf</h2>
+      <p class="lead">Ich bin nicht nur Energieberater: Hauptberuflich leite ich den Bereich Energie und Nachhaltigkeit in einer Fördermittelberatung und begleite Unternehmen vom Handwerksbetrieb bis zum Konzern – von der ersten Förderprüfung bis zur Auszahlung. Ihr Vorteil: mehr Förderung, weniger Risiko, keine verpassten Fristen.</p>
+    </div>
+    <div class="skills">
+      <div><h3>Alle Förderwege im Blick</h3><p>Zuschüsse, Förderkredite mit Tilgungszuschuss, steuerliche Forschungszulage, Programme von EU, Bund, Land und Kommune: Ich prüfe Ihr Vorhaben gegen alle passenden Programme – nicht nur gegen das bekannteste.</p></div>
+      <div><h3>Beihilferecht und Kombination</h3><p>Allgemeine Gruppenfreistellung oder De-minimis, Mehrkosten oder Gesamtkosten, welche Programme sich kombinieren lassen: Hier entscheidet sich oft, ob es 20 oder 45 % Zuschuss gibt.</p></div>
+      <div><h3>Der richtige Zeitpunkt</h3><p>Wer vor dem Antrag bestellt, verliert meist die Förderung. Ich plane die Reihenfolge von Angebot, Antrag und Auftrag – mit den passenden Bedingungen im Vertrag – und behalte Fristen und Programmenden im Blick.</p></div>
+      <div><h3>Nachweise aus einer Hand</h3><p>Einsparnachweise, Einsparkonzepte und technische Bestätigungen, die BAFA und KfW verlangen, erstelle ich als gelisteter Energieeffizienz-Experte und Energieauditor selbst – ohne Abstimmungsschleifen mit Dritten.</p></div>
+      <div><h3>Bis das Geld da ist</h3><p>Verwendungsnachweis, Rückfragen der Förderstelle, Anhörungen und Widersprüche: Ich begleite das Verfahren, bis der Zuschuss ausgezahlt ist.</p></div>
+      <div><h3>Forschung und Entwicklung</h3><p>Entwickeln Sie neue Verfahren, Anlagen oder Produkte? Dann kann die Forschungszulage bis zu 35 % der förderfähigen Aufwendungen erstatten – auch rückwirkend für bereits laufende oder abgeschlossene Projekte.</p></div>
+    </div>
+    <div class="kompetenz-box">
+      <div><h3>Fördermittel-Check für Ihr Vorhaben</h3>
+        <p>Sie schildern mir kurz Ihr Vorhaben – neue Maschine, Anlage, Gebäude oder Entwicklungsprojekt. Ich prüfe die passenden Programme und sage Ihnen, welche Förderung realistisch ist, in welcher Höhe und bis wann der Antrag stehen muss.</p></div>
+      <a class="btn" href="#kontakt">Vorhaben prüfen lassen</a>
+    </div>
+    <p class="small muted" style="margin-top:18px">Erfahrung aus Förderprojekten unter anderem in Kunststoffverarbeitung, Maschinen- und Anlagenbau, Sensorik, Textil, Logistik, Aquakultur und Immobilienwirtschaft.</p>
+  </div>
+</section>
+
+<section id="f-foerderung">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Förderung</p>
+      <h2>Förderung jetzt mitnehmen – bevor sie weniger wird</h2>
+      <p class="lead">Mehrere Zuschüsse laufen Ende 2026 aus oder werden ab 2027 schrittweise gekürzt. Gefördert wird zudem fast immer nur, wer den Antrag <b>vor</b> Bestellung oder Beauftragung stellt – rechtzeitig planen lohnt sich doppelt.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card"><h3>Anlagen und Maschinen</h3><p class="muted">Bundesförderung für Energie- und Ressourceneffizienz in der Wirtschaft: 20 bis 25 % für effiziente Pumpen, Motoren, Kompressoren und Wärmerückgewinnung (KMU), 10 bis 15 % für den Tausch gelisteter Maschinen, bis zu 55 % für Prozessoptimierung und Abwärmenutzung, bis zu 60 % für Prozesswärme aus erneuerbaren Energien. Wahlweise als Zuschuss oder als KfW-Kredit mit Tilgungszuschuss.</p></div>
+      <div class="card"><h3>Forschung und Entwicklung</h3><p class="muted">Steuerliche Forschungszulage: 25 % der förderfähigen Aufwendungen, für KMU 35 % – für eigene Entwicklungsprojekte, auch rückwirkend. Aufwand aus dem Wirtschaftsjahr 2022 lässt sich nach heutigem Stand nur noch bis 31.12.2026 geltend machen.</p></div>
+      <div class="card"><h3>Energieaudit und Energieberatung</h3><p class="muted">50 % Zuschuss für das Energieaudit (bis 3.000 €) und den Sanierungsfahrplan für Nichtwohngebäude (je nach Fläche bis 4.000 €) – nach heutigem Stand nur noch bis 31.12.2026.</p></div>
+      <div class="card"><h3>Nichtwohngebäude</h3><p class="muted">BEG-Zuschuss von 15 % für Dämmung, Fenster und Gebäudeautomation, 30 % Grundförderung für den Heizungstausch über die KfW, Kredite mit Tilgungszuschuss für die Komplettsanierung. Innenbeleuchtung wird seit 21.07.2026 nicht mehr gefördert.</p></div>
+    </div>
+  </div>
+</section>
+
+<div data-slot="energie-check"></div>
+
+<section id="f-beispiele">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Gebäude im Betrieb</p>
+      <h2>So viel sparen typische Betriebsgebäude</h2>
+      <p class="lead">Drei Nichtwohngebäude, gerechnet mit dem Gebäude-Check: heutige Energiekosten, mögliche Einsparung und Förderung. Beispielrechnungen, keine Kundenprojekte.</p>
+    </div>
+    <div class="grid-3" id="examples-nwg"></div>
+  </div>
+</section>
+
+<div data-slot="ablauf"></div>
+
+<section id="f-preise">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Preise</p>
+      <h2>Klare Preise – Förderung eingerechnet</h2>
+      <p class="lead">Festpreis nach dem Erstgespräch. Zuschüsse zu Energieaudit und Energieberatung beantrage ich für Sie – nach heutigem Stand bei Antrag bis 31.12.2026.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Erstgespräch</h3>
+        <p class="price">0 €</p>
+        <p class="muted">Telefonisch oder per Video, ca. 30 Minuten: Ihr Vorhaben, die größten Hebel und eine erste Einschätzung der Fördermöglichkeiten.</p>
+      </div>
+      <div class="card featured">
+        <h3>Fördermittel-Check</h3>
+        <p class="price">auf Anfrage</p>
+        <p class="muted">Prüfung Ihres Vorhabens gegen alle passenden Programme: Förderhöhe, Kombination, Reihenfolge der Anträge und Fristen. Festpreis nach dem Erstgespräch.</p>
+      </div>
+      <div class="card">
+        <h3>Einsparnachweis und Einsparkonzept</h3>
+        <p class="price">nach Aufwand</p>
+        <p class="muted">Bestätigung der Energieeinsparung für die Basisförderung und Einsparkonzept für die Premiumförderung der Bundesförderung für Energie- und Ressourceneffizienz.</p>
+      </div>
+      <div class="card">
+        <h3>Energieaudit DIN EN 16247</h3>
+        <p class="price">auf Anfrage</p>
+        <p class="muted">Für kleine und mittlere Unternehmen übernimmt das BAFA 50 % – bis 600 € bei Energiekosten bis 10.000 € im Jahr, darüber bis 3.000 €.</p>
+      </div>
+      <div class="card">
+        <h3>Energieberatung Nichtwohngebäude</h3>
+        <p class="price">auf Anfrage</p>
+        <p class="muted">Sanierungsfahrplan für Büro, Halle, Laden oder Praxis mit 50 % BAFA-Zuschuss – je nach Fläche bis 4.000 €.</p>
+      </div>
+      <div class="card">
+        <h3>Antragsbegleitung</h3>
+        <p class="price">nach Aufwand</p>
+        <p class="muted">Antrag, Rückfragen der Förderstelle, Verwendungsnachweis – bis der Zuschuss ausgezahlt ist.</p>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:16px">Alle Preise sind Endpreise. Zuschüsse nach aktuellem Stand (November 2026), vorbehaltlich der Bewilligung.</p>
+  </div>
+</section>
+
+<div data-slot="ueber-mich"></div>
+
+<section id="f-aktuelles">
+  <div class="wrap" style="max-width:900px">
+    <div class="section-head">
+      <p class="eyebrow">Fristen und Änderungen</p>
+      <h2>Was sich ändert – und bis wann Sie handeln sollten</h2>
+    </div>
+    <div class="news">
+      <article>
+        <time datetime="2026-12-31">bis 31.12.2026</time>
+        <div><h3>Zuschuss zu Energieaudit und Energieberatung – nach heutigem Stand bis Ende 2026</h3>
+        <p>Das BAFA übernimmt 50 % der Kosten für ein Energieaudit (bis 3.000 €) und für die Energieberatung für Nichtwohngebäude (je nach Fläche bis 4.000 €). Die Richtlinie läuft nach heutigem Stand am 31.12.2026 aus, eine Nachfolgeregelung ist noch nicht bekannt. Der Beratervertrag darf erst nach der Bewilligung oder unter der Bedingung der Förderzusage geschlossen werden.</p></div>
+      </article>
+      <article>
+        <time datetime="2026-12-31">bis 31.12.2026</time>
+        <div><h3>Forschungszulage: Aufwand aus 2022 nur noch bis Jahresende</h3>
+        <p>Die Forschungszulage wird nach Ablauf des Wirtschaftsjahres beantragt – auch rückwirkend. Für Forschungs- und Entwicklungsaufwand aus dem Wirtschaftsjahr 2022 endet die Frist nach heutigem Stand am 31.12.2026. Erstattet werden 25 %, für kleine und mittlere Unternehmen 35 % der förderfähigen Aufwendungen. Wer 2022 eigene Entwicklungsprojekte hatte, sollte jetzt prüfen lassen.</p></div>
+      </article>
+      <article>
+        <time datetime="2027">2027 / 2028</time>
+        <div><h3>CO₂-Preis 2027 und Emissionshandel ab 2028</h3>
+        <p>Der CO₂-Preis auf Heizöl und Erdgas – also auch auf Prozesswärme – soll 2027 bei 55 bis 65 € je Tonne liegen. Ab 2028 wechselt die Bepreisung in den europäischen Emissionshandel; wie sich der Preis dann entwickelt, ist offen. Jede Kilowattstunde Gas, die heute eingespart wird, schützt vor diesem Risiko.</p></div>
+      </article>
+      <article>
+        <time datetime="2026-07-21">seit 21.07.2026</time>
+        <div><h3>Neue Regeln für Nichtwohngebäude</h3>
+        <p>Für Einzelmaßnahmen an Nichtwohngebäuden gelten neue Förderbedingungen: Innenbeleuchtung wird nicht mehr gefördert, Gebäudeautomation weiterhin mit 15 %. Für effiziente Beleuchtung in Produktionsprozessen kann im Einzelfall die Bundesförderung für Energie- und Ressourceneffizienz greifen.</p></div>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:14px">Stand: November 2026. Förderprogramme stehen unter Haushaltsvorbehalt und ändern sich häufig – maßgeblich sind die jeweils gültigen Richtlinien.</p>
+  </div>
+</section>
+
+<section id="f-faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head">
+      <p class="eyebrow">Häufige Fragen</p>
+      <h2>Gut zu wissen</h2>
+    </div>
+    <details class="faq"><summary>Welche Förderung gibt es für neue Maschinen und Anlagen?</summary>
+      <p>Vor allem die Bundesförderung für Energie- und Ressourceneffizienz in der Wirtschaft, als Zuschuss beim BAFA oder als KfW-Kredit 295 mit Tilgungszuschuss: für kleine und mittlere Unternehmen 20 bis 25 % auf effiziente Pumpen, Motoren, Kompressoren und Wärmerückgewinnung, 10 bis 15 % auf den Tausch gelisteter Maschinen; für Unternehmen jeder Größe bis zu 55 % bei Prozessoptimierung und Abwärmenutzung mit Einsparkonzept. Je nach Vorhaben kommen Landesprogramme und die Forschungszulage hinzu.</p></details>
+    <details class="faq"><summary>Die Maschine ist schon bestellt – ist die Förderung verloren?</summary>
+      <p>Bei den meisten Zuschüssen leider ja: Der Antrag muss vor dem Vertragsschluss gestellt werden, danach sind Verträge nur unter der Bedingung der Förderzusage zulässig. Angebote einholen und planen dürfen Sie vorher. Eine Ausnahme ist die Forschungszulage, die rückwirkend beantragt wird. Melden Sie sich deshalb, bevor Sie unterschreiben.</p></details>
+    <details class="faq"><summary>Bekommen auch große Unternehmen Förderung?</summary>
+      <p>Ja, aber nicht in jedem Programm: Querschnittstechnik und die Basisförderung für Maschinen sind kleinen und mittleren Unternehmen vorbehalten. Große Unternehmen erhalten unter anderem die Premiumförderung für Prozessoptimierung und Abwärmenutzung, Zuschüsse für Prozesswärme aus erneuerbaren Energien und für Mess- und Regeltechnik sowie die Forschungszulage mit 25 %.</p></details>
+    <details class="faq"><summary>Lohnt es sich, jetzt noch zu handeln?</summary>
+      <p>Ja, wenn Investitionen ohnehin anstehen. Der Zuschuss zu Energieaudit und Energieberatung läuft nach heutigem Stand Ende 2026 aus, ebenso die Frist für die Forschungszulage auf Aufwand aus 2022. Ab 2028 wird der CO₂-Preis über den europäischen Emissionshandel gebildet. Förderprogramme stehen zudem unter Haushaltsvorbehalt – wer vorbereitet ist, kann schnell beantragen.</p></details>
+    <details class="faq"><summary>Was kostet der Fördermittel-Check?</summary>
+      <p>Das Erstgespräch mit einer ersten Einschätzung ist kostenlos. Für die ausführliche Prüfung aller Programme erhalten Sie danach ein Festpreisangebot.</p></details>
+    <details class="faq"><summary>In welchem Gebiet sind Sie tätig?</summary>
+      <p>Energieaudits und Vor-Ort-Termine bayernweit, die Fördermittelberatung auch bundesweit per Video.</p></details>
+  </div>
+</section>
+
+<div data-slot="kontakt"></div>
+</div>
 
 </main>
 
@@ -853,7 +1272,7 @@ footer.site nav a:first-child { margin-left: 0; }
 <footer class="site">
   <div class="wrap">
     <span>© 2026 Nicolas Stephan · Ingenieur- und Energieberatung · München</span>
-    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
+    <nav aria-label="Bereiche und Rechtliches"><a href="#wohngebaeude">Wohngebäude</a><a href="#unternehmen">Unternehmen</a><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
   </div>
 </footer>
 
@@ -1092,7 +1511,7 @@ function naechsteSchritte(r) {
   }
   if (r.wpSinnvoll) {
     s.push("Heizlast berechnen lassen und die Eignung für eine Wärmepumpe prüfen – häufig auch ohne Komplettsanierung möglich.");
-    s.push("Für Wärmepumpen sinkt die Grundförderung laut Richtlinie ab dem ersten Quartal 2027 auf 15 %, dazu kommen 15 Prozentpunkte für Geräte aus europäischer Herstellung. Ein Antrag noch 2026 kann sich lohnen.");
+    s.push("Für Wärmepumpen sinkt die Grundförderung laut Richtlinie ab dem ersten Quartal 2027 auf 15 % (mit Bonus für Geräte aus europäischer Herstellung weiterhin 30 %), und ab 01.02.2027 sinken die förderfähigen Kosten schrittweise. Ein Antrag noch 2026 kann sich lohnen.");
   } else if (r.hz === "fw") {
     s.push("Bei Fernwärme lohnt ein Wechsel selten. Prüfen Sie Anschlussleistung und Tarif – nach einer Dämmung ist die bestellte Leistung oft zu hoch.");
   } else {
@@ -1264,9 +1683,13 @@ const BEISPIELE = [
   { titel: "Mehrfamilienhaus, Baujahr 1958", text: "6 Wohnungen, 420 m², Gas, Dach gedämmt",
     p: { art: "wg", typ: "mfh", bj: 1968, hz: "gas", flaeche: 420, we: 6, vb: 0, erledigt: { ...OHNE, dach: true } } },
   { titel: "Bürogebäude, Baujahr 1975", text: "1.200 m² Nutzfläche, Gas, Leuchtstoffröhren, mittelständischer Eigentümer",
-    p: { art: "nwg", nutzung: "buero", bj: 1978, hz: "gas", flaeche: 1200, betrieb: "kmu", vb: 0, sv: 0, led: false, ga: false, rlt: false, erledigt: { ...OHNE } } }
+    p: { art: "nwg", nutzung: "buero", bj: 1978, hz: "gas", flaeche: 1200, betrieb: "kmu", vb: 0, sv: 0, led: false, ga: false, rlt: false, erledigt: { ...OHNE } } },
+  { titel: "Werkstatt mit Halle, Baujahr 1988", text: "900 m² beheizt, Gas, Handwerksbetrieb, Fenster bereits erneuert",
+    p: { art: "nwg", nutzung: "halle", bj: 1994, hz: "gas", flaeche: 900, betrieb: "kmu", vb: 0, sv: 0, led: true, ga: false, rlt: false, erledigt: { ...OHNE, fenster: true } } },
+  { titel: "Arztpraxis, Baujahr 1998", text: "350 m², Heizöl, Praxis im eigenen Gebäude",
+    p: { art: "nwg", nutzung: "praxis", bj: 2001, hz: "oel", flaeche: 350, betrieb: "kmu", vb: 0, sv: 0, led: false, ga: false, rlt: false, erledigt: { ...OHNE } } }
 ];
-$("examples").innerHTML = BEISPIELE.map((b, i) => {
+const beispielKarte = (b, i) => {
   const r = berechne(b.p), e = einstufung(r);
   const top = r.massnahmen.reduce((a, m) => (!a || m.ersparnis > a.ersparnis ? m : a), null);
   const foerd = r.massnahmen.reduce((s, m) => s + m.foerderung, 0);
@@ -1281,7 +1704,9 @@ $("examples").innerHTML = BEISPIELE.map((b, i) => {
     <p class="small">Größter Hebel: <b>${top ? top.name : "Feinoptimierung"}</b></p>
     <button class="btn ghost" type="button" data-bsp="${i}">Mit diesen Werten rechnen</button>
   </div>`;
-}).join("");
+};
+$("examples-wg").innerHTML = BEISPIELE.map((b, i) => b.p.art === "wg" ? beispielKarte(b, i) : "").join("");
+$("examples-nwg").innerHTML = BEISPIELE.map((b, i) => b.p.art === "nwg" ? beispielKarte(b, i) : "").join("");
 document.querySelectorAll("[data-bsp]").forEach(btn => btn.addEventListener("click", () => {
   const p = BEISPIELE[+btn.dataset.bsp].p;
   document.querySelector(`input[name="art"][value="${p.art}"]`).checked = true;
@@ -1306,6 +1731,129 @@ document.querySelectorAll(".back-link").forEach(a => a.addEventListener("click",
 document.querySelectorAll(".mobile-nav a").forEach(a => a.addEventListener("click", () => a.closest("details").open = false));
 
 umschalten();
+
+/* Maschinen- und Anlagenrechner (EEW, Stand BAFA-Merkblatt April 2026) */
+const MR = {
+  m1: { prog: "EEW Modul 1 – Querschnittstechnologien", q: { KU: 25, MU: 20 }, max: 200000, min: 2000,
+    notes: ["Gefördert wird der Ersatz bestehender, weniger effizienter Anlagen; die neuen Geräte müssen technische Mindestanforderungen erfüllen.",
+            "Zuschuss höchstens 200.000 € für zusammenhängende Maßnahmen, Mindestinvestition 2.000 €."] },
+  m4b: { prog: "EEW Modul 4 – Basisförderung", q: { KU: 15, MU: 10 }, min: 10000, minSpar: 15,
+    notes: ["Die neue Maschine muss in der Kategorienliste des BAFA stehen und denselben Zweck erfüllen wie die alte.",
+            "Die Altmaschine läuft seit mindestens fünf Jahren im eigenen Betrieb und darf danach nicht weiterbetrieben werden.",
+            "Mindestens 15 % Endenergieeinsparung, bestätigt durch einen gelisteten Energieauditor; Mindestinvestition 10.000 €."] },
+  m6: { prog: "EEW Modul 6 – Elektrifizierung kleiner Unternehmen", q: { KU: 33 }, max: 200000, min: 2000,
+    notes: ["Ersatz einer mit Erdgas, Öl oder Kohle betriebenen Anlage durch eine rein elektrische.",
+            "De-minimis-Beihilfe: andere De-minimis-Förderungen der letzten drei Jahre zählen mit."] },
+  m4p: { prog: "EEW Modul 4 – Premiumförderung", q: { KU: 20, MU: 15, GU: 10 }, qMax: { KU: 55, MU: 45, GU: 35 },
+    notes: ["Einsparkonzept auf BAFA-Formular durch eine gelistete Energieeffizienz-Expertin oder einen gelisteten Experten.",
+            "Mindestens 30 % weniger Treibhausgase oder mindestens 100 t (klein), 300 t (mittel) bzw. 1.000 t (groß) CO₂ pro Jahr; Amortisation ohne Förderung über drei Jahre."] }
+};
+const GR_TEXT = { KU: "kleines Unternehmen", MU: "mittleres Unternehmen", GU: "großes Unternehmen" };
+const jahre = v => v.toLocaleString("de-DE", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
+
+function mrRechnen(ev) {
+  ev.preventDefault();
+  const err = $("mr-err"), out = $("mr-out");
+  let art = $("mr-art").value;
+  const gr = document.querySelector('input[name="mr-gr"]:checked').value;
+  const inv = parseFloat($("mr-inv").value), kosten = parseFloat($("mr-kosten").value), pct = parseFloat($("mr-spar").value);
+  const f = [];
+  if (!(inv >= 1000 && inv <= 50000000)) f.push("Bitte eine Investition zwischen 1.000 € und 50 Mio. € eingeben.");
+  if (!(kosten >= 100 && kosten <= 50000000)) f.push("Bitte die heutigen Energiekosten der Anlage eingeben (mindestens 100 € im Jahr).");
+  if (!(pct >= 1 && pct <= 90)) f.push("Bitte eine Einsparung zwischen 1 und 90 % eingeben.");
+  if (f.length) { err.innerHTML = f.join("<br>"); err.hidden = false; return; }
+  err.hidden = true;
+
+  const warn = [];
+  if (MR[art].q[gr] === undefined) {
+    warn.push(`${MR[art].prog.split(" – ")[1]} steht einem ${GR_TEXT[gr]} nicht offen. Gerechnet wird mit der Premiumförderung, die allen Unternehmensgrößen offensteht.`);
+    art = "m4p";
+  }
+  const m = MR[art];
+  const spar = kosten * pct / 100;
+  let quote = m.q[gr];
+  const amortOhne = inv / spar;
+  if (m.min && inv < m.min) { warn.push(`Unter der Mindestinvestition von ${eur(m.min)} gibt es in diesem Programm keinen Zuschuss.`); quote = 0; }
+  if (m.minSpar && pct < m.minSpar) { warn.push(`Für die Basisförderung muss die Maschine mindestens ${m.minSpar} % Endenergie einsparen.`); quote = 0; }
+  if (art === "m4p" && amortOhne <= 3) { warn.push("Amortisiert sich die Maßnahme ohne Förderung in höchstens drei Jahren, ist die Premiumförderung ausgeschlossen. Für kleine und mittlere Unternehmen kann dann Modul 1 oder die Basisförderung passen."); quote = 0; }
+  const zuschuss = Math.min(inv * quote / 100, m.max || Infinity);
+  const eigen = inv - zuschuss, amortMit = eigen / spar, zehn = spar * 10 - eigen;
+  const notes = [...m.notes];
+  if (art === "m4p" && quote > 0) notes.push(`Gerechnet ist die vorsichtige Quote von ${quote} % auf die Gesamtkosten. Je nach beihilferechtlichem Berechnungsweg und mit Dekarbonisierungsbonus sind bis zu ${m.qMax[gr]} % möglich – das prüfe ich im Einzelfall.`);
+  notes.push("Antrag vor der Bestellung: Verträge erst danach und nur unter der Bedingung der Förderzusage.");
+  notes.push("Alternativ als KfW-Förderkredit 295 mit Tilgungszuschuss.");
+  if (amortMit > 10) warn.push("Allein über die Energiekosten rechnet sich das erst nach mehr als zehn Jahren – interessant vor allem, wenn die Anlage ohnehin ersetzt werden muss.");
+
+  out.innerHTML = `
+    <p class="mr-prog">${m.prog} · ${GR_TEXT[gr]}</p>
+    <h3>${quote > 0 ? "Zuschuss " + eur(zuschuss) : "Kein Zuschuss in diesem Programm"}</h3>
+    ${warn.map(w => `<p class="mr-warn">${w}</p>`).join("")}
+    <div class="kpis">
+      <div class="kpi"><b>${quote} %</b><span>Förderquote</span></div>
+      <div class="kpi"><b>${eur(eigen)}</b><span>Ihr Eigenanteil</span></div>
+      <div class="kpi"><b>${eur(spar)}</b><span>Einsparung pro Jahr</span></div>
+      <div class="kpi"><b>${jahre(amortMit)} Jahre</b><span>Amortisation${quote > 0 ? " (ohne Förderung " + jahre(amortOhne) + ")" : ""}</span></div>
+    </div>
+    <p>Über zehn Jahre bleiben Ihnen nach Abzug des Eigenanteils rund <b>${eur(zehn)}</b>${zehn < 0 ? " – die Maßnahme trägt sich in diesem Zeitraum noch nicht" : ""}.</p>
+    <ul class="mr-notes">${notes.map(n => `<li>${n}</li>`).join("")}</ul>
+    <a class="btn" href="#kontakt">Vorhaben prüfen lassen</a>
+    <p class="disclaimer">Unverbindliche Ersteinschätzung nach den Förderbedingungen mit Stand November 2026, ohne Gewähr. Ob und in welcher Höhe gefördert wird, hängt von den Details Ihres Vorhabens und der Bewilligung ab.</p>`;
+}
+$("mr-form").addEventListener("submit", mrRechnen);
+
+/* Zwei Bereiche (Reiter): Wohngebäude und Unternehmen/Nichtwohngebäude */
+const GEMEINSAM = ["energie-check", "ablauf", "ueber-mich", "kontakt"];
+const TITEL = {
+  wohngebaeude: "Heizkosten senken – Energieberatung für Wohngebäude in München | Nicolas Stephan",
+  unternehmen: "Energiekosten senken – Energie- und Fördermittelberatung für Unternehmen | Nicolas Stephan"
+};
+const bereich = () => document.body.dataset.view === "unternehmen" ? "unternehmen" : "wohngebaeude";
+function springe(fn) {
+  const h = document.documentElement, alt = h.style.scrollBehavior;
+  h.style.scrollBehavior = "auto"; fn(); h.style.scrollBehavior = alt;
+}
+function zeigeBereich(view) {
+  const root = $(view);
+  const gewechselt = document.body.dataset.view !== view || !root.querySelector("#kontakt");
+  document.body.dataset.view = view;
+  GEMEINSAM.forEach(id => {
+    const ziel = root.querySelector(`[data-slot="${id}"]`);
+    if (ziel && $(id).parentNode !== ziel) ziel.appendChild($(id));
+  });
+  document.querySelectorAll("[data-t-unternehmen]").forEach(el => {
+    if (el.dataset.tWohngebaeude === undefined) el.dataset.tWohngebaeude = el.innerHTML;
+    el.innerHTML = view === "unternehmen" ? el.dataset.tUnternehmen : el.dataset.tWohngebaeude;
+  });
+  const radio = document.querySelector(`input[name="art"][value="${view === "unternehmen" ? "nwg" : "wg"}"]`);
+  if (!radio.checked) {
+    radio.checked = true; umschalten();
+    $("result-body").hidden = true; $("result-empty").hidden = false; $("f-err").hidden = true;
+  }
+  let i = 0;
+  root.querySelectorAll("section").forEach(sec => { if (!sec.classList.contains("hero")) sec.classList.toggle("band", i++ % 2 === 0); });
+  document.querySelectorAll("[data-tab]").forEach(t => t.setAttribute("aria-selected", t.dataset.tab === view ? "true" : "false"));
+  document.title = TITEL[view];
+  try { localStorage.setItem("bereich", view); } catch (e) {}
+  return gewechselt;
+}
+let ersterAufruf = true;
+function folgeAdresse() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h === "impressum" || h === "datenschutz") return;
+  const el = h ? document.getElementById(h) : null;
+  const erster = ersterAufruf; ersterAufruf = false;
+  if (!el || el.id === "start") { zeigeBereich(bereich()); if (el) springe(() => window.scrollTo(0, 0)); return; }
+  const gemeinsam = GEMEINSAM.some(id => $(id).contains(el));
+  const view = el.classList.contains("view") ? el.id : gemeinsam ? bereich() : (el.closest(".view") || {}).id || bereich();
+  const gewechselt = zeigeBereich(view);
+  if (el.classList.contains("view")) springe(() => window.scrollTo(0, 0));
+  else if (gewechselt || erster) springe(() => el.scrollIntoView());
+}
+window.addEventListener("hashchange", folgeAdresse);
+document.querySelectorAll("[data-tab]").forEach(t => t.addEventListener("click", e => {
+  if (location.hash === "#" + t.dataset.tab) { e.preventDefault(); zeigeBereich(t.dataset.tab); springe(() => window.scrollTo(0, 0)); }
+}));
+folgeAdresse();
 </script>
 </body>
 </html>
