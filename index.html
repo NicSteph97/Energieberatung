@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolas Stephan – Ingenieur- und Energieberatung München</title>
+<meta name="description" content="Unabhängige Energieberatung in München: individueller Sanierungsfahrplan (iSFP), Energieausweise, Baubegleitung, Energieaudits und Fördermittel für Wohn- und Nichtwohngebäude.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6b4f'/%3E%3Cpath d='M9 17l7-9 7 9h-4v7h-6v-7z' fill='white'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --text: #1d2420; --muted: #5b655f; --line: #e3e1da;
+  --accent: #2f6b4f; --accent-soft: #e6f0ea; --accent-text: #ffffff; --todo: #fff1b8;
+  --radius: 14px; --max: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131715; --surface: #1b201d; --text: #e8ece9; --muted: #a3ada7; --line: #2d3430;
+    --accent: #7cc4a0; --accent-soft: #1f2e27; --accent-text: #0f1512; --todo: #5a4b12;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131715; --surface: #1b201d; --text: #e8ece9; --muted: #a3ada7; --line: #2d3430;
+  --accent: #7cc4a0; --accent-soft: #1f2e27; --accent-text: #0f1512; --todo: #5a4b12;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color: var(--accent); }
+mark.todo { background: var(--todo); color: inherit; padding: 0 .2em; border-radius: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+header.site { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.brand { font-weight: 700; text-decoration: none; color: var(--text); line-height: 1.2; }
+.brand small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; }
+nav.main { display: flex; gap: 20px; flex-wrap: wrap; }
+nav.main a { color: var(--text); text-decoration: none; font-size: .95rem; }
+nav.main a:hover { color: var(--accent); }
+@media (max-width: 760px) { nav.main { display: none; } }
+
+section { padding: 72px 0; }
+section + section { border-top: 1px solid var(--line); }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); }
+h3 { font-size: 1.1rem; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 46em; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: var(--accent); font-weight: 600; margin-bottom: .6em; }
+.hero { padding: 88px 0 72px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 32px; padding: 0; list-style: none; }
+.badges li { background: var(--accent-soft); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
+.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; background: var(--accent);
+  color: var(--accent-text); text-decoration: none; font-weight: 600; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 32px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.card p { margin: 0; color: var(--muted); }
+.card svg { width: 34px; height: 34px; color: var(--accent); margin-bottom: 10px; }
+ol.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 32px; }
+ol.steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+ol.steps li::before { content: counter(s); display: inline-grid; place-items: center; width: 32px; height: 32px;
+  border-radius: 50%; background: var(--accent); color: var(--accent-text); font-weight: 700; margin-bottom: 10px; }
+ol.steps p { margin: 0; color: var(--muted); }
+.split { display: grid; gap: 40px; grid-template-columns: 1.2fr 1fr; align-items: start; }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
+ul.check { list-style: none; padding: 0; margin: 0; }
+ul.check li { padding-left: 28px; position: relative; margin-bottom: 10px; }
+ul.check li::before { content: ""; position: absolute; left: 4px; top: .55em; width: 12px; height: 7px;
+  border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg); }
+.note { background: var(--accent-soft); border-radius: var(--radius); padding: 20px 24px; margin-top: 28px; }
+.contact-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.contact-box p { margin: 0 0 10px; }
+.legal { max-width: 760px; }
+.legal h2 { font-size: 1.6rem; }
+.legal h3 { margin-top: 1.6em; }
+footer.site { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; }
+footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer.site a { color: var(--muted); margin-left: 16px; }
+footer.site a:first-child { margin-left: 0; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#start">Nicolas Stephan<small>Ingenieur- und Energieberatung</small></a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#foerderung">Förderung</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Energieberatung in München und Umgebung</p>
+    <h1>Gebäude sanieren mit Plan – und mit Förderung.</h1>
+    <p class="lead">Unabhängige Energieberatung für Wohn- und Nichtwohngebäude: vom individuellen Sanierungsfahrplan über Energieausweis und Baubegleitung bis zum Energieaudit für Unternehmen.</p>
+    <ul class="badges">
+      <li>Energieeffizienz-Experte (dena-Liste)</li>
+      <li>BAFA-gelisteter Energieberater</li>
+      <li>Energieauditor</li>
+      <li>M.Sc. TU München</li>
+    </ul>
+    <div class="actions">
+      <a class="btn" href="#kontakt">Erstgespräch vereinbaren</a>
+      <a class="btn ghost" href="#leistungen">Leistungen ansehen</a>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <p class="eyebrow">Leistungen</p>
+    <h2>Was ich für Sie mache</h2>
+    <div class="grid">
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+        <h3>Individueller Sanierungsfahrplan (iSFP)</h3>
+        <p>Bestandsaufnahme vor Ort, energetische Bilanz und ein Schritt-für-Schritt-Plan für Ihr Haus – mit Kosten, Einsparung und Fördermöglichkeiten.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        <h3>Energieausweise</h3>
+        <p>Bedarfs- und Verbrauchsausweise nach GEG für Wohn- und Nichtwohngebäude, z. B. für Verkauf, Vermietung oder Neubau.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M12 6l6 6"/></svg>
+        <h3>Fachplanung und Baubegleitung</h3>
+        <p>Technische Projektnachweise und Bestätigungen für BAFA und KfW, Planung der Maßnahmen und Begleitung bis zur Umsetzung.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><rect x="5" y="9" width="4" height="9"/><rect x="10" y="5" width="4" height="13"/><rect x="15" y="12" width="4" height="6"/></svg>
+        <h3>Energieaudits für Unternehmen</h3>
+        <p>Energieaudits nach DIN EN 16247, Energieberatung für Nichtwohngebäude und Prozesse, Einsparmaßnahmen mit Wirtschaftlichkeitsbetrachtung.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.6-1-1.7-1.5-3-1.5-1.7 0-3 1-3 2.2s1.1 1.8 3 2.1 3 .9 3 2.2-1.3 2.3-3 2.3c-1.4 0-2.5-.6-3-1.6M12 6v2M12 16.8V18"/></svg>
+        <h3>Fördermittel</h3>
+        <p>Prüfung der passenden Programme (BAFA, KfW, Land, Kommune), Antragsunterlagen und Nachweise – damit kein Zuschuss verloren geht.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M4.6 6.6l2.1 2.1M17.3 15.3l2.1 2.1M3 12h3M18 12h3M4.6 17.4l2.1-2.1M17.3 8.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+        <h3>Heizungstausch und Wärmepumpe</h3>
+        <p>Heizlast, Eignung für eine Wärmepumpe, Einbindung erneuerbarer Energien und Vorgaben aus dem Gebäudeenergiegesetz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="foerderung">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Förderung</p>
+      <h2>Beratung, die sich selbst mitfinanziert</h2>
+      <p class="lead">Die Energieberatung für Wohngebäude wird vom Bund bezuschusst. Mit einem iSFP erhalten Sie zusätzlich höhere Förderung und mehr förderfähige Kosten bei späteren Sanierungsmaßnahmen an der Gebäudehülle.</p>
+    </div>
+    <ul class="check">
+      <li>Zuschuss zur Energieberatung (BAFA, Bundesförderung Energieberatung)</li>
+      <li>iSFP-Bonus für Einzelmaßnahmen der BEG</li>
+      <li>KfW-Förderung für Effizienzhaus-Sanierung und Neubau</li>
+      <li>Förderung für Unternehmen: Energieberatung Nichtwohngebäude, Bundesförderung Energie- und Ressourceneffizienz</li>
+      <li>Ich prüfe für Ihr Vorhaben die aktuellen Bedingungen – Förderprogramme ändern sich häufig.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="wrap">
+    <p class="eyebrow">Ablauf</p>
+    <h2>So arbeiten wir zusammen</h2>
+    <ol class="steps">
+      <li><h3>Erstgespräch</h3><p>Kostenloses Telefonat: Was haben Sie vor, was ist sinnvoll, welche Förderung passt?</p></li>
+      <li><h3>Vor-Ort-Termin</h3><p>Begehung des Gebäudes, Aufnahme von Bauteilen und Anlagentechnik, Sichtung Ihrer Unterlagen.</p></li>
+      <li><h3>Berechnung und Bericht</h3><p>Energetische Bilanz, Varianten, Kosten und Einsparung – verständlich aufbereitet.</p></li>
+      <li><h3>Besprechung und Umsetzung</h3><p>Gemeinsame Besprechung der Ergebnisse, Förderanträge und auf Wunsch Begleitung der Umsetzung.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="ueber-mich">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Über mich</p>
+      <h2>Nicolas Stephan, M.Sc.</h2>
+      <p>Ich habe an der TU München Ressourceneffizientes und Nachhaltiges Bauen studiert und arbeite seit 2019 in der Planung, der Nachhaltigkeitsberatung und der Fördermittelberatung für Gebäude und Unternehmen.</p>
+      <p>Bevor ich Ingenieur wurde, habe ich als Maurer und Schreiner auf der Baustelle gearbeitet – ich weiß also, was sich in der Praxis umsetzen lässt und was nur auf dem Papier gut aussieht.</p>
+    </div>
+    <ul class="check">
+      <li>Zertifizierter Energieberater für Wohn- und Nichtwohngebäude</li>
+      <li>Eingetragen in der Energieeffizienz-Expertenliste des Bundes</li>
+      <li>Gelistet beim BAFA für die Bundesförderung Energieberatung</li>
+      <li>Energieauditor nach DIN EN 16247</li>
+      <li>Herstellerunabhängig – keine Provisionen von Handwerk oder Industrie</li>
+    </ul>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Kontakt</p>
+      <h2>Lassen Sie uns sprechen</h2>
+      <p class="lead">Schreiben Sie mir kurz, um welches Gebäude es geht und was Sie vorhaben. Ich melde mich in der Regel innerhalb von zwei Werktagen.</p>
+    </div>
+    <div class="contact-box">
+      <p><strong>Nicolas Stephan</strong><br>Ingenieur- und Energieberatung</p>
+      <p>E-Mail: <a href="mailto:EMAIL@BEISPIEL.DE"><mark class="todo">EMAIL@BEISPIEL.DE</mark></a></p>
+      <p>Telefon: <a href="tel:+49000000000"><mark class="todo">+49 000 000000</mark></a></p>
+      <p>Einsatzgebiet: München und Umgebung</p>
+      <p style="margin-top:18px"><a class="btn" href="mailto:EMAIL@BEISPIEL.DE?subject=Anfrage%20Energieberatung">E-Mail schreiben</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="impressum">
+  <div class="wrap legal">
+    <h2>Impressum</h2>
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
+    <p>Nicolas Stephan<br>Ingenieur- und Energieberatung<br>Schellingstraße 76<br><mark class="todo">80799</mark> München<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: <mark class="todo">+49 000 000000</mark><br>E-Mail: <mark class="todo">EMAIL@BEISPIEL.DE</mark></p>
+    <h3>Berufsbezeichnung</h3>
+    <p>Ingenieur (M.Sc.), verliehen in der Bundesrepublik Deutschland (Technische Universität München).<br>Energieeffizienz-Experte für Förderprogramme des Bundes, eingetragen in der Energieeffizienz-Expertenliste (www.energie-effizienz-experten.de).</p>
+    <h3>Umsatzsteuer</h3>
+    <p><mark class="todo">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</mark></p>
+    <h3>Verantwortlich für den Inhalt</h3>
+    <p>Nicolas Stephan, Anschrift wie oben.</p>
+    <h3>Haftung für Inhalte und Links</h3>
+    <p>Die Inhalte dieser Seite wurden mit Sorgfalt erstellt. Förderbedingungen und gesetzliche Vorgaben ändern sich jedoch häufig; die Angaben ersetzen keine individuelle Beratung. Für Inhalte verlinkter fremder Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+  </div>
+</section>
+
+<section id="datenschutz">
+  <div class="wrap legal">
+    <h2>Datenschutzerklärung</h2>
+
+    <h3>1. Verantwortlicher</h3>
+    <p>Nicolas Stephan, Schellingstraße 76, <mark class="todo">80799</mark> München, E-Mail: <mark class="todo">EMAIL@BEISPIEL.DE</mark>, Telefon: <mark class="todo">+49 000 000000</mark>.</p>
+
+    <h3>2. Grundsatz</h3>
+    <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Trackingdienste, bindet keine externen Schriftarten, Karten oder Videos ein und enthält kein Kontaktformular. Personenbezogene Daten werden nur in dem unten beschriebenen Umfang verarbeitet.</p>
+
+    <h3>3. Hosting und Server-Logdateien</h3>
+    <p>Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Daten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite sowie Browser- und Betriebssystemangaben, um die Seite auszuliefern und die Sicherheit des Dienstes zu gewährleisten.</p>
+    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website. Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: GitHub General Privacy Statement (docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).</p>
+
+    <h3>4. Kontakt per E-Mail oder Telefon</h3>
+    <p>Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben (z. B. Name, Kontaktdaten, Angaben zum Gebäude), um Ihre Anfrage zu beantworten und gegebenenfalls einen Auftrag vorzubereiten oder durchzuführen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung bzw. -erfüllung), im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten (z. B. nach Handels- und Steuerrecht) entgegenstehen.</p>
+
+    <h3>5. Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie das Recht, der Verarbeitung auf Grundlage berechtigter Interessen aus Gründen Ihrer besonderen Situation zu widersprechen (Art. 21 DSGVO). Wenden Sie sich dazu an die oben genannte Adresse.</p>
+    <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
+
+    <h3>6. Pflicht zur Bereitstellung</h3>
+    <p>Sie sind nicht verpflichtet, mir personenbezogene Daten mitzuteilen. Ohne Ihre Kontaktdaten kann ich Ihre Anfrage jedoch nicht beantworten.</p>
+
+    <p><em>Stand: November 2026</em></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Nicolas Stephan · Ingenieur- und Energieberatung</span>
+    <span><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
