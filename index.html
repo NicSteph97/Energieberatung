@@ -3,278 +3,1013 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicolas Stephan – Ingenieur- und Energieberatung München</title>
-<meta name="description" content="Unabhängige Energieberatung in München: individueller Sanierungsfahrplan (iSFP), Energieausweise, Baubegleitung, Energieaudits und Fördermittel für Wohn- und Nichtwohngebäude.">
+<title>Energieberatung München – Nicolas Stephan</title>
+<meta name="description" content="Unabhängige Energieberatung in München: Sanierungsfahrplan (iSFP), Energieausweis, Baubegleitung, Wärmepumpe, Energieaudit und Fördermittel. Mit kostenlosem Energie-Check.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6b4f'/%3E%3Cpath d='M9 17l7-9 7 9h-4v7h-6v-7z' fill='white'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Energieberatung München – Nicolas Stephan">
+<meta property="og:description" content="Sanierungsfahrplan, Energieausweis, Wärmepumpe und Fördermittel – mit kostenlosem Energie-Check.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nicolas Stephan – Ingenieur- und Energieberatung",
+  "description": "Unabhängige Energieberatung für Wohn- und Nichtwohngebäude: individueller Sanierungsfahrplan (iSFP), Energieausweise, Baubegleitung, Wärmepumpen-Check, Energieaudits und Fördermittel.",
+  "founder": { "@type": "Person", "name": "Nicolas Stephan", "jobTitle": "Energieberater, Ingenieur (M.Sc.)" },
+  "address": { "@type": "PostalAddress", "streetAddress": "Schellingstraße 76", "postalCode": "80799", "addressLocality": "München", "addressCountry": "DE" },
+  "telephone": "+4915209964648",
+  "email": "nicolasstephan@gmx.de",
+  "areaServed": { "@type": "City", "name": "München" },
+  "priceRange": "€€",
+  "knowsAbout": ["Energieberatung", "Sanierungsfahrplan", "Energieausweis", "Wärmepumpe", "BEG-Förderung", "Energieaudit DIN EN 16247"]
+}
+</script>
 <style>
 :root {
-  --bg: #fbfaf7; --surface: #ffffff; --text: #1d2420; --muted: #5b655f; --line: #e3e1da;
-  --accent: #2f6b4f; --accent-soft: #e6f0ea; --accent-text: #ffffff; --todo: #fff1b8;
-  --radius: 14px; --max: 1080px;
+  --bg: #f7f6f2; --surface: #ffffff; --surface-2: #f0efe9; --text: #1b221e; --muted: #59635d; --line: #e2e0d8;
+  --accent: #2f6b4f; --accent-hover: #255a41; --accent-soft: #e4efe8; --accent-text: #ffffff;
+  --warn: #9a5b00; --radius: 16px; --max: 1120px;
+  --k-ap: #1a7f3c; --k-a: #3d9a3a; --k-b: #7fb239; --k-c: #c3c62f; --k-d: #f0c419;
+  --k-e: #f2a31b; --k-f: #ec7a1c; --k-g: #e0461f; --k-h: #c42121;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #131715; --surface: #1b201d; --text: #e8ece9; --muted: #a3ada7; --line: #2d3430;
-    --accent: #7cc4a0; --accent-soft: #1f2e27; --accent-text: #0f1512; --todo: #5a4b12;
+    --bg: #121614; --surface: #1a1f1c; --surface-2: #202622; --text: #e7ebe8; --muted: #a2aca6; --line: #2c3430;
+    --accent: #7cc4a0; --accent-hover: #93d3b2; --accent-soft: #1d2c25; --accent-text: #0e1411; --warn: #f0b45a;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #131715; --surface: #1b201d; --text: #e8ece9; --muted: #a3ada7; --line: #2d3430;
-  --accent: #7cc4a0; --accent-soft: #1f2e27; --accent-text: #0f1512; --todo: #5a4b12;
+  --bg: #121614; --surface: #1a1f1c; --surface-2: #202622; --text: #e7ebe8; --muted: #a2aca6; --line: #2c3430;
+  --accent: #7cc4a0; --accent-hover: #93d3b2; --accent-soft: #1d2c25; --accent-text: #0e1411; --warn: #f0b45a;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 body { margin: 0; background: var(--bg); color: var(--text);
   font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
 a { color: var(--accent); }
-mark.todo { background: var(--todo); color: inherit; padding: 0 .2em; border-radius: 3px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2rem, 5.2vw, 3.2rem); letter-spacing: -.015em; }
+h2 { font-size: clamp(1.55rem, 3.6vw, 2.2rem); letter-spacing: -.01em; }
+h3 { font-size: 1.08rem; }
+p { margin: 0 0 1em; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 44em; }
+.eyebrow { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; color: var(--accent); font-weight: 700; margin-bottom: .7em; }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
 
-header.site { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+/* Kopfzeile */
+header.site { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
-.brand { font-weight: 700; text-decoration: none; color: var(--text); line-height: 1.2; }
-.brand small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; }
-nav.main { display: flex; gap: 20px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--text); line-height: 1.15; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.brand small { display: block; font-weight: 400; color: var(--muted); font-size: .78rem; }
+nav.main { display: flex; align-items: center; gap: 22px; }
 nav.main a { color: var(--text); text-decoration: none; font-size: .95rem; }
 nav.main a:hover { color: var(--accent); }
-@media (max-width: 760px) { nav.main { display: none; } }
+nav.main a.btn { color: var(--accent-text); padding: 8px 16px; font-size: .9rem; }
+details.mobile-nav { display: none; position: relative; }
+details.mobile-nav summary { list-style: none; cursor: pointer; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; font-size: .95rem; }
+details.mobile-nav summary::-webkit-details-marker { display: none; }
+details.mobile-nav .panel { position: absolute; right: 0; top: calc(100% + 8px); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 8px; min-width: 220px; display: grid; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+details.mobile-nav .panel a { padding: 10px 12px; color: var(--text); text-decoration: none; border-radius: 8px; }
+details.mobile-nav .panel a:hover { background: var(--surface-2); }
+@media (max-width: 860px) { nav.main { display: none; } details.mobile-nav { display: block; } }
 
-section { padding: 72px 0; }
-section + section { border-top: 1px solid var(--line); }
-h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
-h1 { font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.01em; }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); }
-h3 { font-size: 1.1rem; }
-.lead { font-size: 1.15rem; color: var(--muted); max-width: 46em; }
-.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: var(--accent); font-weight: 600; margin-bottom: .6em; }
-.hero { padding: 88px 0 72px; }
-.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 32px; padding: 0; list-style: none; }
-.badges li { background: var(--accent-soft); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
-.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; background: var(--accent);
-  color: var(--accent-text); text-decoration: none; font-weight: 600; }
+/* Bausteine */
+section { padding: 80px 0; }
+.band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; background: var(--accent); color: var(--accent-text);
+  text-decoration: none; font-weight: 600; border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+.btn:hover { background: var(--accent-hover); }
 .btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn.ghost:hover { background: var(--accent-soft); }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 32px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.card p { margin: 0; color: var(--muted); }
-.card svg { width: 34px; height: 34px; color: var(--accent); margin-bottom: 10px; }
-ol.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 32px; }
-ol.steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-ol.steps li::before { content: counter(s); display: inline-grid; place-items: center; width: 32px; height: 32px;
-  border-radius: 50%; background: var(--accent); color: var(--accent-text); font-weight: 700; margin-bottom: 10px; }
-ol.steps p { margin: 0; color: var(--muted); }
-.split { display: grid; gap: 40px; grid-template-columns: 1.2fr 1fr; align-items: start; }
-@media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
+.grid-2 { display: grid; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.band .card { background: var(--bg); }
+.card p:last-child { margin-bottom: 0; }
+.icon { width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center; margin-bottom: 14px; }
+.icon svg { width: 22px; height: 22px; }
 ul.check { list-style: none; padding: 0; margin: 0; }
-ul.check li { padding-left: 28px; position: relative; margin-bottom: 10px; }
+ul.check li { padding-left: 28px; position: relative; margin-bottom: 9px; }
 ul.check li::before { content: ""; position: absolute; left: 4px; top: .55em; width: 12px; height: 7px;
   border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg); }
-.note { background: var(--accent-soft); border-radius: var(--radius); padding: 20px 24px; margin-top: 28px; }
-.contact-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
-.contact-box p { margin: 0 0 10px; }
-.legal { max-width: 760px; }
-.legal h2 { font-size: 1.6rem; }
-.legal h3 { margin-top: 1.6em; }
+.section-head { max-width: 720px; margin-bottom: 36px; }
+
+/* Startbereich */
+.hero { padding: 80px 0 72px; }
+.hero .wrap { display: grid; grid-template-columns: 1.25fr .9fr; gap: 48px; align-items: center; }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+.trust { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 30px; padding: 0; list-style: none; }
+.trust li { background: var(--accent-soft); border-radius: 999px; padding: 4px 14px; font-size: .88rem; }
+.hero-card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 28px; }
+.hero-card h3 { font-size: 1.25rem; }
+.mini-scale { display: flex; gap: 3px; margin: 18px 0 8px; }
+.mini-scale span { flex: 1; height: 26px; border-radius: 4px; color: #fff; font-size: .72rem; font-weight: 700; display: grid; place-items: center; }
+
+/* Ablauf */
+ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { ol.steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { ol.steps { grid-template-columns: 1fr; } }
+ol.steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+ol.steps li::before { content: counter(s); display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-text); font-weight: 700; margin-bottom: 10px; }
+ol.steps p { margin: 0; color: var(--muted); }
+
+/* Energie-Check */
+.check-tool { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+@media (max-width: 900px) { .check-tool { grid-template-columns: 1fr; } }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 520px) { form .row { grid-template-columns: 1fr; } }
+label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 14px; }
+label .hint { font-weight: 400; color: var(--muted); }
+input[type=number], input[type=email], input[type=text], select {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px; font: inherit; font-size: 1rem;
+  color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; }
+input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+fieldset { border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px 6px; margin: 0 0 16px; }
+legend { font-weight: 600; font-size: .92rem; padding: 0 6px; }
+.chk { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-bottom: 10px; }
+.chk input { margin-top: 5px; accent-color: var(--accent); }
+.chips { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.result-empty { color: var(--muted); display: grid; place-items: center; text-align: center; min-height: 260px; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+.kpi { background: var(--surface-2); border-radius: 12px; padding: 14px 16px; }
+.kpi b { display: block; font-size: 1.35rem; }
+.kpi span { font-size: .85rem; color: var(--muted); }
+.scale { display: flex; gap: 3px; margin-top: 8px; }
+.scale div { flex: 1; text-align: center; color: #fff; font-weight: 700; font-size: .78rem; padding: 6px 0; border-radius: 4px; opacity: .35; }
+.scale div.on { opacity: 1; outline: 3px solid var(--text); outline-offset: 1px; }
+.locked { position: relative; margin-top: 8px; }
+.locked .blur { filter: blur(6px); pointer-events: none; user-select: none; }
+.gate { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin-top: 16px; }
+.gate h3 { margin-bottom: .3em; }
+table.measures { width: 100%; border-collapse: collapse; font-size: .92rem; }
+table.measures th, table.measures td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.measures th { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+table.measures td.num { white-space: nowrap; }
+.table-scroll { overflow-x: auto; }
+.ok-msg { background: var(--accent-soft); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+.err { color: #c42121; font-size: .9rem; }
+.disclaimer { font-size: .82rem; color: var(--muted); margin-top: 14px; }
+
+/* FAQ */
+details.faq { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 20px; margin-bottom: 10px; }
+details.faq summary { cursor: pointer; font-weight: 600; padding: 16px 0; list-style: none; position: relative; padding-right: 30px; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: "+"; position: absolute; right: 0; top: 12px; font-size: 1.4rem; color: var(--accent); }
+details.faq[open] summary::after { content: "–"; }
+details.faq p { color: var(--muted); }
+
+/* Über mich */
+.about { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start; }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+.portrait { aspect-ratio: 4/5; border-radius: 20px; background: var(--accent-soft); display: grid; place-items: center;
+  color: var(--accent); font-size: 3rem; font-weight: 700; overflow: hidden; }
+.photo { background: var(--accent-soft) url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAcFBQYFBAcGBQYIBwcIChELCgkJChUPEAwRGBUaGRgVGBcbHichGx0lHRcYIi4iJSgpKywrGiAvMy8qMicqKyr/2wBDAQcICAoJChQLCxQqHBgcKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKir/wAARCAJYAeADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD13PsPyoz7D8qXHFJVFBn2H5UZ9h+VFFABn2H5UZ9h+VFFACg89B+VO3H2/KmDrTqAF3H2/Kjcfb8qSigB4Y47flRuPt+VIOlFAC7j7flRuPt+VJRQAu4+35Ubj7flSUUALuPt+VG4+35UlFAC7j7flRuPt+VJRQAu4+35Ubj7flSUUALuPt+VG4+35UlFAC7j7flRuPt+VJRQAu4+35Ubj7flSUUALk+35Ubj7flSUUALuPt+VG4+35UlFAC7j7flRuPt+VJRQAu4+35Ubj7flSUUALuPt+VG4+35UlFAC7j7flSEk+n5UUUAJk+35Ubj7flQRSUALuPt+VG4+35UlFAC7j7flRuPt+VJRQAu4+35Ubj7flSUUAITz0H5UmfYflQaKADPsPyoyfb8qKKAEz7D8qM+w/KiigAz9PyppJHp+VLSGgAz7D8qM+w/KkooAQsc9vyo3H2/KkPWigCwOlIRmlooAbRS4oIoASiiigAHWnU3vTqACiiigBw6UUDpRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUdqKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigApDS0cUANooooAKKKKACiiigBD0pKdTTQAUUUUAFIaWkoASgjNLSUANooPWigBp60UpFJQBYooooAKQjNLRQAmKAMUtFABRRRQAUopKUUALRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFBIAyTigAoqKS5hiRnklVVXqScAVlweLNIurl4bW6WYpwzIcqD6A96ANmio0nikHyyLkejA08Mp6MD9DQAtFFFABRRRQAUUUUAFFFFABSYpaKADtSYpaKAExSU49KbigAooooAKQjNLRQA2ig9aKACiiigBKSlooAYetFKaSgAppGKdSGgCeiiigAooooAKKKKACiiigAHWnU0DmnUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFL2rnvFvjLTPCWlPdX8oLA7ViU5ZifagDedgiEvgADPWuY1r4g+H9EAF1eLuyPlXkivFNa+NGtanBJBCqQIxIyvXHavOLq6muZWklcu7nJJOalsD3TV/j7awXBTSrNpY1bBkkOMj2rnNR+OurXgkWCGG3Rhhccnr3rygKpPzbmprRnOdtK4HW618RtZ1uVftd4UiU8RIMKfrWQNbvED/ZryVA5y218Vk7MjBUmnRgI3zAj2xQBt23izWbFCLXUbhRj++Tiuk8PfF7X9DjETSJdx7skTDJ/OuEYgg5UkH0NQnBfIP50gPpHwz8b9I1WWODVYzYytwWY5T869Ksr+11C2S4sp0micZVkOQa+JlJjHHSuk8N+OdY8N3ET2N3J5Q6wsxKH8Kq4H16Oe1FeT+DfjNa6xMbXVglrOWATJ+U16rDMk8QkiYMpHBBqrgPooooAKKKKACiiigAooooAKKKKAA9KbTqQj0oASiiigBMUhGKdSGgBKKKKACkNLSGgBD0ptOPSm4oAKQ0tGKAJqKKKACiiigAooooAKUDFAHFLQAUUUUAFFFFABRRRQAUUtGKAEopaK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") center 20% / cover no-repeat; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; flex: none; }
+.person { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
+.person b { display: block; }
+
+/* Beispiele, Preise, Aktuelles */
+.example h3 { margin-bottom: .2em; }
+.example .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0; }
+.example .facts div { background: var(--surface-2); border-radius: 10px; padding: 8px 10px; font-size: .85rem; color: var(--muted); }
+.example .facts b { display: block; font-size: 1.05rem; color: var(--text); }
+.badge-k { display: inline-block; color: #fff; font-weight: 700; border-radius: 6px; padding: 0 8px; margin-right: 4px; }
+.price { font-size: 1.6rem; font-weight: 700; margin: 4px 0 2px; }
+.price small { font-size: .9rem; font-weight: 400; color: var(--muted); }
+.card.featured { border: 2px solid var(--accent); }
+.news { display: grid; gap: 14px; }
+.news article { display: grid; grid-template-columns: 120px 1fr; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; }
+.news time { color: var(--accent); font-weight: 700; font-size: .9rem; }
+.news h3 { margin-bottom: .3em; }
+.news p { margin: 0; color: var(--muted); }
+@media (max-width: 620px) { .news article { grid-template-columns: 1fr; gap: 4px; } }
+details.callback { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+details.callback summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+
+/* Kontakt */
+.contact { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+@media (max-width: 820px) { .contact { grid-template-columns: 1fr; } }
+.contact-line { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; font-size: 1.05rem; }
+.contact-line .icon { margin: 0; width: 38px; height: 38px; }
+
+/* Rechtstexte: nur bei Aufruf über #impressum / #datenschutz sichtbar */
+.legal-page { display: none; padding: 56px 0 80px; }
+.legal-page:target { display: block; }
+body:has(.legal-page:target) main.home { display: none; }
+.legal-page .wrap { max-width: 780px; }
+.legal-page h3 { margin-top: 1.6em; }
+
 footer.site { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; }
 footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-footer.site a { color: var(--muted); margin-left: 16px; }
-footer.site a:first-child { margin-left: 0; }
+footer.site nav a { color: var(--muted); margin-left: 18px; }
+footer.site nav a:first-child { margin-left: 0; }
+
+@media print {
+  header.site, footer.site, main.home > section:not(#energie-check), .gate, .no-print, #check-form-card { display: none !important; }
+  .check-tool { grid-template-columns: 1fr; }
+  body { background: #fff; color: #000; }
+  .locked .blur { filter: none; }
+}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#start">Nicolas Stephan<small>Ingenieur- und Energieberatung</small></a>
+    <a class="brand" href="#start">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f6b4f"/><path d="M9 17l7-9 7 9h-4v7h-6v-7z" fill="#fff"/></svg>
+      <span>Nicolas Stephan<small>Ingenieur- und Energieberatung</small></span>
+    </a>
     <nav class="main" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
-      <a href="#foerderung">Förderung</a>
-      <a href="#ablauf">Ablauf</a>
+      <a href="#energie-check">Energie-Check</a>
+      <a href="#preise">Preise</a>
       <a href="#ueber-mich">Über mich</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#aktuelles">Aktuelles</a>
+      <a class="btn" href="#kontakt">Kontakt</a>
     </nav>
+    <details class="mobile-nav">
+      <summary>Menü</summary>
+      <div class="panel">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#energie-check">Energie-Check</a>
+        <a href="#beispiele">Beispiele</a>
+        <a href="#preise">Preise</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#aktuelles">Aktuelles</a>
+        <a href="#faq">Fragen</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </details>
   </div>
 </header>
 
-<main id="start">
+<main class="home" id="start">
 
+<!-- Start -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Energieberatung in München und Umgebung</p>
-    <h1>Gebäude sanieren mit Plan – und mit Förderung.</h1>
-    <p class="lead">Unabhängige Energieberatung für Wohn- und Nichtwohngebäude: vom individuellen Sanierungsfahrplan über Energieausweis und Baubegleitung bis zum Energieaudit für Unternehmen.</p>
-    <ul class="badges">
-      <li>Energieeffizienz-Experte (dena-Liste)</li>
-      <li>BAFA-gelisteter Energieberater</li>
-      <li>Energieauditor</li>
-      <li>M.Sc. TU München</li>
-    </ul>
-    <div class="actions">
-      <a class="btn" href="#kontakt">Erstgespräch vereinbaren</a>
-      <a class="btn ghost" href="#leistungen">Leistungen ansehen</a>
-    </div>
-  </div>
-</section>
-
-<section id="leistungen">
-  <div class="wrap">
-    <p class="eyebrow">Leistungen</p>
-    <h2>Was ich für Sie mache</h2>
-    <div class="grid">
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
-        <h3>Individueller Sanierungsfahrplan (iSFP)</h3>
-        <p>Bestandsaufnahme vor Ort, energetische Bilanz und ein Schritt-für-Schritt-Plan für Ihr Haus – mit Kosten, Einsparung und Fördermöglichkeiten.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
-        <h3>Energieausweise</h3>
-        <p>Bedarfs- und Verbrauchsausweise nach GEG für Wohn- und Nichtwohngebäude, z. B. für Verkauf, Vermietung oder Neubau.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M12 6l6 6"/></svg>
-        <h3>Fachplanung und Baubegleitung</h3>
-        <p>Technische Projektnachweise und Bestätigungen für BAFA und KfW, Planung der Maßnahmen und Begleitung bis zur Umsetzung.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><rect x="5" y="9" width="4" height="9"/><rect x="10" y="5" width="4" height="13"/><rect x="15" y="12" width="4" height="6"/></svg>
-        <h3>Energieaudits für Unternehmen</h3>
-        <p>Energieaudits nach DIN EN 16247, Energieberatung für Nichtwohngebäude und Prozesse, Einsparmaßnahmen mit Wirtschaftlichkeitsbetrachtung.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.6-1-1.7-1.5-3-1.5-1.7 0-3 1-3 2.2s1.1 1.8 3 2.1 3 .9 3 2.2-1.3 2.3-3 2.3c-1.4 0-2.5-.6-3-1.6M12 6v2M12 16.8V18"/></svg>
-        <h3>Fördermittel</h3>
-        <p>Prüfung der passenden Programme (BAFA, KfW, Land, Kommune), Antragsunterlagen und Nachweise – damit kein Zuschuss verloren geht.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M4.6 6.6l2.1 2.1M17.3 15.3l2.1 2.1M3 12h3M18 12h3M4.6 17.4l2.1-2.1M17.3 8.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
-        <h3>Heizungstausch und Wärmepumpe</h3>
-        <p>Heizlast, Eignung für eine Wärmepumpe, Einbindung erneuerbarer Energien und Vorgaben aus dem Gebäudeenergiegesetz.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="foerderung">
-  <div class="wrap split">
     <div>
-      <p class="eyebrow">Förderung</p>
-      <h2>Beratung, die sich selbst mitfinanziert</h2>
-      <p class="lead">Die Energieberatung für Wohngebäude wird vom Bund bezuschusst. Mit einem iSFP erhalten Sie zusätzlich höhere Förderung und mehr förderfähige Kosten bei späteren Sanierungsmaßnahmen an der Gebäudehülle.</p>
+      <p class="eyebrow">Energieberatung in München und Umgebung</p>
+      <h1>Sanieren mit Plan – und mit voller Förderung.</h1>
+      <p class="lead">Ich zeige Ihnen, welche Maßnahmen sich für Ihr Gebäude wirklich lohnen, in welcher Reihenfolge – und wie Sie die Zuschüsse von BAFA und KfW mitnehmen.</p>
+      <ul class="trust">
+        <li>Energieeffizienz-Experte (dena)</li>
+        <li>BAFA-gelistet</li>
+        <li>Energieauditor DIN EN 16247</li>
+        <li>M.Sc. TU München</li>
+        <li>Herstellerunabhängig</li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="#energie-check">Kostenlosen Energie-Check starten</a>
+        <a class="btn ghost" href="#kontakt">Erstgespräch vereinbaren</a>
+      </div>
     </div>
-    <ul class="check">
-      <li>Zuschuss zur Energieberatung (BAFA, Bundesförderung Energieberatung)</li>
-      <li>iSFP-Bonus für Einzelmaßnahmen der BEG</li>
-      <li>KfW-Förderung für Effizienzhaus-Sanierung und Neubau</li>
-      <li>Förderung für Unternehmen: Energieberatung Nichtwohngebäude, Bundesförderung Energie- und Ressourceneffizienz</li>
-      <li>Ich prüfe für Ihr Vorhaben die aktuellen Bedingungen – Förderprogramme ändern sich häufig.</li>
-    </ul>
+    <aside class="hero-card" aria-label="Energie-Check in Kürze">
+      <h3>In 2 Minuten wissen, wo Ihr Haus steht</h3>
+      <p class="muted">Effizienzklasse, Energiekosten, CO₂ – und welche Sanierung sich zuerst lohnt.</p>
+      <div class="mini-scale" aria-hidden="true">
+        <span style="background:var(--k-ap)">A+</span><span style="background:var(--k-a)">A</span><span style="background:var(--k-b)">B</span>
+        <span style="background:var(--k-c)">C</span><span style="background:var(--k-d)">D</span><span style="background:var(--k-e)">E</span>
+        <span style="background:var(--k-f)">F</span><span style="background:var(--k-g)">G</span><span style="background:var(--k-h)">H</span>
+      </div>
+      <p class="small muted">Unverbindlich und kostenlos. Ergebnis sofort, ausführliche Auswertung per E-Mail.</p>
+      <a class="btn" href="#energie-check">Zum Energie-Check</a>
+    </aside>
   </div>
 </section>
 
+<!-- Leistungen -->
+<section id="leistungen" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Leistungen</p>
+      <h2>Für Eigentümer und für Unternehmen</h2>
+      <p class="lead">Von der ersten Einschätzung bis zur abgeschlossenen Sanierung – alles aus einer Hand.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Wohngebäude</h3>
+        <p class="muted">Für Eigentümer von Ein- und Mehrfamilienhäusern sowie Eigentümergemeinschaften.</p>
+        <ul class="check">
+          <li><b>Individueller Sanierungsfahrplan (iSFP)</b> – mit BAFA-Zuschuss zur Beratung</li>
+          <li><b>Heizungstausch und Wärmepumpe</b> – Heizlast, Eignung, Förderung</li>
+          <li><b>Baubegleitung</b> – Bestätigungen und Nachweise für BAFA und KfW</li>
+          <li><b>Effizienzhaus-Sanierung</b> – Planung und KfW-Nachweise</li>
+          <li><b>Energieausweise</b> – Bedarfs- und Verbrauchsausweis nach GEG</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><rect x="5" y="9" width="4" height="9"/><rect x="10" y="5" width="4" height="13"/><rect x="15" y="12" width="4" height="6"/></svg></div>
+        <h3>Unternehmen und Nichtwohngebäude</h3>
+        <p class="muted">Für Betriebe, Gewerbeimmobilien, Vereine und Kommunen.</p>
+        <ul class="check">
+          <li><b>Energieaudit nach DIN EN 16247</b> – inkl. Pflichtaudit nach EDL-G</li>
+          <li><b>Energieberatung Nichtwohngebäude</b> – Sanierungsfahrplan mit Förderung</li>
+          <li><b>Prozess- und Anlageneffizienz</b> – Druckluft, Wärme, Beleuchtung</li>
+          <li><b>Fördermittel</b> – BEG, Bundesförderung Energie- und Ressourceneffizienz</li>
+          <li><b>Energieausweise</b> für Nichtwohngebäude</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Energie-Check -->
+<section id="energie-check">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Kostenloser Energie-Check</p>
+      <h2>Wie effizient ist Ihr Haus?</h2>
+      <p class="lead">Ein paar Angaben genügen. Sie sehen sofort Effizienzklasse, Energiekosten und CO₂. Die Auswertung mit Maßnahmen, Kosten, Einsparung und Förderung erhalten Sie per E-Mail.</p>
+    </div>
+
+    <div class="check-tool">
+      <div class="card" id="check-form-card">
+        <form id="check-form" novalidate>
+          <div class="row">
+            <label>Gebäudetyp
+              <select id="f-typ">
+                <option value="efh">Einfamilienhaus (freistehend)</option>
+                <option value="rh">Doppel-/Reihenhaus</option>
+                <option value="mfh">Mehrfamilienhaus</option>
+              </select>
+            </label>
+            <label>Baujahr
+              <select id="f-bj">
+                <option value="1918">bis 1918</option>
+                <option value="1948">1919–1948</option>
+                <option value="1957">1949–1957</option>
+                <option value="1968" selected>1958–1968</option>
+                <option value="1978">1969–1978</option>
+                <option value="1983">1979–1983</option>
+                <option value="1994">1984–1994</option>
+                <option value="2001">1995–2001</option>
+                <option value="2009">2002–2009</option>
+                <option value="2015">2010–2015</option>
+                <option value="2030">ab 2016</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>Wohnfläche in m²
+              <input id="f-wf" type="number" min="30" max="5000" step="1" value="140" inputmode="numeric">
+            </label>
+            <label>Wohneinheiten
+              <input id="f-we" type="number" min="1" max="200" step="1" value="1" inputmode="numeric">
+            </label>
+          </div>
+          <div class="row">
+            <label>Heizung
+              <select id="f-hz">
+                <option value="gas">Erdgas</option>
+                <option value="oel">Heizöl</option>
+                <option value="fw">Fernwärme</option>
+                <option value="pellet">Pellets / Holz</option>
+                <option value="nsp">Nachtspeicher / Strom direkt</option>
+                <option value="wp">Wärmepumpe</option>
+              </select>
+            </label>
+            <label>Verbrauch pro Jahr <span class="hint">(kWh, optional)</span>
+              <input id="f-vb" type="number" min="0" step="100" placeholder="z. B. 22000" inputmode="numeric">
+            </label>
+          </div>
+          <fieldset>
+            <legend>Was wurde seit dem Bau schon gedämmt bzw. erneuert?</legend>
+            <div class="chips">
+              <label class="chk"><input type="checkbox" id="d-fassade"> Fassade</label>
+              <label class="chk"><input type="checkbox" id="d-dach"> Dach / oberste Decke</label>
+              <label class="chk"><input type="checkbox" id="d-fenster"> Fenster</label>
+              <label class="chk"><input type="checkbox" id="d-keller"> Kellerdecke</label>
+            </div>
+          </fieldset>
+          <button class="btn" type="submit">Ergebnis anzeigen</button>
+          <p class="disclaimer">Die Daten werden nur in Ihrem Browser berechnet und nicht gespeichert.</p>
+        </form>
+      </div>
+
+      <div class="card" id="result" aria-live="polite">
+        <div class="result-empty" id="result-empty">
+          <div>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+            <p>Füllen Sie die Angaben aus und klicken Sie auf <b>Ergebnis anzeigen</b>.</p>
+          </div>
+        </div>
+        <div id="result-body" hidden>
+          <p class="eyebrow">Ihr Ergebnis</p>
+          <h3 id="r-title">Effizienzklasse</h3>
+          <div class="scale" id="r-scale"></div>
+          <div class="kpis">
+            <div class="kpi"><b id="r-kwh">–</b><span>Endenergie in kWh/(m²·a)</span></div>
+            <div class="kpi"><b id="r-cost">–</b><span>Energiekosten pro Jahr</span></div>
+            <div class="kpi"><b id="r-co2">–</b><span>CO₂ pro Jahr</span></div>
+            <div class="kpi"><b id="r-pot">–</b><span>Einsparpotenzial Energiekosten</span></div>
+          </div>
+
+          <div class="locked" id="locked">
+            <div class="blur" id="r-details-preview" aria-hidden="true"></div>
+          </div>
+
+          <div class="gate" id="gate">
+            <h3>Ausführliche Auswertung per E-Mail</h3>
+            <p class="muted small">Maßnahmen nach Wirtschaftlichkeit, Investitionskosten, Einsparung, Förderung und Ihre nächsten Schritte.</p>
+            <form id="gate-form" novalidate>
+              <label>Ihr Name <span class="hint">(optional)</span>
+                <input id="g-name" type="text" autocomplete="name">
+              </label>
+              <label>Ihre E-Mail-Adresse
+                <input id="g-mail" type="email" autocomplete="email" required>
+              </label>
+              <label>PLZ des Gebäudes <span class="hint">(optional)</span>
+                <input id="g-plz" type="text" inputmode="numeric" maxlength="5">
+              </label>
+              <label class="chk"><input type="checkbox" id="g-ok" required>
+                <span>Ich bin einverstanden, dass meine Angaben verwendet werden, um mir die Auswertung zu senden und mich einmalig dazu zu kontaktieren. Einwilligung jederzeit widerrufbar, siehe <a href="#datenschutz">Datenschutz</a>.</span></label>
+              <p class="err" id="g-err" hidden></p>
+              <button class="btn" type="submit" id="g-btn">Auswertung anfordern</button>
+            </form>
+          </div>
+
+          <div id="r-details" hidden>
+            <div class="ok-msg" id="r-okmsg"></div>
+            <div id="r-details-content"></div>
+            <div class="actions no-print" style="margin-top:16px">
+              <button class="btn ghost" type="button" onclick="window.print()">Als PDF speichern</button>
+              <a class="btn" href="#kontakt">Erstgespräch vereinbaren</a>
+            </div>
+          </div>
+          <p class="disclaimer">Grobe Orientierung auf Basis typischer Kennwerte (Stand November 2026). Ersetzt keine Energieberatung vor Ort. Förderbedingungen ändern sich häufig – ich prüfe sie für Ihr Vorhaben individuell.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Beispiele -->
+<section id="beispiele" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Rechenbeispiele</p>
+      <h2>Was bei typischen Häusern drin ist</h2>
+      <p class="lead">Drei typische Gebäude, gerechnet mit dem Energie-Check. Es handelt sich um Beispielrechnungen, nicht um Kundenprojekte.</p>
+    </div>
+    <div class="grid-3" id="examples"></div>
+  </div>
+</section>
+
+<!-- Ablauf -->
 <section id="ablauf">
   <div class="wrap">
-    <p class="eyebrow">Ablauf</p>
-    <h2>So arbeiten wir zusammen</h2>
+    <div class="section-head">
+      <p class="eyebrow">Ablauf</p>
+      <h2>In vier Schritten zum Ergebnis</h2>
+    </div>
     <ol class="steps">
       <li><h3>Erstgespräch</h3><p>Kostenloses Telefonat: Was haben Sie vor, was ist sinnvoll, welche Förderung passt?</p></li>
-      <li><h3>Vor-Ort-Termin</h3><p>Begehung des Gebäudes, Aufnahme von Bauteilen und Anlagentechnik, Sichtung Ihrer Unterlagen.</p></li>
-      <li><h3>Berechnung und Bericht</h3><p>Energetische Bilanz, Varianten, Kosten und Einsparung – verständlich aufbereitet.</p></li>
-      <li><h3>Besprechung und Umsetzung</h3><p>Gemeinsame Besprechung der Ergebnisse, Förderanträge und auf Wunsch Begleitung der Umsetzung.</p></li>
+      <li><h3>Vor-Ort-Termin</h3><p>Begehung, Aufnahme von Bauteilen und Heizung, Sichtung Ihrer Pläne und Rechnungen.</p></li>
+      <li><h3>Berechnung und Bericht</h3><p>Energiebilanz, Varianten, Kosten und Einsparung – verständlich aufbereitet.</p></li>
+      <li><h3>Umsetzung</h3><p>Förderanträge, Ausschreibungshilfe und auf Wunsch Begleitung bis zur Abnahme.</p></li>
     </ol>
   </div>
 </section>
 
-<section id="ueber-mich">
-  <div class="wrap split">
+<!-- Förderung -->
+<section id="foerderung" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Förderung</p>
+      <h2>Beratung, die sich selbst mitfinanziert</h2>
+      <p class="lead">Viele Zuschüsse gibt es nur mit Energieeffizienz-Experten – und nur, wenn der Antrag <b>vor</b> der Beauftragung gestellt wird.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>Energieberatung</h3><p class="muted">Der Bund bezuschusst den Sanierungsfahrplan für Wohngebäude und die Energieberatung für Nichtwohngebäude.</p></div>
+      <div class="card"><h3>Einzelmaßnahmen</h3><p class="muted">Zuschüsse für Dämmung, Fenster und Anlagentechnik (BAFA) und für den Heizungstausch (KfW) – mit Sanierungsfahrplan teils mehr.</p></div>
+      <div class="card"><h3>Komplettsanierung</h3><p class="muted">KfW-Kredite mit Tilgungszuschuss für die Sanierung zum Effizienzhaus, dazu Landes- und kommunale Programme.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Preise -->
+<section id="preise">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Preise</p>
+      <h2>Transparent und mit Förderung gerechnet</h2>
+      <p class="lead">Festpreis nach dem Erstgespräch – ohne versteckte Kosten. Den BAFA-Zuschuss zur Energieberatung beantrage ich für Sie und verrechne ihn direkt mit meinem Honorar.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Erstgespräch</h3>
+        <p class="price">0 €</p>
+        <p class="muted">Telefonisch oder per Video, ca. 20 Minuten: Was ist sinnvoll, welche Förderung passt?</p>
+      </div>
+      <div class="card featured">
+        <h3>Sanierungsfahrplan (iSFP)</h3>
+        <p class="price">ab 650 € <small>Eigenanteil</small></p>
+        <p class="muted">Ein-/Zweifamilienhaus ab 1.300 €, davon übernimmt das BAFA 50 % (max. 650 €). Mehrfamilienhaus ab 1.700 €, Zuschuss max. 850 €.</p>
+      </div>
+      <div class="card">
+        <h3>Energieausweis</h3>
+        <p class="price">ab 99 €</p>
+        <p class="muted">Verbrauchsausweis ab 99 €, Bedarfsausweis mit Vor-Ort-Termin ab 390 €.</p>
+      </div>
+      <div class="card">
+        <h3>Heizungscheck Wärmepumpe</h3>
+        <p class="price">ab 290 €</p>
+        <p class="muted">Raumweise Heizlast, Eignung der Heizkörper, Empfehlung zur Anlagengröße.</p>
+      </div>
+      <div class="card">
+        <h3>Fachplanung und Baubegleitung</h3>
+        <p class="price">nach Aufwand</p>
+        <p class="muted">Bestätigungen für BAFA und KfW, Planung und Begleitung bis zur Abnahme – selbst zu großen Teilen förderfähig.</p>
+      </div>
+      <div class="card">
+        <h3>Unternehmen</h3>
+        <p class="price">auf Anfrage</p>
+        <p class="muted">Energieaudit DIN EN 16247 und Energieberatung für Nichtwohngebäude – Angebot nach Erstgespräch.</p>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:16px">Alle Preise sind Endpreise. Fahrtkosten im Stadtgebiet München inklusive. Zuschüsse nach aktuellem Stand (November 2026), vorbehaltlich der Bewilligung durch das BAFA.</p>
+  </div>
+</section>
+
+<!-- Über mich -->
+<section id="ueber-mich" class="band">
+  <div class="wrap about">
+    <div class="portrait photo" role="img" aria-label="Foto von Nicolas Stephan"></div>
     <div>
       <p class="eyebrow">Über mich</p>
       <h2>Nicolas Stephan, M.Sc.</h2>
-      <p>Ich habe an der TU München Ressourceneffizientes und Nachhaltiges Bauen studiert und arbeite seit 2019 in der Planung, der Nachhaltigkeitsberatung und der Fördermittelberatung für Gebäude und Unternehmen.</p>
-      <p>Bevor ich Ingenieur wurde, habe ich als Maurer und Schreiner auf der Baustelle gearbeitet – ich weiß also, was sich in der Praxis umsetzen lässt und was nur auf dem Papier gut aussieht.</p>
+      <p>Ich habe an der TU München Ressourceneffizientes und Nachhaltiges Bauen studiert und arbeite seit 2019 in Planung, Nachhaltigkeits- und Fördermittelberatung für Gebäude und Unternehmen.</p>
+      <p>Vor dem Studium war ich als Maurer und Schreiner auf der Baustelle – ich weiß also, was sich in der Praxis umsetzen lässt und was nur auf dem Papier gut aussieht.</p>
+      <ul class="check">
+        <li>Zertifizierter Energieberater für Wohn- und Nichtwohngebäude</li>
+        <li>Eingetragen in der Energieeffizienz-Expertenliste des Bundes</li>
+        <li>Energieauditor nach DIN EN 16247</li>
+        <li>Herstellerunabhängig – keine Provisionen von Handwerk oder Industrie</li>
+      </ul>
     </div>
-    <ul class="check">
-      <li>Zertifizierter Energieberater für Wohn- und Nichtwohngebäude</li>
-      <li>Eingetragen in der Energieeffizienz-Expertenliste des Bundes</li>
-      <li>Gelistet beim BAFA für die Bundesförderung Energieberatung</li>
-      <li>Energieauditor nach DIN EN 16247</li>
-      <li>Herstellerunabhängig – keine Provisionen von Handwerk oder Industrie</li>
-    </ul>
   </div>
 </section>
 
+<!-- Kundenstimmen: erst einfügen, wenn echte Stimmen mit schriftlicher Zustimmung vorliegen.
+<section id="stimmen">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Kundenstimmen</p><h2>Das sagen Kunden</h2></div>
+    <div class="grid-3">
+      <div class="card"><p>„Text der Kundin oder des Kunden“</p><p class="small muted">Vorname N., Einfamilienhaus, Ort</p></div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Aktuelles -->
+<section id="aktuelles">
+  <div class="wrap" style="max-width:900px">
+    <div class="section-head">
+      <p class="eyebrow">Aktuelles zur Förderung</p>
+      <h2>Was sich gerade ändert</h2>
+    </div>
+    <div class="news">
+      <article>
+        <time datetime="2026-07-21">21.07.2026</time>
+        <div><h3>Neue Regeln für BEG-Einzelmaßnahmen</h3>
+        <p>Für Dämmung, Fenster und Anlagentechnik gelten neue Förderbedingungen. Der Bonus für Maßnahmen aus einem Sanierungsfahrplan greift nur noch bei größeren Vorhaben. Lassen Sie Ihr Vorhaben vor dem Antrag prüfen – die Reihenfolge der Maßnahmen entscheidet über die Förderhöhe.</p></div>
+      </article>
+      <article>
+        <time datetime="2026-11">November 2026</time>
+        <div><h3>CO₂-Preis 2027 und Emissionshandel ab 2028</h3>
+        <p>Der CO₂-Preis auf Heizöl und Erdgas soll auch 2027 bei 55 bis 65 € je Tonne liegen. Ab 2028 wechselt die Bepreisung in den europäischen Emissionshandel; wie sich der Preis dann entwickelt, ist offen. Wer heute plant, sollte steigende Preise einkalkulieren.</p></div>
+      </article>
+      <article>
+        <time datetime="2026-11">November 2026</time>
+        <div><h3>Zuschuss zur Energieberatung bleibt</h3>
+        <p>Das BAFA übernimmt weiterhin 50 % der Kosten für einen Sanierungsfahrplan – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten. Voraussetzung: Energieeffizienz-Experte und ein mindestens zehn Jahre altes Gebäude.</p></div>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:14px">Stand: November 2026. Förderbedingungen ändern sich häufig – maßgeblich sind die jeweils gültigen Richtlinien.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="band">
+  <div class="wrap" style="max-width:820px">
+    <div class="section-head">
+      <p class="eyebrow">Häufige Fragen</p>
+      <h2>Gut zu wissen</h2>
+    </div>
+    <details class="faq"><summary>Was kostet eine Energieberatung?</summary>
+      <p>Das hängt von Gebäude und Umfang ab. Für den Sanierungsfahrplan übernimmt der Bund einen Teil des Honorars; den Antrag stelle ich für Sie. Im Erstgespräch erhalten Sie ein Festpreisangebot.</p></details>
+    <details class="faq"><summary>Muss ich vor der Sanierung einen Energieberater einschalten?</summary>
+      <p>Für viele Förderungen ja: Die Bestätigung eines Energieeffizienz-Experten ist Voraussetzung, und der Antrag muss vor der Beauftragung der Handwerker gestellt werden. Wer zuerst unterschreibt, verliert oft den Zuschuss.</p></details>
+    <details class="faq"><summary>Passt eine Wärmepumpe zu meinem Altbau?</summary>
+      <p>Häufig ja – entscheidend sind Heizlast, Heizflächen und Vorlauftemperatur. Ich rechne das für Ihr Haus durch und sage Ihnen, ob vorher gedämmt oder Heizkörper getauscht werden sollten.</p></details>
+    <details class="faq"><summary>Wie lange dauert ein Sanierungsfahrplan?</summary>
+      <p>Vom Vor-Ort-Termin bis zur Besprechung meist drei bis sechs Wochen, abhängig von den vorhandenen Unterlagen.</p></details>
+    <details class="faq"><summary>In welchem Gebiet sind Sie tätig?</summary>
+      <p>In München und im Umland. Energieaudits für Unternehmen auch bayernweit.</p></details>
+  </div>
+</section>
+
+<!-- Kontakt -->
 <section id="kontakt">
-  <div class="wrap split">
+  <div class="wrap contact">
     <div>
       <p class="eyebrow">Kontakt</p>
       <h2>Lassen Sie uns sprechen</h2>
-      <p class="lead">Schreiben Sie mir kurz, um welches Gebäude es geht und was Sie vorhaben. Ich melde mich in der Regel innerhalb von zwei Werktagen.</p>
+      <p class="lead">Schreiben Sie mir kurz, um welches Gebäude es geht und was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden an Werktagen.</p>
     </div>
-    <div class="contact-box">
-      <p><strong>Nicolas Stephan</strong><br>Ingenieur- und Energieberatung</p>
-      <p>E-Mail: <a href="mailto:EMAIL@BEISPIEL.DE"><mark class="todo">EMAIL@BEISPIEL.DE</mark></a></p>
-      <p>Telefon: <a href="tel:+49000000000"><mark class="todo">+49 000 000000</mark></a></p>
-      <p>Einsatzgebiet: München und Umgebung</p>
-      <p style="margin-top:18px"><a class="btn" href="mailto:EMAIL@BEISPIEL.DE?subject=Anfrage%20Energieberatung">E-Mail schreiben</a></p>
+    <div class="card">
+      <div class="person"><div class="avatar photo" role="img" aria-label="Foto von Nicolas Stephan"></div>
+        <div><b>Nicolas Stephan, M.Sc.</b><span class="muted small">Ihr Energieberater</span></div></div>
+      <div class="contact-line"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <a href="mailto:nicolasstephan@gmx.de?subject=Anfrage%20Energieberatung">nicolasstephan@gmx.de</a></div>
+      <div class="contact-line"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+        <a href="tel:+4915209964648">0152 09964648</a></div>
+      <div class="contact-line"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span>München und Umgebung</span></div>
+      <a class="btn" style="margin-top:8px" href="mailto:nicolasstephan@gmx.de?subject=Anfrage%20Energieberatung">E-Mail schreiben</a>
+      <details class="callback">
+        <summary>Lieber Rückruf? Kurz Nummer hinterlassen</summary>
+        <form id="cb-form" novalidate style="margin-top:12px">
+          <label>Ihr Name <input id="cb-name" type="text" autocomplete="name"></label>
+          <label>Telefonnummer <input id="cb-tel" type="text" inputmode="tel" autocomplete="tel"></label>
+          <label>Wann passt es Ihnen? <span class="hint">(optional)</span>
+            <select id="cb-zeit"><option>egal</option><option>vormittags</option><option>nachmittags</option><option>abends ab 18 Uhr</option></select></label>
+          <label class="chk"><input type="checkbox" id="cb-ok"><span>Ich bin einverstanden, dass meine Angaben für den Rückruf verwendet werden, siehe <a href="#datenschutz">Datenschutz</a>.</span></label>
+          <p class="err" id="cb-err" hidden></p>
+          <p class="ok-msg" id="cb-msg" hidden></p>
+          <button class="btn" type="submit">Rückruf anfordern</button>
+        </form>
+      </details>
     </div>
-  </div>
-</section>
-
-<section id="impressum">
-  <div class="wrap legal">
-    <h2>Impressum</h2>
-    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
-    <p>Nicolas Stephan<br>Ingenieur- und Energieberatung<br>Schellingstraße 76<br><mark class="todo">80799</mark> München<br>Deutschland</p>
-    <h3>Kontakt</h3>
-    <p>Telefon: <mark class="todo">+49 000 000000</mark><br>E-Mail: <mark class="todo">EMAIL@BEISPIEL.DE</mark></p>
-    <h3>Berufsbezeichnung</h3>
-    <p>Ingenieur (M.Sc.), verliehen in der Bundesrepublik Deutschland (Technische Universität München).<br>Energieeffizienz-Experte für Förderprogramme des Bundes, eingetragen in der Energieeffizienz-Expertenliste (www.energie-effizienz-experten.de).</p>
-    <h3>Umsatzsteuer</h3>
-    <p><mark class="todo">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</mark></p>
-    <h3>Verantwortlich für den Inhalt</h3>
-    <p>Nicolas Stephan, Anschrift wie oben.</p>
-    <h3>Haftung für Inhalte und Links</h3>
-    <p>Die Inhalte dieser Seite wurden mit Sorgfalt erstellt. Förderbedingungen und gesetzliche Vorgaben ändern sich jedoch häufig; die Angaben ersetzen keine individuelle Beratung. Für Inhalte verlinkter fremder Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
-  </div>
-</section>
-
-<section id="datenschutz">
-  <div class="wrap legal">
-    <h2>Datenschutzerklärung</h2>
-
-    <h3>1. Verantwortlicher</h3>
-    <p>Nicolas Stephan, Schellingstraße 76, <mark class="todo">80799</mark> München, E-Mail: <mark class="todo">EMAIL@BEISPIEL.DE</mark>, Telefon: <mark class="todo">+49 000 000000</mark>.</p>
-
-    <h3>2. Grundsatz</h3>
-    <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Trackingdienste, bindet keine externen Schriftarten, Karten oder Videos ein und enthält kein Kontaktformular. Personenbezogene Daten werden nur in dem unten beschriebenen Umfang verarbeitet.</p>
-
-    <h3>3. Hosting und Server-Logdateien</h3>
-    <p>Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Daten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite sowie Browser- und Betriebssystemangaben, um die Seite auszuliefern und die Sicherheit des Dienstes zu gewährleisten.</p>
-    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website. Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: GitHub General Privacy Statement (docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).</p>
-
-    <h3>4. Kontakt per E-Mail oder Telefon</h3>
-    <p>Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben (z. B. Name, Kontaktdaten, Angaben zum Gebäude), um Ihre Anfrage zu beantworten und gegebenenfalls einen Auftrag vorzubereiten oder durchzuführen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung bzw. -erfüllung), im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten (z. B. nach Handels- und Steuerrecht) entgegenstehen.</p>
-
-    <h3>5. Ihre Rechte</h3>
-    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie das Recht, der Verarbeitung auf Grundlage berechtigter Interessen aus Gründen Ihrer besonderen Situation zu widersprechen (Art. 21 DSGVO). Wenden Sie sich dazu an die oben genannte Adresse.</p>
-    <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
-
-    <h3>6. Pflicht zur Bereitstellung</h3>
-    <p>Sie sind nicht verpflichtet, mir personenbezogene Daten mitzuteilen. Ohne Ihre Kontaktdaten kann ich Ihre Anfrage jedoch nicht beantworten.</p>
-
-    <p><em>Stand: November 2026</em></p>
   </div>
 </section>
 
 </main>
 
+<!-- Impressum -->
+<section class="legal-page" id="impressum">
+  <div class="wrap">
+    <p><a href="#start">← Zurück zur Startseite</a></p>
+    <h2>Impressum</h2>
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
+    <p>Nicolas Stephan<br>Ingenieur- und Energieberatung<br>Schellingstraße 76<br>80799 München<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: 0152 09964648<br>E-Mail: nicolasstephan@gmx.de</p>
+    <h3>Berufsbezeichnung</h3>
+    <p>Ingenieur (M.Sc.), verliehen in der Bundesrepublik Deutschland (Technische Universität München).<br>Energieeffizienz-Experte für Förderprogramme des Bundes, eingetragen in der Energieeffizienz-Expertenliste (www.energie-effizienz-experten.de).</p>
+    <h3>Umsatzsteuer</h3>
+    <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
+    <h3>Verantwortlich für den Inhalt</h3>
+    <p>Nicolas Stephan, Anschrift wie oben.</p>
+    <h3>Haftung für Inhalte und Links</h3>
+    <p>Die Inhalte dieser Seite wurden mit Sorgfalt erstellt. Förderbedingungen und gesetzliche Vorgaben ändern sich jedoch häufig; die Angaben und die Ergebnisse des Energie-Checks ersetzen keine individuelle Beratung. Für Inhalte verlinkter fremder Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+  </div>
+</section>
+
+<!-- Datenschutz -->
+<section class="legal-page" id="datenschutz">
+  <div class="wrap">
+    <p><a href="#start">← Zurück zur Startseite</a></p>
+    <h2>Datenschutzerklärung</h2>
+
+    <h3>1. Verantwortlicher</h3>
+    <p>Nicolas Stephan, Schellingstraße 76, 80799 München, E-Mail: nicolasstephan@gmx.de, Telefon: 0152 09964648.</p>
+
+    <h3>2. Grundsatz</h3>
+    <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Trackingdienste und bindet keine externen Schriftarten, Karten oder Videos ein. Personenbezogene Daten werden nur in dem unten beschriebenen Umfang verarbeitet.</p>
+
+    <h3>3. Hosting und Server-Logdateien</h3>
+    <p>Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Daten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite sowie Browser- und Betriebssystemangaben, um die Seite auszuliefern und die Sicherheit des Dienstes zu gewährleisten.</p>
+    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website. Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).</p>
+
+    <h3>4. Energie-Check</h3>
+    <p>Die Angaben im Energie-Check (Gebäudetyp, Baujahr, Fläche, Heizung, Verbrauch, Maßnahmen) werden ausschließlich in Ihrem Browser berechnet und nicht übertragen oder gespeichert, solange Sie keine Auswertung anfordern.</p>
+    <p>Fordern Sie die ausführliche Auswertung an, werden Ihre E-Mail-Adresse, optional Name und PLZ sowie die Angaben und Ergebnisse des Energie-Checks an mich übermittelt, um Ihnen die Auswertung zu senden und Sie einmalig dazu zu kontaktieren. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit mit Wirkung für die Zukunft per E-Mail widerrufen können. Eine Nutzung für Newsletter oder Werbung findet nicht statt. Die Daten werden gelöscht, wenn sie für die Anfrage nicht mehr erforderlich sind, spätestens nach 12 Monaten, sofern daraus kein Auftrag entsteht.</p>
+    <p>Für einen Rückrufwunsch werden Name, Telefonnummer und Wunschzeit auf demselben Weg an mich übermittelt und nur für den Rückruf verwendet (Art. 6 Abs. 1 lit. a DSGVO).</p>
+    <p id="ds-formdienst">Die Übermittlung erfolgt über Ihr eigenes E-Mail-Programm: Nach dem Absenden öffnet sich eine vorbereitete E-Mail an mich, die Sie selbst versenden.</p>
+
+    <h3>5. Kontakt per E-Mail oder Telefon</h3>
+    <p>Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben, um Ihre Anfrage zu beantworten und gegebenenfalls einen Auftrag vorzubereiten oder durchzuführen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+    <h3>6. Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20), Widerruf erteilter Einwilligungen (Art. 7 Abs. 3) sowie das Recht, der Verarbeitung auf Grundlage berechtigter Interessen zu widersprechen (Art. 21 DSGVO). Wenden Sie sich dazu an die oben genannte Adresse.</p>
+    <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
+
+    <h3>7. Pflicht zur Bereitstellung</h3>
+    <p>Sie sind nicht verpflichtet, mir personenbezogene Daten mitzuteilen. Ohne E-Mail-Adresse kann ich Ihnen die ausführliche Auswertung jedoch nicht senden.</p>
+
+    <p><em>Stand: November 2026</em></p>
+  </div>
+</section>
+
 <footer class="site">
   <div class="wrap">
-    <span>© 2026 Nicolas Stephan · Ingenieur- und Energieberatung</span>
-    <span><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></span>
+    <span>© 2026 Nicolas Stephan · Ingenieur- und Energieberatung · München</span>
+    <nav aria-label="Rechtliches"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></nav>
   </div>
 </footer>
 
+<script>
+/* ===================== EINSTELLUNGEN ===================== */
+const CONFIG = {
+  kontaktMail: "nicolasstephan@gmx.de",
+  // Optional: Zugangsschlüssel von web3forms.com eintragen, dann kommen Anfragen
+  // automatisch per E-Mail an, ohne dass sich beim Besucher das Mailprogramm öffnet.
+  // Leer lassen = Versand über das Mailprogramm des Besuchers.
+  web3formsKey: "",
+  // Energiepreise in €/kWh und CO2-Faktoren in kg/kWh (GEG Anlage 9) – Stand 11/2026, bei Bedarf anpassen
+  preis:  { gas: 0.12, oel: 0.11, fw: 0.15, pellet: 0.08, nsp: 0.33, wp: 0.28 },
+  co2:    { gas: 0.240, oel: 0.310, fw: 0.180, pellet: 0.020, nsp: 0.560, wp: 0.560 },
+  // Förderung (Grundsätze, Stand 11/2026 – vor jeder Aussage aktuelle Richtlinie prüfen)
+  foerderHuelle: 0.15,     // BEG EM Gebäudehülle (BAFA)
+  foerderHeizung: 0.30,    // KfW 458 Grundförderung
+  foerderHeizungMax: 0.70  // KfW 458 mit Boni maximal
+};
+/* ======================================================== */
+
+const NAMEN = { gas: "Erdgas", oel: "Heizöl", fw: "Fernwärme", pellet: "Pellets/Holz", nsp: "Strom direkt", wp: "Wärmepumpe" };
+// Wirkungsgrad bzw. Jahresarbeitszahl: Endenergie = Wärmebedarf / Faktor
+const EFF = { gas: 0.90, oel: 0.85, fw: 0.97, pellet: 0.82, nsp: 0.98, wp: 3.0 };
+// typischer Wärmebedarf (Heizung + Warmwasser) in kWh/(m²·a) nach Baujahr, Einfamilienhaus unsaniert
+const BEDARF = { 1918: 205, 1948: 195, 1957: 205, 1968: 190, 1978: 170, 1983: 145, 1994: 125, 2001: 105, 2009: 82, 2015: 64, 2030: 45 };
+const TYPFAKTOR = { efh: 1.0, rh: 0.9, mfh: 0.8 };
+// Bauteile: Anteil am Wärmebedarf, der durch Sanierung typ. eingespart wird; Kosten in € je m² Wohnfläche
+const BAUTEILE = [
+  { id: "fassade", name: "Fassade dämmen",                   anteil: 0.20, kosten: { efh: 240, rh: 170, mfh: 140 } },
+  { id: "dach",    name: "Dach / oberste Geschossdecke dämmen", anteil: 0.14, kosten: { efh: 150, rh: 130, mfh: 70 } },
+  { id: "fenster", name: "Fenster tauschen",                 anteil: 0.10, kosten: { efh: 170, rh: 160, mfh: 140 } },
+  { id: "keller",  name: "Kellerdecke dämmen",                anteil: 0.06, kosten: { efh: 35, rh: 35, mfh: 25 } }
+];
+const KLASSEN = [
+  { k: "A+", max: 30, c: "var(--k-ap)" }, { k: "A", max: 50, c: "var(--k-a)" }, { k: "B", max: 75, c: "var(--k-b)" },
+  { k: "C", max: 100, c: "var(--k-c)" }, { k: "D", max: 130, c: "var(--k-d)" }, { k: "E", max: 160, c: "var(--k-e)" },
+  { k: "F", max: 200, c: "var(--k-f)" }, { k: "G", max: 250, c: "var(--k-g)" }, { k: "H", max: Infinity, c: "var(--k-h)" }
+];
+
+const $ = id => document.getElementById(id);
+const eur = v => Math.round(v).toLocaleString("de-DE") + " €";
+const rund = (v, s) => Math.round(v / s) * s;
+const spanne = v => eur(rund(v * 0.8, 500)) + " – " + eur(rund(v * 1.25, 500));
+const klasse = kwh => KLASSEN.find(x => kwh < x.max);
+// Sanierungsspielraum je Baujahr: neuere Gebäude sind schon besser gedämmt
+const spielraum = bj => bj <= 1978 ? 1.0 : bj <= 1994 ? 0.7 : bj <= 2009 ? 0.4 : 0;
+// förderfähige Höchstkosten Heizung (KfW 458): 30.000 € 1. WE, 15.000 € 2.–6. WE, 8.000 € ab 7. WE
+const kostenCapHeizung = we => 30000 + 15000 * Math.min(Math.max(we - 1, 0), 5) + 8000 * Math.max(we - 6, 0);
+
+let letztesErgebnis = null;
+
+function eingaben() {
+  return {
+    typ: $("f-typ").value, bj: +$("f-bj").value, hz: $("f-hz").value,
+    wf: Math.max(30, +$("f-wf").value || 0), we: Math.max(1, Math.round(+$("f-we").value || 1)),
+    vb: +$("f-vb").value || 0,
+    erledigt: Object.fromEntries(BAUTEILE.map(b => [b.id, $("d-" + b.id).checked]))
+  };
+}
+
+function berechne(p = eingaben()) {
+  const { typ, bj, hz, wf, we, vb, erledigt } = p;
+  const pf = spielraum(bj);
+
+  // Wärmebedarf q (kWh/a): aus Verbrauch oder typischen Werten
+  let q;
+  if (vb > 0) q = vb * EFF[hz];
+  else {
+    q = BEDARF[bj] * TYPFAKTOR[typ] * wf;
+    BAUTEILE.forEach(b => { if (erledigt[b.id]) q *= 1 - b.anteil * pf; });
+  }
+  const endenergie = q / EFF[hz];
+  const kosten = endenergie * CONFIG.preis[hz];
+  const co2 = endenergie * CONFIG.co2[hz] / 1000;
+
+  // Maßnahmen
+  const massnahmen = [];
+  let qNach = q;
+  BAUTEILE.forEach(b => {
+    if (erledigt[b.id] || pf === 0) return;
+    const dq = q * b.anteil * pf;
+    qNach -= dq;
+    const invest = b.kosten[typ] * wf;
+    const ersparnis = dq / EFF[hz] * CONFIG.preis[hz];
+    const foerderung = CONFIG.foerderHuelle * Math.min(invest, 30000 * we);
+    massnahmen.push({ name: b.name, invest, ersparnis, co2: dq / EFF[hz] * CONFIG.co2[hz] / 1000, foerderung,
+      foerderText: Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA), mit iSFP ggf. mehr" });
+  });
+  if (hz !== "wp" && hz !== "pellet") {
+    const inv = Math.max(28000, 22000 + 90 * wf);
+    const qBasis = qNach;
+    const alt = qBasis / EFF[hz] * CONFIG.preis[hz], neu = qBasis / 3.2 * CONFIG.preis.wp;
+    massnahmen.push({ name: "Wärmepumpe statt " + NAMEN[hz], invest: inv, ersparnis: Math.max(alt - neu, 0),
+      co2: (qBasis / EFF[hz] * CONFIG.co2[hz] - qBasis / 3.2 * CONFIG.co2.wp) / 1000,
+      foerderung: CONFIG.foerderHeizung * Math.min(inv, kostenCapHeizung(we)),
+      foerderText: Math.round(CONFIG.foerderHeizung * 100) + " % Grundförderung (KfW), mit Boni bis " + Math.round(CONFIG.foerderHeizungMax * 100) + " %" });
+  }
+  if (hz !== "nsp") {
+    const inv = 800 + 8 * wf;
+    const dq = qNach * 0.05;
+    const satz = hz === "wp" ? CONFIG.preis.wp / 3.0 : CONFIG.preis[hz] / EFF[hz];
+    massnahmen.push({ name: "Heizungsoptimierung (hydraulischer Abgleich, Pumpe)", invest: inv, ersparnis: dq * satz,
+      co2: dq / EFF[hz] * CONFIG.co2[hz] / 1000, foerderung: CONFIG.foerderHuelle * inv, foerderText: Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA)" });
+  }
+  massnahmen.forEach(m => { m.amort = m.ersparnis > 0 ? (m.invest - m.foerderung) / m.ersparnis : Infinity; });
+  massnahmen.sort((a, b) => a.amort - b.amort);
+
+  // Gesamtpotenzial: Hülle + Wärmepumpe (sofern sinnvoll)
+  const kostenNach = (hz !== "wp" && hz !== "pellet") ? qNach / 3.2 * CONFIG.preis.wp : qNach / EFF[hz] * CONFIG.preis[hz];
+  const potenzial = Math.max(0, 1 - kostenNach / kosten);
+
+  return { typ, bj, hz, wf, we, vb, erledigt, kwhm2: endenergie / wf, endenergie, kosten, co2, massnahmen, potenzial };
+}
+
+function zeigeErgebnis(r) {
+  const kl = klasse(r.kwhm2);
+  $("result-empty").hidden = true;
+  $("result-body").hidden = false;
+  $("r-title").textContent = "Effizienzklasse " + kl.k;
+  $("r-scale").innerHTML = KLASSEN.map(x => `<div class="${x.k === kl.k ? "on" : ""}" style="background:${x.c}">${x.k}</div>`).join("");
+  $("r-kwh").textContent = Math.round(r.kwhm2).toLocaleString("de-DE");
+  $("r-cost").textContent = eur(rund(r.kosten, 50));
+  $("r-co2").textContent = r.co2.toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " t";
+  $("r-pot").textContent = r.potenzial < 0.05 ? "gering" : "bis " + Math.round(r.potenzial * 100) + " %";
+  $("r-details-preview").innerHTML = detailHtml(r, true);
+  $("r-details-content").innerHTML = detailHtml(r, false);
+}
+
+function detailHtml(r, vorschau) {
+  const zeilen = (vorschau ? r.massnahmen.slice(0, 3) : r.massnahmen).map(m => `<tr>
+      <td><b>${m.name}</b><br><span class="muted small">${m.foerderText}</span></td>
+      <td class="num">${spanne(m.invest)}</td>
+      <td class="num">${eur(rund(m.ersparnis, 10))}/Jahr</td>
+      <td class="num">ca. ${eur(rund(m.foerderung, 100))}</td>
+      <td class="num">${isFinite(m.amort) ? "~" + Math.max(1, Math.round(m.amort)) + " J." : "–"}</td></tr>`).join("");
+  const tabelle = r.massnahmen.length ? `<div class="table-scroll"><table class="measures">
+      <thead><tr><th>Maßnahme</th><th>Investition</th><th>Ersparnis</th><th>Förderung</th><th>Amortisation</th></tr></thead>
+      <tbody>${zeilen}</tbody></table></div>`
+    : `<p>Ihr Gebäude ist bereits auf gutem Stand. Lohnend sind vor allem Feinoptimierung, Photovoltaik und ein Blick auf den Stromverbrauch.</p>`;
+  if (vorschau) return `<h3>Ihre Maßnahmen nach Wirtschaftlichkeit</h3>${tabelle}`;
+  const schritte = [
+    "Individuellen Sanierungsfahrplan (iSFP) erstellen lassen: Der Bund bezuschusst die Beratung, und für die spätere Gebäudehülle steigen die förderfähigen Kosten.",
+    "Förderanträge immer <b>vor</b> der Beauftragung stellen – sonst entfällt der Zuschuss.",
+    r.hz !== "wp" && r.hz !== "pellet" ? "Heizlast berechnen lassen und Eignung für eine Wärmepumpe prüfen – häufig auch ohne Komplettsanierung möglich." : "Heizung regelmäßig optimieren und Vorlauftemperatur so niedrig wie möglich halten.",
+    "Der CO₂-Preis auf Gas und Öl liegt 2027 voraussichtlich bei 55–65 € je Tonne; ab 2028 gilt der europäische Emissionshandel. Steigende Preise verbessern die Wirtschaftlichkeit jeder Maßnahme."
+  ];
+  return `<h3>Ihre Maßnahmen nach Wirtschaftlichkeit</h3>${tabelle}
+    <p class="small muted" style="margin-top:10px">Investition als Spanne, Ersparnis zu heutigen Energiepreisen, Förderung als Grundförderung ohne Boni. Amortisation ohne steigende CO₂-Preise und ohne „Sowieso-Kosten“ – wenn Dach, Fassade oder Heizung ohnehin erneuert werden müssen, rechnet sich die energetische Verbesserung deutlich schneller. Maßnahmen beeinflussen sich gegenseitig; die Einzelwerte sind daher nicht einfach addierbar.</p>
+    <h3 style="margin-top:20px">Ihre nächsten Schritte</h3>
+    <ul class="check">${schritte.map(s => `<li>${s}</li>`).join("")}</ul>`;
+}
+
+function textAuswertung(r, name, mail, plz) {
+  const kl = klasse(r.kwhm2);
+  const done = BAUTEILE.filter(b => r.erledigt[b.id]).map(b => b.id).join(", ") || "keine";
+  const typen = { efh: "Einfamilienhaus", rh: "Doppel-/Reihenhaus", mfh: "Mehrfamilienhaus" };
+  const z = [
+    "ENERGIE-CHECK – AUSWERTUNG",
+    "",
+    "Anfrage von: " + (name || "–") + " <" + mail + ">" + (plz ? ", PLZ " + plz : ""),
+    "",
+    "GEBÄUDE",
+    "Typ: " + typen[r.typ] + " | Baujahr bis " + (r.bj === 2030 ? "heute" : r.bj) + " | " + r.wf + " m² | " + r.we + " WE",
+    "Heizung: " + NAMEN[r.hz] + " | Verbrauch: " + (r.vb ? r.vb.toLocaleString("de-DE") + " kWh" : "geschätzt"),
+    "Bereits saniert: " + done,
+    "",
+    "ERGEBNIS",
+    "Effizienzklasse " + kl.k + " (" + Math.round(r.kwhm2) + " kWh/(m²·a))",
+    "Energiekosten ca. " + eur(rund(r.kosten, 50)) + " pro Jahr, CO₂ ca. " + r.co2.toFixed(1).replace(".", ",") + " t pro Jahr",
+    "Einsparpotenzial Energiekosten: bis " + Math.round(r.potenzial * 100) + " %",
+    "",
+    "MASSNAHMEN"
+  ];
+  r.massnahmen.forEach((m, i) => z.push((i + 1) + ". " + m.name + ": Investition " + spanne(m.invest) + ", Ersparnis " + eur(rund(m.ersparnis, 10)) + "/Jahr, Förderung ca. " + eur(rund(m.foerderung, 100)) + " (" + m.foerderText + ")"));
+  z.push("", "Grobe Orientierung, ersetzt keine Energieberatung vor Ort.");
+  return z.join("\n");
+}
+
+$("check-form").addEventListener("submit", e => {
+  e.preventDefault();
+  letztesErgebnis = berechne();
+  zeigeErgebnis(letztesErgebnis);
+  if (window.matchMedia("(max-width: 900px)").matches) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// Versand: über Web3Forms (wenn Schlüssel eingetragen) oder über das Mailprogramm des Besuchers.
+// Gibt "web" bzw. "mail" zurück, wirft bei Fehler.
+async function sende({ betreff, text, antwortAn, name }) {
+  if (CONFIG.web3formsKey) {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ access_key: CONFIG.web3formsKey, subject: betreff, from_name: "Website Energieberatung",
+        email: antwortAn || CONFIG.kontaktMail, replyto: antwortAn || undefined, name, message: text })
+    });
+    if (!res.ok) throw new Error("Versand fehlgeschlagen");
+    return "web";
+  }
+  window.location.href = "mailto:" + CONFIG.kontaktMail + "?subject=" + encodeURIComponent(betreff)
+    + "&body=" + encodeURIComponent(text);
+  return "mail";
+}
+
+$("gate-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = $("g-name").value.trim(), mail = $("g-mail").value.trim(), plz = $("g-plz").value.trim();
+  const err = $("g-err");
+  err.hidden = true;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) { err.textContent = "Bitte eine gültige E-Mail-Adresse angeben."; err.hidden = false; return; }
+  if (!$("g-ok").checked) { err.textContent = "Bitte stimmen Sie der Verwendung Ihrer Angaben zu."; err.hidden = false; return; }
+  if (!letztesErgebnis) return;
+  const text = "Hallo Herr Stephan,\n\nbitte senden Sie mir die ausführliche Auswertung meines Energie-Checks.\n\n"
+    + textAuswertung(letztesErgebnis, name, mail, plz) + "\n\nViele Grüße\n" + name;
+  let meldung;
+  $("g-btn").disabled = true; $("g-btn").textContent = "Wird gesendet …";
+  try {
+    const weg = await sende({ betreff: "Energie-Check: " + (name || mail), text, antwortAn: mail, name });
+    meldung = weg === "web"
+      ? "<b>Vielen Dank!</b> Ihre Anfrage ist bei mir eingegangen. Ich sende Ihnen die Auswertung mit einer persönlichen Einschätzung innerhalb von 24 Stunden an Werktagen an " + mail.replace(/</g, "&lt;") + "."
+      : "<b>Fast geschafft:</b> In Ihrem E-Mail-Programm ist eine vorbereitete Nachricht an mich geöffnet – bitte nur noch absenden. Ich schicke Ihnen die Auswertung dann mit einer persönlichen Einschätzung zu. Unten sehen Sie bereits alle Ergebnisse.";
+  } catch {
+    err.textContent = "Das Senden hat nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie an " + CONFIG.kontaktMail + ".";
+    err.hidden = false; $("g-btn").disabled = false; $("g-btn").textContent = "Auswertung anfordern";
+    return;
+  }
+  $("r-okmsg").innerHTML = meldung;
+  $("gate").hidden = true;
+  $("locked").hidden = true;
+  $("r-details").hidden = false;
+});
+
+// Datenschutztext an den gewählten Versandweg anpassen
+if (CONFIG.web3formsKey) {
+  $("ds-formdienst").textContent = "Für die Übermittlung nutze ich den Formulardienst Web3Forms. Ihre Angaben werden dabei an dessen Server übertragen und von dort per E-Mail an mich weitergeleitet; es kann eine Übermittlung in Drittländer stattfinden. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO).";
+}
+// Rückrufwunsch
+$("cb-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = $("cb-name").value.trim(), tel = $("cb-tel").value.trim(), zeit = $("cb-zeit").value;
+  const err = $("cb-err"), msg = $("cb-msg");
+  err.hidden = true;
+  if (!/^[+0-9 ()\/-]{6,}$/.test(tel)) { err.textContent = "Bitte eine gültige Telefonnummer angeben."; err.hidden = false; return; }
+  if (!$("cb-ok").checked) { err.textContent = "Bitte stimmen Sie der Verwendung Ihrer Angaben zu."; err.hidden = false; return; }
+  try {
+    const weg = await sende({ betreff: "Rückrufwunsch: " + (name || tel), name,
+      text: "Hallo Herr Stephan,\n\nbitte rufen Sie mich zurück.\n\nName: " + (name || "–") + "\nTelefon: " + tel + "\nWunschzeit: " + zeit + "\n\nViele Grüße\n" + name });
+    msg.innerHTML = weg === "web" ? "<b>Danke!</b> Ich rufe Sie innerhalb von 24 Stunden an Werktagen zurück."
+      : "<b>Fast geschafft:</b> Bitte die vorbereitete E-Mail in Ihrem Mailprogramm noch absenden.";
+    msg.hidden = false;
+  } catch {
+    err.textContent = "Das Senden hat nicht geklappt. Bitte rufen Sie mich direkt an."; err.hidden = false;
+  }
+});
+
+// Rechenbeispiele aus dem Energie-Check erzeugen
+const BEISPIELE = [
+  { titel: "Einfamilienhaus, Baujahr 1965", text: "140 m², Gasheizung, noch unsaniert",
+    p: { typ: "efh", bj: 1968, hz: "gas", wf: 140, we: 1, vb: 0, erledigt: { fassade: false, dach: false, fenster: false, keller: false } } },
+  { titel: "Reihenhaus, Baujahr 1982", text: "120 m², Ölheizung, Fenster bereits getauscht",
+    p: { typ: "rh", bj: 1983, hz: "oel", wf: 120, we: 1, vb: 0, erledigt: { fassade: false, dach: false, fenster: true, keller: false } } },
+  { titel: "Mehrfamilienhaus, Baujahr 1958", text: "6 Wohnungen, 420 m², Gas, Dach gedämmt",
+    p: { typ: "mfh", bj: 1968, hz: "gas", wf: 420, we: 6, vb: 0, erledigt: { fassade: false, dach: true, fenster: false, keller: false } } }
+];
+$("examples").innerHTML = BEISPIELE.map((b, i) => {
+  const r = berechne(b.p), kl = klasse(r.kwhm2);
+  const top = r.massnahmen.reduce((a, m) => (!a || m.ersparnis > a.ersparnis ? m : a), null);
+  const foerd = r.massnahmen.reduce((s, m) => s + m.foerderung, 0);
+  return `<div class="card example">
+    <h3>${b.titel}</h3><p class="muted small">${b.text}</p>
+    <div class="facts">
+      <div><b><span class="badge-k" style="background:${kl.c}">${kl.k}</span></b>Effizienzklasse heute</div>
+      <div><b>${eur(rund(r.kosten, 50))}</b>Energiekosten pro Jahr</div>
+      <div><b>bis ${Math.round(r.potenzial * 100)} %</b>weniger Energiekosten</div>
+      <div><b>ca. ${eur(rund(foerd, 500))}</b>Grundförderung gesamt</div>
+    </div>
+    <p class="small">Größter Hebel: <b>${top ? top.name : "Feinoptimierung"}</b></p>
+    <button class="btn ghost" type="button" data-bsp="${i}">Mit diesen Werten rechnen</button>
+  </div>`;
+}).join("");
+document.querySelectorAll("[data-bsp]").forEach(btn => btn.addEventListener("click", () => {
+  const p = BEISPIELE[+btn.dataset.bsp].p;
+  $("f-typ").value = p.typ; $("f-bj").value = String(p.bj); $("f-hz").value = p.hz;
+  $("f-wf").value = p.wf; $("f-we").value = p.we; $("f-vb").value = "";
+  BAUTEILE.forEach(b => $("d-" + b.id).checked = p.erledigt[b.id]);
+  $("check-form").requestSubmit();
+  $("energie-check").scrollIntoView({ behavior: "smooth" });
+}));
+
+// Menü auf dem Handy nach Klick schließen
+document.querySelectorAll(".mobile-nav a").forEach(a => a.addEventListener("click", () => a.closest("details").open = false));
+</script>
 </body>
 </html>
