@@ -196,6 +196,20 @@ details.faq p { color: var(--muted); }
 details.callback { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
 details.callback summary { cursor: pointer; font-weight: 600; color: var(--accent); }
 
+/* Umschalter Wohn-/Nichtwohngebäude */
+[hidden] { display: none !important; }
+.check-tool > *, fieldset { min-width: 0; }   /* verhindert seitliches Überlaufen auf dem Handy */
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: var(--surface-2); border-radius: 12px; padding: 4px; margin-bottom: 18px; }
+.seg label { position: relative; margin: 0; cursor: pointer; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg span { display: block; text-align: center; padding: 9px 10px; border-radius: 9px; font-weight: 600; color: var(--muted); }
+.seg input:checked + span { background: var(--surface); color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); }
+.form-err { background: #fdecec; color: #8a1c1c; border-radius: 10px; padding: 10px 14px; font-size: .9rem; margin: 0 0 14px; }
+.scale div.dark, .badge-k.dark, .mini-scale span.dark { color: #1b221e; }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
+#r-mailtext { width: 100%; min-height: 160px; margin-top: 8px; font: .8rem/1.4 ui-monospace, Consolas, monospace; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+
 /* Kontakt */
 .contact { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
 @media (max-width: 820px) { .contact { grid-template-columns: 1fr; } }
@@ -215,7 +229,7 @@ footer.site nav a { color: var(--muted); margin-left: 18px; }
 footer.site nav a:first-child { margin-left: 0; }
 
 @media print {
-  header.site, footer.site, main.home > section:not(#energie-check), .gate, .no-print, #check-form-card { display: none !important; }
+  header.site, footer.site, main.home > section:not(#energie-check), .gate, .locked, #r-mailhilfe, .no-print, #check-form-card { display: none !important; }
   .check-tool { grid-template-columns: 1fr; }
   body { background: #fff; color: #000; }
   .locked .blur { filter: none; }
@@ -277,11 +291,11 @@ footer.site nav a:first-child { margin-left: 0; }
       </div>
     </div>
     <aside class="hero-card" aria-label="Energie-Check in Kürze">
-      <h3>In 2 Minuten wissen, wo Ihr Haus steht</h3>
-      <p class="muted">Effizienzklasse, Energiekosten, CO₂ – und welche Sanierung sich zuerst lohnt.</p>
+      <h3>In 2 Minuten wissen, wo Ihr Gebäude steht</h3>
+      <p class="muted">Für Wohnhäuser und Nichtwohngebäude: Effizienz, Energiekosten, CO₂ – und welche Maßnahme sich zuerst lohnt.</p>
       <div class="mini-scale" aria-hidden="true">
         <span style="background:var(--k-ap)">A+</span><span style="background:var(--k-a)">A</span><span style="background:var(--k-b)">B</span>
-        <span style="background:var(--k-c)">C</span><span style="background:var(--k-d)">D</span><span style="background:var(--k-e)">E</span>
+        <span class="dark" style="background:var(--k-c)">C</span><span class="dark" style="background:var(--k-d)">D</span><span class="dark" style="background:var(--k-e)">E</span>
         <span style="background:var(--k-f)">F</span><span style="background:var(--k-g)">G</span><span style="background:var(--k-h)">H</span>
       </div>
       <p class="small muted">Unverbindlich und kostenlos. Ergebnis sofort, ausführliche Auswertung per E-Mail.</p>
@@ -332,19 +346,33 @@ footer.site nav a:first-child { margin-left: 0; }
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Kostenloser Energie-Check</p>
-      <h2>Wie effizient ist Ihr Haus?</h2>
-      <p class="lead">Ein paar Angaben genügen. Sie sehen sofort Effizienzklasse, Energiekosten und CO₂. Die Auswertung mit Maßnahmen, Kosten, Einsparung und Förderung erhalten Sie per E-Mail.</p>
+      <h2>Wie effizient ist Ihr Gebäude?</h2>
+      <p class="lead">Für Wohnhäuser und Nichtwohngebäude wie Büros, Läden, Praxen oder Hallen. Sie sehen sofort Effizienz, Energiekosten und CO₂. Die Auswertung mit Maßnahmen, Kosten, Einsparung und Förderung erhalten Sie per E-Mail.</p>
     </div>
 
     <div class="check-tool">
       <div class="card" id="check-form-card">
         <form id="check-form" novalidate>
+          <div class="seg" role="radiogroup" aria-label="Gebäudeart">
+            <label><input type="radio" name="art" value="wg" checked><span>Wohngebäude</span></label>
+            <label><input type="radio" name="art" value="nwg"><span>Nichtwohngebäude</span></label>
+          </div>
           <div class="row">
-            <label>Gebäudetyp
+            <label class="nur-wg">Gebäudetyp
               <select id="f-typ">
                 <option value="efh">Einfamilienhaus (freistehend)</option>
                 <option value="rh">Doppel-/Reihenhaus</option>
                 <option value="mfh">Mehrfamilienhaus</option>
+              </select>
+            </label>
+            <label class="nur-nwg" hidden>Nutzung
+              <select id="f-nutz">
+                <option value="buero">Büro / Verwaltung</option>
+                <option value="handel">Handel / Laden</option>
+                <option value="hotel">Hotel / Gastronomie</option>
+                <option value="bildung">Schule / Kita / Bildung</option>
+                <option value="praxis">Praxis / Gesundheit</option>
+                <option value="halle">Werkstatt / Halle / Lager (beheizt)</option>
               </select>
             </label>
             <label>Baujahr
@@ -364,11 +392,21 @@ footer.site nav a:first-child { margin-left: 0; }
             </label>
           </div>
           <div class="row">
-            <label>Wohnfläche in m²
-              <input id="f-wf" type="number" min="30" max="5000" step="1" value="140" inputmode="numeric">
+            <label class="nur-wg">Wohnfläche in m²
+              <input id="f-wf" type="number" min="30" max="20000" step="1" value="140" inputmode="numeric">
             </label>
-            <label>Wohneinheiten
-              <input id="f-we" type="number" min="1" max="200" step="1" value="1" inputmode="numeric">
+            <label class="nur-wg">Wohneinheiten
+              <input id="f-we" type="number" min="1" max="500" step="1" value="1" inputmode="numeric">
+            </label>
+            <label class="nur-nwg" hidden>Beheizte Nutzfläche in m²
+              <input id="f-ngf" type="number" min="50" max="100000" step="1" value="800" inputmode="numeric">
+            </label>
+            <label class="nur-nwg" hidden>Eigentümer
+              <select id="f-betrieb">
+                <option value="kmu">Unternehmen (KMU)</option>
+                <option value="gu">Unternehmen (kein KMU)</option>
+                <option value="kommune">Kommune, Verein, gemeinnützig</option>
+              </select>
             </label>
           </div>
           <div class="row">
@@ -382,19 +420,32 @@ footer.site nav a:first-child { margin-left: 0; }
                 <option value="wp">Wärmepumpe</option>
               </select>
             </label>
-            <label>Verbrauch pro Jahr <span class="hint">(kWh, optional)</span>
+            <label><span id="vb-text">Verbrauch Heizung pro Jahr</span> <span class="hint">(kWh, optional)</span>
               <input id="f-vb" type="number" min="0" step="100" placeholder="z. B. 22000" inputmode="numeric">
             </label>
           </div>
+          <div class="row nur-nwg" hidden>
+            <label>Stromverbrauch pro Jahr <span class="hint">(kWh ohne Heizung, optional)</span>
+              <input id="f-sv" type="number" min="0" step="100" placeholder="z. B. 40000" inputmode="numeric">
+            </label>
+          </div>
+          <p class="small muted" style="margin:-6px 0 14px">Heizöl: Liter × 10 = kWh. Pellets: kg × 5 = kWh. Gas: steht in kWh auf der Rechnung.</p>
           <fieldset>
             <legend>Was wurde seit dem Bau schon gedämmt bzw. erneuert?</legend>
             <div class="chips">
               <label class="chk"><input type="checkbox" id="d-fassade"> Fassade</label>
               <label class="chk"><input type="checkbox" id="d-dach"> Dach / oberste Decke</label>
               <label class="chk"><input type="checkbox" id="d-fenster"> Fenster</label>
-              <label class="chk"><input type="checkbox" id="d-keller"> Kellerdecke</label>
+              <label class="chk"><input type="checkbox" id="d-keller"> Kellerdecke / Boden</label>
             </div>
           </fieldset>
+          <fieldset class="nur-nwg" hidden>
+            <legend>Technik im Gebäude</legend>
+            <label class="chk"><input type="checkbox" id="d-led"> Beleuchtung ist bereits LED</label>
+            <label class="chk"><input type="checkbox" id="d-ga"> Gebäudeautomation vorhanden (zentrale Regelung, Präsenzmelder)</label>
+            <label class="chk"><input type="checkbox" id="d-rlt"> Lüftungsanlage ohne Wärmerückgewinnung vorhanden</label>
+          </fieldset>
+          <div class="form-err" id="f-err" role="alert" hidden></div>
           <button class="btn" type="submit">Ergebnis anzeigen</button>
           <p class="disclaimer">Die Daten werden nur in Ihrem Browser berechnet und nicht gespeichert.</p>
         </form>
@@ -411,8 +462,9 @@ footer.site nav a:first-child { margin-left: 0; }
           <p class="eyebrow">Ihr Ergebnis</p>
           <h3 id="r-title">Effizienzklasse</h3>
           <div class="scale" id="r-scale"></div>
+          <p class="small muted" id="r-scale-note" style="margin:6px 0 0"></p>
           <div class="kpis">
-            <div class="kpi"><b id="r-kwh">–</b><span>Endenergie in kWh/(m²·a)</span></div>
+            <div class="kpi"><b id="r-kwh">–</b><span id="r-kwh-label">Endenergie in kWh/(m²·a)</span></div>
             <div class="kpi"><b id="r-cost">–</b><span>Energiekosten pro Jahr</span></div>
             <div class="kpi"><b id="r-co2">–</b><span>CO₂ pro Jahr</span></div>
             <div class="kpi"><b id="r-pot">–</b><span>Einsparpotenzial Energiekosten</span></div>
@@ -444,6 +496,9 @@ footer.site nav a:first-child { margin-left: 0; }
 
           <div id="r-details" hidden>
             <div class="ok-msg" id="r-okmsg"></div>
+            <p class="small muted" id="r-mailhilfe" hidden>Es öffnet sich kein E-Mail-Programm?
+              <button type="button" class="linkbtn" id="r-copy">Text kopieren</button> und an <a href="mailto:nicolasstephan@gmx.de">nicolasstephan@gmx.de</a> senden.
+              <textarea id="r-mailtext" readonly hidden aria-label="Text der Anfrage"></textarea></p>
             <div id="r-details-content"></div>
             <div class="actions no-print" style="margin-top:16px">
               <button class="btn ghost" type="button" onclick="window.print()">Als PDF speichern</button>
@@ -462,10 +517,10 @@ footer.site nav a:first-child { margin-left: 0; }
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Rechenbeispiele</p>
-      <h2>Was bei typischen Häusern drin ist</h2>
-      <p class="lead">Drei typische Gebäude, gerechnet mit dem Energie-Check. Es handelt sich um Beispielrechnungen, nicht um Kundenprojekte.</p>
+      <h2>Was bei typischen Gebäuden drin ist</h2>
+      <p class="lead">Vier typische Gebäude, gerechnet mit dem Energie-Check. Es handelt sich um Beispielrechnungen, nicht um Kundenprojekte.</p>
     </div>
-    <div class="grid-3" id="examples"></div>
+    <div class="grid-2" id="examples"></div>
   </div>
 </section>
 
@@ -518,7 +573,7 @@ footer.site nav a:first-child { margin-left: 0; }
       <div class="card featured">
         <h3>Sanierungsfahrplan (iSFP)</h3>
         <p class="price">ab 650 € <small>Eigenanteil</small></p>
-        <p class="muted">Ein-/Zweifamilienhaus ab 1.300 €, davon übernimmt das BAFA 50 % (max. 650 €). Mehrfamilienhaus ab 1.700 €, Zuschuss max. 850 €.</p>
+        <p class="muted">Ein-/Zweifamilienhaus ab 1.300 €, davon übernimmt das BAFA 50 % (max. 650 €). Mehrfamilienhaus ab 1.700 €, Zuschuss max. 850 €. Zuschuss nach aktueller Richtlinie bis 31.12.2026.</p>
       </div>
       <div class="card">
         <h3>Energieausweis</h3>
@@ -538,7 +593,7 @@ footer.site nav a:first-child { margin-left: 0; }
       <div class="card">
         <h3>Unternehmen</h3>
         <p class="price">auf Anfrage</p>
-        <p class="muted">Energieaudit DIN EN 16247 und Energieberatung für Nichtwohngebäude – Angebot nach Erstgespräch.</p>
+        <p class="muted">Energieaudit DIN EN 16247 und Energieberatung für Nichtwohngebäude – mit 50 % BAFA-Zuschuss (je nach Fläche bis 4.000 €). Angebot nach Erstgespräch.</p>
       </div>
     </div>
     <p class="small muted" style="margin-top:16px">Alle Preise sind Endpreise. Fahrtkosten im Stadtgebiet München inklusive. Zuschüsse nach aktuellem Stand (November 2026), vorbehaltlich der Bewilligung durch das BAFA.</p>
@@ -586,7 +641,12 @@ footer.site nav a:first-child { margin-left: 0; }
       <article>
         <time datetime="2026-07-21">21.07.2026</time>
         <div><h3>Neue Regeln für BEG-Einzelmaßnahmen</h3>
-        <p>Für Dämmung, Fenster und Anlagentechnik gelten neue Förderbedingungen. Der Bonus für Maßnahmen aus einem Sanierungsfahrplan greift nur noch bei größeren Vorhaben. Lassen Sie Ihr Vorhaben vor dem Antrag prüfen – die Reihenfolge der Maßnahmen entscheidet über die Förderhöhe.</p></div>
+        <p>Für Dämmung, Fenster und Anlagentechnik gelten neue Förderbedingungen. Der Bonus für Maßnahmen aus einem Sanierungsfahrplan gilt nur noch für Kosten oberhalb der normalen Höchstgrenze und erst ab 30.000 € Investition; die förderfähige Kostengrenze verdoppelt sich mit Sanierungsfahrplan aber weiterhin. Bei Nichtwohngebäuden wird Innenbeleuchtung nicht mehr als Einzelmaßnahme gefördert.</p></div>
+      </article>
+      <article>
+        <time datetime="2027-01">ab 2027</time>
+        <div><h3>Neue Sätze für Wärmepumpen</h3>
+        <p>Laut Förderrichtlinie sinkt die Grundförderung für Wärmepumpen ab dem ersten Quartal 2027 auf 15 %; dazu kommt ein Bonus von 15 Prozentpunkten für Geräte aus europäischer Herstellung. Ab 01.02.2027 sinken außerdem die förderfähigen Höchstkosten schrittweise, und der Klimageschwindigkeitsbonus für Selbstnutzer nimmt halbjährlich ab. Ein Antrag noch in diesem Jahr kann sich lohnen.</p></div>
       </article>
       <article>
         <time datetime="2026-11">November 2026</time>
@@ -595,8 +655,8 @@ footer.site nav a:first-child { margin-left: 0; }
       </article>
       <article>
         <time datetime="2026-11">November 2026</time>
-        <div><h3>Zuschuss zur Energieberatung bleibt</h3>
-        <p>Das BAFA übernimmt weiterhin 50 % der Kosten für einen Sanierungsfahrplan – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten. Voraussetzung: Energieeffizienz-Experte und ein mindestens zehn Jahre altes Gebäude.</p></div>
+        <div><h3>Zuschuss zur Energieberatung – nach heutigem Stand bis Ende 2026</h3>
+        <p>Das BAFA übernimmt 50 % der Kosten für einen Sanierungsfahrplan – bis 650 € beim Ein- und Zweifamilienhaus, bis 850 € ab drei Wohneinheiten; bei Nichtwohngebäuden je nach Fläche bis 4.000 €. Beide Richtlinien laufen nach heutigem Stand am 31.12.2026 aus, eine Nachfolgeregelung ist noch nicht bekannt. Wer den Zuschuss sicher nutzen will, sollte den Antrag noch 2026 stellen.</p></div>
       </article>
     </div>
     <p class="small muted" style="margin-top:14px">Stand: November 2026. Förderbedingungen ändern sich häufig – maßgeblich sind die jeweils gültigen Richtlinien.</p>
@@ -663,7 +723,7 @@ footer.site nav a:first-child { margin-left: 0; }
 <!-- Impressum -->
 <section class="legal-page" id="impressum">
   <div class="wrap">
-    <p><a href="#start">← Zurück zur Startseite</a></p>
+    <p><a class="back-link" href="#start">← Zurück</a></p>
     <h2>Impressum</h2>
     <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
     <p>Nicolas Stephan<br>Ingenieur- und Energieberatung<br>Schellingstraße 76<br>80799 München<br>Deutschland</p>
@@ -683,7 +743,7 @@ footer.site nav a:first-child { margin-left: 0; }
 <!-- Datenschutz -->
 <section class="legal-page" id="datenschutz">
   <div class="wrap">
-    <p><a href="#start">← Zurück zur Startseite</a></p>
+    <p><a class="back-link" href="#start">← Zurück</a></p>
     <h2>Datenschutzerklärung</h2>
 
     <h3>1. Verantwortlicher</h3>
@@ -697,7 +757,7 @@ footer.site nav a:first-child { margin-left: 0; }
     <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website. Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich auf den Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).</p>
 
     <h3>4. Energie-Check</h3>
-    <p>Die Angaben im Energie-Check (Gebäudetyp, Baujahr, Fläche, Heizung, Verbrauch, Maßnahmen) werden ausschließlich in Ihrem Browser berechnet und nicht übertragen oder gespeichert, solange Sie keine Auswertung anfordern.</p>
+    <p>Die Angaben im Energie-Check (z. B. Gebäudeart und Nutzung, Baujahr, Fläche, Heizung, Verbrauch, vorhandene Technik und Maßnahmen, bei Nichtwohngebäuden die Betriebsgröße) werden ausschließlich in Ihrem Browser berechnet und nicht übertragen oder gespeichert, solange Sie keine Auswertung anfordern.</p>
     <p>Fordern Sie die ausführliche Auswertung an, werden Ihre E-Mail-Adresse, optional Name und PLZ sowie die Angaben und Ergebnisse des Energie-Checks an mich übermittelt, um Ihnen die Auswertung zu senden und Sie einmalig dazu zu kontaktieren. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit mit Wirkung für die Zukunft per E-Mail widerrufen können. Eine Nutzung für Newsletter oder Werbung findet nicht statt. Die Daten werden gelöscht, wenn sie für die Anfrage nicht mehr erforderlich sind, spätestens nach 12 Monaten, sofern daraus kein Auftrag entsteht.</p>
     <p>Für einen Rückrufwunsch werden Name, Telefonnummer und Wunschzeit auf demselben Weg an mich übermittelt und nur für den Rückruf verwendet (Art. 6 Abs. 1 lit. a DSGVO).</p>
     <p id="ds-formdienst">Die Übermittlung erfolgt über Ihr eigenes E-Mail-Programm: Nach dem Absenden öffnet sich eine vorbereitete E-Mail an mich, die Sie selbst versenden.</p>
@@ -731,117 +791,212 @@ const CONFIG = {
   // automatisch per E-Mail an, ohne dass sich beim Besucher das Mailprogramm öffnet.
   // Leer lassen = Versand über das Mailprogramm des Besuchers.
   web3formsKey: "",
-  // Energiepreise in €/kWh und CO2-Faktoren in kg/kWh (GEG Anlage 9) – Stand 11/2026, bei Bedarf anpassen
-  preis:  { gas: 0.12, oel: 0.11, fw: 0.15, pellet: 0.08, nsp: 0.33, wp: 0.28 },
-  co2:    { gas: 0.240, oel: 0.310, fw: 0.180, pellet: 0.020, nsp: 0.560, wp: 0.560 },
-  // Förderung (Grundsätze, Stand 11/2026 – vor jeder Aussage aktuelle Richtlinie prüfen)
-  foerderHuelle: 0.15,     // BEG EM Gebäudehülle (BAFA)
-  foerderHeizung: 0.30,    // KfW 458 Grundförderung
-  foerderHeizungMax: 0.70  // KfW 458 mit Boni maximal
+  // Energiepreise in €/kWh – Stand 11/2026, bei Bedarf anpassen
+  preisWG:  { gas: 0.12, oel: 0.11, fw: 0.15, pellet: 0.08, nsp: 0.33, wp: 0.28, strom: 0.35 },
+  preisNWG: { gas: 0.10, oel: 0.10, fw: 0.13, pellet: 0.07, nsp: 0.25, wp: 0.22, strom: 0.25 },
+  // CO₂ in kg/kWh: Brennstoffe nach GEG Anlage 9, Strom als Strommix Deutschland (gerundet)
+  co2: { gas: 0.240, oel: 0.310, fw: 0.180, pellet: 0.020, nsp: 0.360, wp: 0.360, strom: 0.360 },
+  // Förderung laut Richtlinie BEG EM vom 17.08.2026 (gilt seit 21.07.2026) – vor jeder Änderung Richtlinie prüfen
+  foerderHuelle: 0.15,       // Gebäudehülle, Anlagentechnik, Heizungsoptimierung (BAFA, WG und NWG)
+  foerderHeizung: 0.30,      // Grundförderung Heizung: KfW 458 (WG) bzw. KfW 522 (NWG)
+  foerderHeizungMaxWG: 0.70  // KfW 458 mit Boni für Selbstnutzer
 };
 /* ======================================================== */
 
 const NAMEN = { gas: "Erdgas", oel: "Heizöl", fw: "Fernwärme", pellet: "Pellets/Holz", nsp: "Strom direkt", wp: "Wärmepumpe" };
 // Wirkungsgrad bzw. Jahresarbeitszahl: Endenergie = Wärmebedarf / Faktor
 const EFF = { gas: 0.90, oel: 0.85, fw: 0.97, pellet: 0.82, nsp: 0.98, wp: 3.0 };
+const JAZ_NEU = 3.2;
 // typischer Wärmebedarf (Heizung + Warmwasser) in kWh/(m²·a) nach Baujahr, Einfamilienhaus unsaniert
 const BEDARF = { 1918: 205, 1948: 195, 1957: 205, 1968: 190, 1978: 170, 1983: 145, 1994: 125, 2001: 105, 2009: 82, 2015: 64, 2030: 45 };
 const TYPFAKTOR = { efh: 1.0, rh: 0.9, mfh: 0.8 };
-// Bauteile: Anteil am Wärmebedarf, der durch Sanierung typ. eingespart wird; Kosten in € je m² Wohnfläche
+const TYPNAMEN = { efh: "Einfamilienhaus", rh: "Doppel-/Reihenhaus", mfh: "Mehrfamilienhaus" };
+// Nichtwohngebäude: Wärmebedarf (Baujahr 1958–68, unsaniert) und Strom ohne Heizung in kWh/(m²·a), Anteil Beleuchtung am Strom
+const NUTZUNG = {
+  buero:   { name: "Büro / Verwaltung",              waerme: 170, strom: 50, licht: 0.30 },
+  handel:  { name: "Handel / Laden",                 waerme: 160, strom: 90, licht: 0.45 },
+  hotel:   { name: "Hotel / Gastronomie",            waerme: 200, strom: 90, licht: 0.20 },
+  bildung: { name: "Schule / Kita / Bildung",        waerme: 160, strom: 25, licht: 0.40 },
+  praxis:  { name: "Praxis / Gesundheit",            waerme: 180, strom: 60, licht: 0.30 },
+  halle:   { name: "Werkstatt / Halle / Lager",      waerme: 150, strom: 40, licht: 0.35 }
+};
+const BETRIEB = { kmu: "KMU", gu: "größeres Unternehmen", kommune: "Kommune/gemeinnützig" };
+// Bauteile: Anteil am Wärmebedarf, der durch Sanierung typ. eingespart wird; Kosten in € je m² Wohn- bzw. Nutzfläche
 const BAUTEILE = [
-  { id: "fassade", name: "Fassade dämmen",                   anteil: 0.20, kosten: { efh: 240, rh: 170, mfh: 140 } },
-  { id: "dach",    name: "Dach / oberste Geschossdecke dämmen", anteil: 0.14, kosten: { efh: 150, rh: 130, mfh: 70 } },
-  { id: "fenster", name: "Fenster tauschen",                 anteil: 0.10, kosten: { efh: 170, rh: 160, mfh: 140 } },
-  { id: "keller",  name: "Kellerdecke dämmen",                anteil: 0.06, kosten: { efh: 35, rh: 35, mfh: 25 } }
+  { id: "fassade", name: "Fassade dämmen",                      anteil: 0.20, kosten: { efh: 240, rh: 170, mfh: 140, nwg: 150 } },
+  { id: "dach",    name: "Dach / oberste Geschossdecke dämmen", anteil: 0.14, kosten: { efh: 150, rh: 130, mfh: 70,  nwg: 110 } },
+  { id: "fenster", name: "Fenster tauschen",                    anteil: 0.10, kosten: { efh: 170, rh: 160, mfh: 140, nwg: 120 } },
+  { id: "keller",  name: "Kellerdecke / Boden dämmen",          anteil: 0.06, kosten: { efh: 35,  rh: 35,  mfh: 25,  nwg: 30 } }
 ];
 const KLASSEN = [
   { k: "A+", max: 30, c: "var(--k-ap)" }, { k: "A", max: 50, c: "var(--k-a)" }, { k: "B", max: 75, c: "var(--k-b)" },
-  { k: "C", max: 100, c: "var(--k-c)" }, { k: "D", max: 130, c: "var(--k-d)" }, { k: "E", max: 160, c: "var(--k-e)" },
+  { k: "C", max: 100, c: "var(--k-c)", dark: true }, { k: "D", max: 130, c: "var(--k-d)", dark: true }, { k: "E", max: 160, c: "var(--k-e)", dark: true },
   { k: "F", max: 200, c: "var(--k-f)" }, { k: "G", max: 250, c: "var(--k-g)" }, { k: "H", max: Infinity, c: "var(--k-h)" }
+];
+// Einstufung Nichtwohngebäude: Wärmebedarf im Verhältnis zum typischen Bestand gleicher Nutzung
+const STUFEN = [
+  { k: "sehr gut", max: 0.45, c: "var(--k-a)" }, { k: "gut", max: 0.75, c: "var(--k-b)" },
+  { k: "mittel", max: 1.1, c: "var(--k-d)", dark: true }, { k: "erhöht", max: 1.4, c: "var(--k-f)" }, { k: "hoch", max: Infinity, c: "var(--k-h)" }
 ];
 
 const $ = id => document.getElementById(id);
 const eur = v => Math.round(v).toLocaleString("de-DE") + " €";
+const zahl = v => Math.round(v).toLocaleString("de-DE");
 const rund = (v, s) => Math.round(v / s) * s;
 const spanne = v => eur(rund(v * 0.8, 500)) + " – " + eur(rund(v * 1.25, 500));
 const klasse = kwh => KLASSEN.find(x => kwh < x.max);
+const stufe = (kennwert, nutzung) => STUFEN.find(x => kennwert / (NUTZUNG[nutzung].waerme * 0.75) < x.max);
+const BJ_TEXT = Object.fromEntries([...$("f-bj").options].map(o => [o.value, o.textContent]));
 // Sanierungsspielraum je Baujahr: neuere Gebäude sind schon besser gedämmt
 const spielraum = bj => bj <= 1978 ? 1.0 : bj <= 1994 ? 0.7 : bj <= 2009 ? 0.4 : 0;
-// förderfähige Höchstkosten Heizung (KfW 458): 30.000 € 1. WE, 15.000 € 2.–6. WE, 8.000 € ab 7. WE
-const kostenCapHeizung = we => 30000 + 15000 * Math.min(Math.max(we - 1, 0), 5) + 8000 * Math.max(we - 6, 0);
+// Höchstgrenzen förderfähiger Kosten (BEG EM): Wohngebäude je WE gestaffelt, NWG je m² Nutzfläche
+const staffelWE = (erste, we) => erste + 15000 * Math.min(Math.max(we - 1, 0), 5) + 8000 * Math.max(we - 6, 0);
+const huelleCapWG = we => staffelWE(30000, we);
+const heizCapWG = we => staffelWE(28000, we);
+const huelleCapNWG = a => 500 * a;
+const heizCapNWG = a => 28000 + 197 * Math.max(0, Math.min(a, 400) - 150) + 118 * Math.max(0, Math.min(a, 1000) - 400) + 79 * Math.max(0, a - 1000);
+const ebnZuschuss = a => a < 200 ? 850 : a <= 500 ? 2500 : 4000;
 
-let letztesErgebnis = null;
+let letztesErgebnis = null, freigegeben = false, letzterMailtext = "";
 
-function eingaben() {
-  return {
-    typ: $("f-typ").value, bj: +$("f-bj").value, hz: $("f-hz").value,
-    wf: Math.max(30, +$("f-wf").value || 0), we: Math.max(1, Math.round(+$("f-we").value || 1)),
-    vb: +$("f-vb").value || 0,
-    erledigt: Object.fromEntries(BAUTEILE.map(b => [b.id, $("d-" + b.id).checked]))
-  };
+const gebaeudeArt = () => document.querySelector('input[name="art"]:checked').value;
+
+function umschalten() {
+  const nwg = gebaeudeArt() === "nwg";
+  document.querySelectorAll(".nur-wg").forEach(el => el.hidden = nwg);
+  document.querySelectorAll(".nur-nwg").forEach(el => el.hidden = !nwg);
+  $("vb-text").textContent = nwg ? "Wärmeverbrauch pro Jahr" : "Verbrauch Heizung pro Jahr";
+  $("f-err").hidden = true;
 }
 
-function berechne(p = eingaben()) {
-  const { typ, bj, hz, wf, we, vb, erledigt } = p;
+function eingaben() {
+  const p = {
+    art: gebaeudeArt(), bj: +$("f-bj").value, hz: $("f-hz").value, vb: +$("f-vb").value || 0,
+    erledigt: Object.fromEntries(BAUTEILE.map(b => [b.id, $("d-" + b.id).checked]))
+  };
+  if (p.art === "wg") Object.assign(p, { typ: $("f-typ").value, flaeche: +$("f-wf").value || 0, we: +$("f-we").value || 0 });
+  else Object.assign(p, { nutzung: $("f-nutz").value, flaeche: +$("f-ngf").value || 0, betrieb: $("f-betrieb").value,
+    sv: +$("f-sv").value || 0, led: $("d-led").checked, ga: $("d-ga").checked, rlt: $("d-rlt").checked });
+  return p;
+}
+
+// Plausibilitätsprüfung der Eingaben, gibt Liste von Fehlermeldungen zurück
+function pruefe(p) {
+  const f = [];
+  const [fmin, fmax] = p.art === "wg" ? [30, 20000] : [50, 100000];
+  const flName = p.art === "wg" ? "Wohnfläche" : "beheizte Nutzfläche";
+  if (!(p.flaeche >= fmin && p.flaeche <= fmax)) f.push(`Bitte eine ${flName} zwischen ${zahl(fmin)} und ${zahl(fmax)} m² angeben.`);
+  if (p.art === "wg") {
+    if (!Number.isInteger(p.we) || p.we < 1) f.push("Bitte die Anzahl der Wohneinheiten angeben (mindestens 1).");
+    else if (p.typ !== "mfh" && p.we > 2) f.push("Ein- und Reihenhäuser haben höchstens 2 Wohneinheiten – bitte „Mehrfamilienhaus“ wählen.");
+    else if (!f.length && p.flaeche / p.we < 20) f.push("Wohnfläche und Anzahl der Wohneinheiten passen nicht zusammen (unter 20 m² je Wohnung).");
+  }
+  if (!f.length && p.vb > 0) {
+    const kw = p.vb / p.flaeche, [lo, hi] = p.hz === "wp" ? [5, 150] : [15, 500];
+    if (kw < lo || kw > hi) f.push(`${zahl(p.vb)} kWh im Jahr sind ${zahl(kw)} kWh je m² – das ist ungewöhnlich ${kw < lo ? "niedrig" : "hoch"}. Bitte den Jahresverbrauch in kWh prüfen.`);
+  }
+  if (!f.length && p.art === "nwg" && p.sv > 0) {
+    const ks = p.sv / p.flaeche;
+    if (ks < 3 || ks > 400) f.push(`${zahl(p.sv)} kWh Strom im Jahr sind ${zahl(ks)} kWh je m² – bitte prüfen.`);
+  }
+  return f;
+}
+
+function berechne(p) {
+  const nwg = p.art === "nwg";
+  const preis = nwg ? CONFIG.preisNWG : CONFIG.preisWG;
+  const { hz, bj, flaeche, erledigt } = p;
   const pf = spielraum(bj);
+  const n = nwg ? NUTZUNG[p.nutzung] : null;
 
   // Wärmebedarf q (kWh/a): aus Verbrauch oder typischen Werten
   let q;
-  if (vb > 0) q = vb * EFF[hz];
+  if (p.vb > 0) q = p.vb * EFF[hz];
   else {
-    q = BEDARF[bj] * TYPFAKTOR[typ] * wf;
+    q = (nwg ? n.waerme * BEDARF[bj] / BEDARF[1968] : BEDARF[bj] * TYPFAKTOR[p.typ]) * flaeche;
     BAUTEILE.forEach(b => { if (erledigt[b.id]) q *= 1 - b.anteil * pf; });
   }
-  const endenergie = q / EFF[hz];
-  const kosten = endenergie * CONFIG.preis[hz];
-  const co2 = endenergie * CONFIG.co2[hz] / 1000;
+  const waermeEnd = q / EFF[hz];
+  // Strom ohne Heizung (nur Nichtwohngebäude)
+  const strom = !nwg ? 0 : p.sv > 0 ? p.sv : n.strom * flaeche * (p.led ? 1 - n.licht * 0.5 : 1);
+  const kosten = waermeEnd * preis[hz] + strom * preis.strom;
+  const co2 = (waermeEnd * CONFIG.co2[hz] + strom * CONFIG.co2.strom) / 1000;
 
-  // Maßnahmen
-  const massnahmen = [];
-  let qNach = q;
+  const satzW = preis[hz] / EFF[hz], co2W = CONFIG.co2[hz] / EFF[hz];   // je kWh Wärme
+  const capH = nwg ? huelleCapNWG(flaeche) : huelleCapWG(p.we);
+  const textH = nwg ? Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA, BEG EM)" : Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA), mit iSFP höhere Kostengrenze";
+  const M = [];
+  let qNach = q, stromNach = strom;
+  const add = (name, invest, dq, ds, foerderung, foerderText) => {
+    qNach -= dq; stromNach -= ds;
+    M.push({ name, invest, ersparnis: dq * satzW + ds * preis.strom, co2: (dq * co2W + ds * CONFIG.co2.strom) / 1000, foerderung, foerderText });
+  };
+
   BAUTEILE.forEach(b => {
     if (erledigt[b.id] || pf === 0) return;
-    const dq = q * b.anteil * pf;
-    qNach -= dq;
-    const invest = b.kosten[typ] * wf;
-    const ersparnis = dq / EFF[hz] * CONFIG.preis[hz];
-    const foerderung = CONFIG.foerderHuelle * Math.min(invest, 30000 * we);
-    massnahmen.push({ name: b.name, invest, ersparnis, co2: dq / EFF[hz] * CONFIG.co2[hz] / 1000, foerderung,
-      foerderText: Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA), mit iSFP ggf. mehr" });
+    const invest = b.kosten[nwg ? "nwg" : p.typ] * flaeche;
+    add(b.name, invest, q * b.anteil * pf, 0, CONFIG.foerderHuelle * Math.min(invest, capH), textH);
   });
-  if (hz !== "wp" && hz !== "pellet") {
-    const inv = Math.max(28000, 22000 + 90 * wf);
-    const qBasis = qNach;
-    const alt = qBasis / EFF[hz] * CONFIG.preis[hz], neu = qBasis / 3.2 * CONFIG.preis.wp;
-    massnahmen.push({ name: "Wärmepumpe statt " + NAMEN[hz], invest: inv, ersparnis: Math.max(alt - neu, 0),
-      co2: (qBasis / EFF[hz] * CONFIG.co2[hz] - qBasis / 3.2 * CONFIG.co2.wp) / 1000,
-      foerderung: CONFIG.foerderHeizung * Math.min(inv, kostenCapHeizung(we)),
-      foerderText: Math.round(CONFIG.foerderHeizung * 100) + " % Grundförderung (KfW), mit Boni bis " + Math.round(CONFIG.foerderHeizungMax * 100) + " %" });
+  if (nwg && !p.ga) {
+    const invest = Math.max(8000, 18 * flaeche);
+    add("Gebäudeautomation (Regelung, Präsenz- und Tageslichtsteuerung)", invest, qNach * 0.10, stromNach * 0.05,
+      CONFIG.foerderHuelle * Math.min(invest, capH), textH + ", mind. Automationsklasse B");
+  }
+  if (nwg && p.rlt) {
+    const invest = Math.max(10000, 15 * flaeche);
+    add("Lüftung mit Wärmerückgewinnung", invest, qNach * 0.12, 0, CONFIG.foerderHuelle * Math.min(invest, capH), textH);
+  }
+  if (nwg && !p.led) {
+    add("LED-Beleuchtung", Math.max(3000, 25 * flaeche), 0, strom * n.licht * 0.55, 0,
+      "seit 21.07.2026 keine BEG-Förderung; die Steuerung ist als Gebäudeautomation förderfähig");
+  }
+  // Wärmepumpe nur bei fossiler oder Strom-Direktheizung; bei Fernwärme und Pellets selten sinnvoll
+  const wpSinnvoll = hz === "gas" || hz === "oel" || hz === "nsp";
+  if (wpSinnvoll) {
+    let invest = nwg ? Math.max(30000, 25000 + 85 * flaeche) : Math.max(28000, 22000 + 90 * flaeche);
+    if (hz === "nsp") invest += 70 * flaeche;   // Heizkörper und Rohrnetz neu
+    const alt = qNach * satzW, neu = qNach / JAZ_NEU * preis.wp;
+    M.push({ name: "Wärmepumpe statt " + NAMEN[hz], invest, ersparnis: Math.max(alt - neu, 0),
+      co2: (qNach * co2W - qNach / JAZ_NEU * CONFIG.co2.wp) / 1000,
+      foerderung: CONFIG.foerderHeizung * Math.min(invest, nwg ? heizCapNWG(flaeche) : heizCapWG(p.we)),
+      foerderText: nwg
+        ? Math.round(CONFIG.foerderHeizung * 100) + " % (KfW " + (p.betrieb === "kommune" ? "422" : "522") + "), ab 2027 neue Sätze"
+        : Math.round(CONFIG.foerderHeizung * 100) + " % Grundförderung (KfW 458), Selbstnutzer mit Boni bis " + Math.round(CONFIG.foerderHeizungMaxWG * 100) + " %" });
   }
   if (hz !== "nsp") {
-    const inv = 800 + 8 * wf;
-    const dq = qNach * 0.05;
-    const satz = hz === "wp" ? CONFIG.preis.wp / 3.0 : CONFIG.preis[hz] / EFF[hz];
-    massnahmen.push({ name: "Heizungsoptimierung (hydraulischer Abgleich, Pumpe)", invest: inv, ersparnis: dq * satz,
-      co2: dq / EFF[hz] * CONFIG.co2[hz] / 1000, foerderung: CONFIG.foerderHuelle * inv, foerderText: Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA)" });
+    const invest = nwg ? 1500 + 4 * flaeche : 800 + 8 * flaeche;
+    add("Heizungsoptimierung (hydraulischer Abgleich, Pumpe)", invest, qNach * 0.05, 0, CONFIG.foerderHuelle * invest,
+      Math.round(CONFIG.foerderHuelle * 100) + " % (BAFA)");
   }
-  massnahmen.forEach(m => { m.amort = m.ersparnis > 0 ? (m.invest - m.foerderung) / m.ersparnis : Infinity; });
-  massnahmen.sort((a, b) => a.amort - b.amort);
+  M.forEach(m => { m.amort = m.ersparnis > 0 ? (m.invest - m.foerderung) / m.ersparnis : Infinity; });
+  M.sort((a, b) => a.amort - b.amort);
 
-  // Gesamtpotenzial: Hülle + Wärmepumpe (sofern sinnvoll)
-  const kostenNach = (hz !== "wp" && hz !== "pellet") ? qNach / 3.2 * CONFIG.preis.wp : qNach / EFF[hz] * CONFIG.preis[hz];
-  const potenzial = Math.max(0, 1 - kostenNach / kosten);
+  const heizNach = wpSinnvoll ? qNach / JAZ_NEU * preis.wp : qNach * satzW;
+  const potenzial = Math.max(0, 1 - (heizNach + Math.max(stromNach, 0) * preis.strom) / kosten);
+  return { ...p, nwg, q, waermeEnd, strom, kosten, co2, massnahmen: M, potenzial, wpSinnvoll,
+    kennwert: nwg ? q / flaeche : waermeEnd / flaeche };
+}
 
-  return { typ, bj, hz, wf, we, vb, erledigt, kwhm2: endenergie / wf, endenergie, kosten, co2, massnahmen, potenzial };
+function einstufung(r) {
+  if (r.nwg) {
+    const s = stufe(r.kennwert, r.nutzung);
+    return { titel: "Wärmebedarf: " + s.k, liste: STUFEN, aktiv: s.k, farbe: s.c, dark: s.dark,
+      hinweis: "Vergleich mit typischen Gebäuden der Nutzung „" + NUTZUNG[r.nutzung].name + "“", kurz: s.k };
+  }
+  const k = klasse(r.kennwert);
+  return { titel: "Effizienzklasse " + k.k, liste: KLASSEN, aktiv: k.k, farbe: k.c, dark: k.dark,
+    hinweis: "Einstufung nach Endenergie wie im Energieausweis", kurz: k.k };
 }
 
 function zeigeErgebnis(r) {
-  const kl = klasse(r.kwhm2);
+  const e = einstufung(r);
   $("result-empty").hidden = true;
   $("result-body").hidden = false;
-  $("r-title").textContent = "Effizienzklasse " + kl.k;
-  $("r-scale").innerHTML = KLASSEN.map(x => `<div class="${x.k === kl.k ? "on" : ""}" style="background:${x.c}">${x.k}</div>`).join("");
-  $("r-kwh").textContent = Math.round(r.kwhm2).toLocaleString("de-DE");
+  $("r-title").textContent = e.titel;
+  $("r-scale").innerHTML = e.liste.map(x => `<div class="${x.k === e.aktiv ? "on" : ""}${x.dark ? " dark" : ""}" style="background:${x.c}">${x.k}</div>`).join("");
+  $("r-scale-note").textContent = e.hinweis;
+  $("r-kwh").textContent = zahl(r.kennwert);
+  $("r-kwh-label").textContent = r.nwg ? "Wärmebedarf in kWh/(m²·a)" : "Endenergie in kWh/(m²·a)";
   $("r-cost").textContent = eur(rund(r.kosten, 50));
   $("r-co2").textContent = r.co2.toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " t";
   $("r-pot").textContent = r.potenzial < 0.05 ? "gering" : "bis " + Math.round(r.potenzial * 100) + " %";
@@ -849,66 +1004,101 @@ function zeigeErgebnis(r) {
   $("r-details-content").innerHTML = detailHtml(r, false);
 }
 
+function naechsteSchritte(r) {
+  const s = [];
+  if (r.nwg) {
+    s.push(`Energieberatung für Nichtwohngebäude (EBN): Das BAFA übernimmt 50 % des Honorars, für Ihr Gebäude bis ${eur(ebnZuschuss(r.flaeche))}. Die Richtlinie läuft nach heutigem Stand bis 31.12.2026.`);
+    s.push("Förderanträge <b>vor</b> Vorhabenbeginn stellen. Bei der BEG muss dabei schon ein Liefer- oder Leistungsvertrag mit Förder-Vorbehalt vorliegen.");
+    if (r.betrieb === "kmu") s.push("Für Motoren, Pumpen, Ventilatoren und Druckluft gibt es für KMU zusätzlich die Bundesförderung EEW Modul 1: 25 % für kleine, 20 % für mittlere Unternehmen.");
+    if (r.betrieb === "gu") s.push("Prüfen Sie, ob für Ihr Unternehmen eine Pflicht zum Energieaudit nach dem Energiedienstleistungsgesetz (EDL-G) besteht – das lässt sich mit der Gebäudeberatung verbinden.");
+    if (r.betrieb === "kommune") s.push("Kommunen beantragen den Heizungstausch über KfW 422; zusätzlich gibt es häufig Landesprogramme.");
+  } else {
+    s.push("Individuellen Sanierungsfahrplan (iSFP) erstellen lassen: Das BAFA übernimmt 50 % des Honorars (bis 650 € bzw. 850 €, Richtlinie nach heutigem Stand bis 31.12.2026). Mit iSFP verdoppelt sich die förderfähige Kostengrenze für die Gebäudehülle.");
+    s.push("Förderanträge immer <b>vor</b> der Beauftragung stellen – sonst entfällt der Zuschuss.");
+  }
+  if (r.wpSinnvoll) {
+    s.push("Heizlast berechnen lassen und die Eignung für eine Wärmepumpe prüfen – häufig auch ohne Komplettsanierung möglich.");
+    s.push("Für Wärmepumpen sinkt die Grundförderung laut Richtlinie ab dem ersten Quartal 2027 auf 15 %, dazu kommen 15 Prozentpunkte für Geräte aus europäischer Herstellung. Ein Antrag noch 2026 kann sich lohnen.");
+  } else if (r.hz === "fw") {
+    s.push("Bei Fernwärme lohnt ein Wechsel selten. Prüfen Sie Anschlussleistung und Tarif – nach einer Dämmung ist die bestellte Leistung oft zu hoch.");
+  } else {
+    s.push("Heizung regelmäßig optimieren und die Vorlauftemperatur so niedrig wie möglich halten.");
+  }
+  s.push("In München kann die Stadt zusätzlich fördern (Programm „Klimaneutrale Gebäude“, gekoppelt an die Bundesförderung).");
+  if (r.nwg) s.push("Prozessenergie (Maschinen, Kälte, Druckluft) ist hier nicht enthalten – dort liegt in Betrieben oft das größte Potenzial.");
+  if (["gas", "oel"].includes(r.hz)) s.push("Der CO₂-Preis auf Gas und Öl liegt 2027 voraussichtlich bei 55–65 € je Tonne; ab 2028 gilt der europäische Emissionshandel. Steigende Preise verbessern die Wirtschaftlichkeit jeder Maßnahme.");
+  return s;
+}
+
 function detailHtml(r, vorschau) {
   const zeilen = (vorschau ? r.massnahmen.slice(0, 3) : r.massnahmen).map(m => `<tr>
       <td><b>${m.name}</b><br><span class="muted small">${m.foerderText}</span></td>
       <td class="num">${spanne(m.invest)}</td>
       <td class="num">${eur(rund(m.ersparnis, 10))}/Jahr</td>
-      <td class="num">ca. ${eur(rund(m.foerderung, 100))}</td>
+      <td class="num">${m.foerderung > 0 ? "ca. " + eur(rund(m.foerderung, 100)) : "–"}</td>
       <td class="num">${isFinite(m.amort) ? "~" + Math.max(1, Math.round(m.amort)) + " J." : "–"}</td></tr>`).join("");
   const tabelle = r.massnahmen.length ? `<div class="table-scroll"><table class="measures">
       <thead><tr><th>Maßnahme</th><th>Investition</th><th>Ersparnis</th><th>Förderung</th><th>Amortisation</th></tr></thead>
       <tbody>${zeilen}</tbody></table></div>`
     : `<p>Ihr Gebäude ist bereits auf gutem Stand. Lohnend sind vor allem Feinoptimierung, Photovoltaik und ein Blick auf den Stromverbrauch.</p>`;
   if (vorschau) return `<h3>Ihre Maßnahmen nach Wirtschaftlichkeit</h3>${tabelle}`;
-  const schritte = [
-    "Individuellen Sanierungsfahrplan (iSFP) erstellen lassen: Der Bund bezuschusst die Beratung, und für die spätere Gebäudehülle steigen die förderfähigen Kosten.",
-    "Förderanträge immer <b>vor</b> der Beauftragung stellen – sonst entfällt der Zuschuss.",
-    r.hz !== "wp" && r.hz !== "pellet" ? "Heizlast berechnen lassen und Eignung für eine Wärmepumpe prüfen – häufig auch ohne Komplettsanierung möglich." : "Heizung regelmäßig optimieren und Vorlauftemperatur so niedrig wie möglich halten.",
-    "Der CO₂-Preis auf Gas und Öl liegt 2027 voraussichtlich bei 55–65 € je Tonne; ab 2028 gilt der europäische Emissionshandel. Steigende Preise verbessern die Wirtschaftlichkeit jeder Maßnahme."
-  ];
   return `<h3>Ihre Maßnahmen nach Wirtschaftlichkeit</h3>${tabelle}
-    <p class="small muted" style="margin-top:10px">Investition als Spanne, Ersparnis zu heutigen Energiepreisen, Förderung als Grundförderung ohne Boni. Amortisation ohne steigende CO₂-Preise und ohne „Sowieso-Kosten“ – wenn Dach, Fassade oder Heizung ohnehin erneuert werden müssen, rechnet sich die energetische Verbesserung deutlich schneller. Maßnahmen beeinflussen sich gegenseitig; die Einzelwerte sind daher nicht einfach addierbar.</p>
+    <p class="small muted" style="margin-top:10px">Investition als Spanne, Ersparnis zu heutigen Energiepreisen, Förderung als Grundförderung ohne Boni. Die förderfähigen Höchstkosten gelten je Gebäude und Jahr für alle Maßnahmen zusammen. Amortisation ohne steigende CO₂-Preise und ohne „Sowieso-Kosten“ – wenn Dach, Fassade oder Heizung ohnehin erneuert werden müssen, rechnet sich die energetische Verbesserung deutlich schneller. Maßnahmen beeinflussen sich gegenseitig; die Einzelwerte sind daher nicht einfach addierbar.</p>
     <h3 style="margin-top:20px">Ihre nächsten Schritte</h3>
-    <ul class="check">${schritte.map(s => `<li>${s}</li>`).join("")}</ul>`;
+    <ul class="check">${naechsteSchritte(r).map(s => `<li>${s}</li>`).join("")}</ul>`;
 }
 
-function textAuswertung(r, name, mail, plz) {
-  const kl = klasse(r.kwhm2);
+// kurz = true: kompakte Fassung für mailto-Links (manche Mailprogramme kürzen lange Links)
+function textAuswertung(r, name, mail, plz, kurz = false) {
+  const e = einstufung(r);
   const done = BAUTEILE.filter(b => r.erledigt[b.id]).map(b => b.id).join(", ") || "keine";
-  const typen = { efh: "Einfamilienhaus", rh: "Doppel-/Reihenhaus", mfh: "Mehrfamilienhaus" };
-  const z = [
-    "ENERGIE-CHECK – AUSWERTUNG",
-    "",
-    "Anfrage von: " + (name || "–") + " <" + mail + ">" + (plz ? ", PLZ " + plz : ""),
-    "",
-    "GEBÄUDE",
-    "Typ: " + typen[r.typ] + " | Baujahr bis " + (r.bj === 2030 ? "heute" : r.bj) + " | " + r.wf + " m² | " + r.we + " WE",
-    "Heizung: " + NAMEN[r.hz] + " | Verbrauch: " + (r.vb ? r.vb.toLocaleString("de-DE") + " kWh" : "geschätzt"),
-    "Bereits saniert: " + done,
-    "",
-    "ERGEBNIS",
-    "Effizienzklasse " + kl.k + " (" + Math.round(r.kwhm2) + " kWh/(m²·a))",
+  const z = ["ENERGIE-CHECK – AUSWERTUNG", "",
+    "Anfrage von: " + (name || "–") + " <" + mail + ">" + (plz ? ", PLZ " + plz : ""), "", "GEBÄUDE"];
+  if (r.nwg) {
+    z.push("Nichtwohngebäude: " + NUTZUNG[r.nutzung].name + " | Baujahr " + BJ_TEXT[r.bj] + " | " + zahl(r.flaeche) + " m² Nutzfläche | " + BETRIEB[r.betrieb]);
+    z.push("Technik: LED " + (r.led ? "ja" : "nein") + ", Gebäudeautomation " + (r.ga ? "ja" : "nein") + ", Lüftung ohne WRG " + (r.rlt ? "ja" : "nein"));
+    z.push("Strom (ohne Heizung): " + (r.sv ? zahl(r.sv) + " kWh" : "geschätzt"));
+  } else {
+    z.push("Wohngebäude: " + TYPNAMEN[r.typ] + " | Baujahr " + BJ_TEXT[r.bj] + " | " + zahl(r.flaeche) + " m² | " + r.we + " WE");
+  }
+  z.push("Heizung: " + NAMEN[r.hz] + " | Verbrauch: " + (r.vb ? zahl(r.vb) + " kWh" : "geschätzt"), "Bereits saniert: " + done, "", "ERGEBNIS",
+    e.titel + " (" + zahl(r.kennwert) + " kWh/(m²·a))",
     "Energiekosten ca. " + eur(rund(r.kosten, 50)) + " pro Jahr, CO₂ ca. " + r.co2.toFixed(1).replace(".", ",") + " t pro Jahr",
-    "Einsparpotenzial Energiekosten: bis " + Math.round(r.potenzial * 100) + " %",
-    "",
-    "MASSNAHMEN"
-  ];
-  r.massnahmen.forEach((m, i) => z.push((i + 1) + ". " + m.name + ": Investition " + spanne(m.invest) + ", Ersparnis " + eur(rund(m.ersparnis, 10)) + "/Jahr, Förderung ca. " + eur(rund(m.foerderung, 100)) + " (" + m.foerderText + ")"));
+    "Einsparpotenzial Energiekosten: " + (r.potenzial < 0.05 ? "gering" : "bis " + Math.round(r.potenzial * 100) + " %"), "", "MASSNAHMEN");
+  if (kurz) z.push(r.massnahmen.map((m, i) => (i + 1) + ". " + m.name + " (" + eur(rund(m.ersparnis, 10)) + "/Jahr)").join("\n"));
+  else r.massnahmen.forEach((m, i) => z.push((i + 1) + ". " + m.name + ": Investition " + spanne(m.invest) + ", Ersparnis " + eur(rund(m.ersparnis, 10)) + "/Jahr, Förderung " + (m.foerderung > 0 ? "ca. " + eur(rund(m.foerderung, 100)) : "–") + " (" + m.foerderText + ")"));
   z.push("", "Grobe Orientierung, ersetzt keine Energieberatung vor Ort.");
   return z.join("\n");
 }
 
+function setzeGateZurueck() {
+  $("g-btn").disabled = false;
+  $("g-btn").textContent = "Auswertung anfordern";
+  $("g-err").hidden = true;
+}
+
+document.querySelectorAll('input[name="art"]').forEach(r => r.addEventListener("change", umschalten));
+
 $("check-form").addEventListener("submit", e => {
   e.preventDefault();
-  letztesErgebnis = berechne();
+  const p = eingaben(), fehler = pruefe(p);
+  $("f-err").innerHTML = fehler.join("<br>");
+  $("f-err").hidden = !fehler.length;
+  if (fehler.length) return;
+  letztesErgebnis = berechne(p);
   zeigeErgebnis(letztesErgebnis);
+  if (freigegeben) {
+    $("gate").hidden = false;
+    setzeGateZurueck();
+    $("r-mailhilfe").hidden = true;
+    $("r-okmsg").innerHTML = "Neue Werte berechnet – unten sehen Sie das aktualisierte Ergebnis. Möchten Sie dazu ebenfalls eine Auswertung, fordern Sie sie oben einfach erneut an.";
+  }
   if (window.matchMedia("(max-width: 900px)").matches) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 // Versand: über Web3Forms (wenn Schlüssel eingetragen) oder über das Mailprogramm des Besuchers.
 // Gibt "web" bzw. "mail" zurück, wirft bei Fehler.
-async function sende({ betreff, text, antwortAn, name }) {
+async function sende({ betreff, text, kurztext, antwortAn, name }) {
   if (CONFIG.web3formsKey) {
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -919,7 +1109,7 @@ async function sende({ betreff, text, antwortAn, name }) {
     return "web";
   }
   window.location.href = "mailto:" + CONFIG.kontaktMail + "?subject=" + encodeURIComponent(betreff)
-    + "&body=" + encodeURIComponent(text);
+    + "&body=" + encodeURIComponent(kurztext || text);
   return "mail";
 }
 
@@ -929,45 +1119,61 @@ $("gate-form").addEventListener("submit", async e => {
   const err = $("g-err");
   err.hidden = true;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) { err.textContent = "Bitte eine gültige E-Mail-Adresse angeben."; err.hidden = false; return; }
+  if (plz && !/^\d{5}$/.test(plz)) { err.textContent = "Bitte eine fünfstellige Postleitzahl angeben oder das Feld leer lassen."; err.hidden = false; return; }
   if (!$("g-ok").checked) { err.textContent = "Bitte stimmen Sie der Verwendung Ihrer Angaben zu."; err.hidden = false; return; }
   if (!letztesErgebnis) return;
-  const text = "Hallo Herr Stephan,\n\nbitte senden Sie mir die ausführliche Auswertung meines Energie-Checks.\n\n"
-    + textAuswertung(letztesErgebnis, name, mail, plz) + "\n\nViele Grüße\n" + name;
-  let meldung;
+  const anrede = "Hallo Herr Stephan,\n\nbitte senden Sie mir die ausführliche Auswertung meines Energie-Checks.\n\n";
+  letzterMailtext = anrede + textAuswertung(letztesErgebnis, name, mail, plz) + "\n\nViele Grüße\n" + name;
+  let weg;
   $("g-btn").disabled = true; $("g-btn").textContent = "Wird gesendet …";
   try {
-    const weg = await sende({ betreff: "Energie-Check: " + (name || mail), text, antwortAn: mail, name });
-    meldung = weg === "web"
-      ? "<b>Vielen Dank!</b> Ihre Anfrage ist bei mir eingegangen. Ich sende Ihnen die Auswertung mit einer persönlichen Einschätzung innerhalb von 24 Stunden an Werktagen an " + mail.replace(/</g, "&lt;") + "."
-      : "<b>Fast geschafft:</b> In Ihrem E-Mail-Programm ist eine vorbereitete Nachricht an mich geöffnet – bitte nur noch absenden. Ich schicke Ihnen die Auswertung dann mit einer persönlichen Einschätzung zu. Unten sehen Sie bereits alle Ergebnisse.";
+    const kurztext = anrede + textAuswertung(letztesErgebnis, name, mail, plz, true) + "\n\nViele Grüße\n" + name;
+    weg = await sende({ betreff: "Energie-Check: " + (name || mail), text: letzterMailtext, kurztext, antwortAn: mail, name });
   } catch {
+    setzeGateZurueck();
     err.textContent = "Das Senden hat nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie an " + CONFIG.kontaktMail + ".";
-    err.hidden = false; $("g-btn").disabled = false; $("g-btn").textContent = "Auswertung anfordern";
+    err.hidden = false;
     return;
   }
-  $("r-okmsg").innerHTML = meldung;
+  $("r-okmsg").innerHTML = weg === "web"
+    ? "<b>Vielen Dank!</b> Ihre Anfrage ist bei mir eingegangen. Ich sende Ihnen die Auswertung mit einer persönlichen Einschätzung innerhalb von 24 Stunden an Werktagen an " + mail.replace(/</g, "&lt;") + "."
+    : "<b>Fast geschafft:</b> In Ihrem E-Mail-Programm ist eine vorbereitete Nachricht an mich geöffnet – bitte nur noch absenden. Ich schicke Ihnen die Auswertung dann mit einer persönlichen Einschätzung zu. Unten sehen Sie bereits alle Ergebnisse.";
+  $("r-mailhilfe").hidden = weg !== "mail";
+  $("r-mailtext").hidden = true;
   $("gate").hidden = true;
   $("locked").hidden = true;
   $("r-details").hidden = false;
+  freigegeben = true;
+});
+
+// Falls sich kein Mailprogramm öffnet: Text kopieren bzw. anzeigen
+$("r-copy").addEventListener("click", async () => {
+  const feld = $("r-mailtext");
+  feld.value = letzterMailtext;
+  feld.hidden = false;
+  feld.select();
+  try { await navigator.clipboard.writeText(letzterMailtext); $("r-copy").textContent = "Text kopiert ✓"; }
+  catch { $("r-copy").textContent = "Text unten markiert – bitte kopieren"; }
 });
 
 // Datenschutztext an den gewählten Versandweg anpassen
 if (CONFIG.web3formsKey) {
   $("ds-formdienst").textContent = "Für die Übermittlung nutze ich den Formulardienst Web3Forms. Ihre Angaben werden dabei an dessen Server übertragen und von dort per E-Mail an mich weitergeleitet; es kann eine Übermittlung in Drittländer stattfinden. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO).";
 }
+
 // Rückrufwunsch
 $("cb-form").addEventListener("submit", async e => {
   e.preventDefault();
   const name = $("cb-name").value.trim(), tel = $("cb-tel").value.trim(), zeit = $("cb-zeit").value;
   const err = $("cb-err"), msg = $("cb-msg");
   err.hidden = true;
-  if (!/^[+0-9 ()\/-]{6,}$/.test(tel)) { err.textContent = "Bitte eine gültige Telefonnummer angeben."; err.hidden = false; return; }
+  if (!/^[+0-9 ()\/-]{6,}$/.test(tel) || tel.replace(/\D/g, "").length < 6) { err.textContent = "Bitte eine gültige Telefonnummer angeben."; err.hidden = false; return; }
   if (!$("cb-ok").checked) { err.textContent = "Bitte stimmen Sie der Verwendung Ihrer Angaben zu."; err.hidden = false; return; }
   try {
     const weg = await sende({ betreff: "Rückrufwunsch: " + (name || tel), name,
       text: "Hallo Herr Stephan,\n\nbitte rufen Sie mich zurück.\n\nName: " + (name || "–") + "\nTelefon: " + tel + "\nWunschzeit: " + zeit + "\n\nViele Grüße\n" + name });
     msg.innerHTML = weg === "web" ? "<b>Danke!</b> Ich rufe Sie innerhalb von 24 Stunden an Werktagen zurück."
-      : "<b>Fast geschafft:</b> Bitte die vorbereitete E-Mail in Ihrem Mailprogramm noch absenden.";
+      : "<b>Fast geschafft:</b> Bitte die vorbereitete E-Mail in Ihrem Mailprogramm noch absenden. Öffnet sich keins, rufen Sie mich gern direkt an.";
     msg.hidden = false;
   } catch {
     err.textContent = "Das Senden hat nicht geklappt. Bitte rufen Sie mich direkt an."; err.hidden = false;
@@ -975,25 +1181,28 @@ $("cb-form").addEventListener("submit", async e => {
 });
 
 // Rechenbeispiele aus dem Energie-Check erzeugen
+const OHNE = { fassade: false, dach: false, fenster: false, keller: false };
 const BEISPIELE = [
   { titel: "Einfamilienhaus, Baujahr 1965", text: "140 m², Gasheizung, noch unsaniert",
-    p: { typ: "efh", bj: 1968, hz: "gas", wf: 140, we: 1, vb: 0, erledigt: { fassade: false, dach: false, fenster: false, keller: false } } },
+    p: { art: "wg", typ: "efh", bj: 1968, hz: "gas", flaeche: 140, we: 1, vb: 0, erledigt: { ...OHNE } } },
   { titel: "Reihenhaus, Baujahr 1982", text: "120 m², Ölheizung, Fenster bereits getauscht",
-    p: { typ: "rh", bj: 1983, hz: "oel", wf: 120, we: 1, vb: 0, erledigt: { fassade: false, dach: false, fenster: true, keller: false } } },
+    p: { art: "wg", typ: "rh", bj: 1983, hz: "oel", flaeche: 120, we: 1, vb: 0, erledigt: { ...OHNE, fenster: true } } },
   { titel: "Mehrfamilienhaus, Baujahr 1958", text: "6 Wohnungen, 420 m², Gas, Dach gedämmt",
-    p: { typ: "mfh", bj: 1968, hz: "gas", wf: 420, we: 6, vb: 0, erledigt: { fassade: false, dach: true, fenster: false, keller: false } } }
+    p: { art: "wg", typ: "mfh", bj: 1968, hz: "gas", flaeche: 420, we: 6, vb: 0, erledigt: { ...OHNE, dach: true } } },
+  { titel: "Bürogebäude, Baujahr 1975", text: "1.200 m² Nutzfläche, Gas, Leuchtstoffröhren, mittelständischer Eigentümer",
+    p: { art: "nwg", nutzung: "buero", bj: 1978, hz: "gas", flaeche: 1200, betrieb: "kmu", vb: 0, sv: 0, led: false, ga: false, rlt: false, erledigt: { ...OHNE } } }
 ];
 $("examples").innerHTML = BEISPIELE.map((b, i) => {
-  const r = berechne(b.p), kl = klasse(r.kwhm2);
+  const r = berechne(b.p), e = einstufung(r);
   const top = r.massnahmen.reduce((a, m) => (!a || m.ersparnis > a.ersparnis ? m : a), null);
   const foerd = r.massnahmen.reduce((s, m) => s + m.foerderung, 0);
   return `<div class="card example">
     <h3>${b.titel}</h3><p class="muted small">${b.text}</p>
     <div class="facts">
-      <div><b><span class="badge-k" style="background:${kl.c}">${kl.k}</span></b>Effizienzklasse heute</div>
+      <div><b><span class="badge-k${e.dark ? " dark" : ""}" style="background:${e.farbe}">${e.kurz}</span></b>${r.nwg ? "Wärmebedarf heute" : "Effizienzklasse heute"}</div>
       <div><b>${eur(rund(r.kosten, 50))}</b>Energiekosten pro Jahr</div>
       <div><b>bis ${Math.round(r.potenzial * 100)} %</b>weniger Energiekosten</div>
-      <div><b>ca. ${eur(rund(foerd, 500))}</b>Grundförderung gesamt</div>
+      <div><b>ca. ${eur(rund(foerd, 500))}</b>Förderung, alle Maßnahmen</div>
     </div>
     <p class="small">Größter Hebel: <b>${top ? top.name : "Feinoptimierung"}</b></p>
     <button class="btn ghost" type="button" data-bsp="${i}">Mit diesen Werten rechnen</button>
@@ -1001,15 +1210,28 @@ $("examples").innerHTML = BEISPIELE.map((b, i) => {
 }).join("");
 document.querySelectorAll("[data-bsp]").forEach(btn => btn.addEventListener("click", () => {
   const p = BEISPIELE[+btn.dataset.bsp].p;
-  $("f-typ").value = p.typ; $("f-bj").value = String(p.bj); $("f-hz").value = p.hz;
-  $("f-wf").value = p.wf; $("f-we").value = p.we; $("f-vb").value = "";
+  document.querySelector(`input[name="art"][value="${p.art}"]`).checked = true;
+  umschalten();
+  $("f-bj").value = String(p.bj); $("f-hz").value = p.hz; $("f-vb").value = "";
+  if (p.art === "wg") { $("f-typ").value = p.typ; $("f-wf").value = p.flaeche; $("f-we").value = p.we; }
+  else { $("f-nutz").value = p.nutzung; $("f-ngf").value = p.flaeche; $("f-betrieb").value = p.betrieb; $("f-sv").value = "";
+    $("d-led").checked = p.led; $("d-ga").checked = p.ga; $("d-rlt").checked = p.rlt; }
   BAUTEILE.forEach(b => $("d-" + b.id).checked = p.erledigt[b.id]);
   $("check-form").requestSubmit();
   $("energie-check").scrollIntoView({ behavior: "smooth" });
 }));
 
+// Impressum/Datenschutz: „Zurück“ springt an die vorherige Stelle der Seite
+let rechtlichesVonSeite = false;
+document.querySelectorAll('a[href="#impressum"], a[href="#datenschutz"]').forEach(a => a.addEventListener("click", () => { rechtlichesVonSeite = true; }));
+document.querySelectorAll(".back-link").forEach(a => a.addEventListener("click", e => {
+  if (rechtlichesVonSeite) { e.preventDefault(); rechtlichesVonSeite = false; history.back(); }
+}));
+
 // Menü auf dem Handy nach Klick schließen
 document.querySelectorAll(".mobile-nav a").forEach(a => a.addEventListener("click", () => a.closest("details").open = false));
+
+umschalten();
 </script>
 </body>
 </html>
